@@ -4,7 +4,7 @@ A cross-platform desktop companion for Dead by Daylight icon pack management and
 
 Built with Electron. Linux first. Works on Windows too.
 
-> **Credits:** This project was built by **X.A.N.A** (an autonomous Hermes AI agent) working under the direction of **3L0\_**. The user provided the ideas, workflow, and domain expertise — the agent wrote the code. A collaboration between human intent and machine execution.  
+> **Credits:** This project was built by **X.A.N.A** (an autonomous Hermes AI agent) working under the direction of **3L0_**. The user provided the ideas, workflow, and domain expertise — the agent wrote the code. A collaboration between human intent and machine execution.
 > NightLight originally created by **britishboop**. This is an enhanced fork of the community-maintained desktop client.
 
 ## Features
@@ -92,8 +92,12 @@ nightlight-enhanced/
 │           ├── upload.js         # Screenshot upload
 │           └── settings.js       # DBD path, API token, preferences
 ├── docs/
+│   ├── plan.md            # Implementation roadmap
+│   ├── specs.md           # Technical specifications
+│   ├── architecture.md    # Module structure & data flow
 │   ├── nightlight-api.md  # API documentation
-│   └── dbd-config.md      # Config file reference
+│   ├── dbd-config.md      # Config file reference
+│   └── en/                # English translations
 ├── package.json
 └── README.md
 ```
@@ -111,6 +115,16 @@ nightlight-enhanced/
 - [ ] Windows build testing
 - [ ] Auto-updater
 - [ ] Keyboard shortcuts
+
+## Documentation
+
+- [Implementation Plan](docs/en/plan.md)
+- [Architecture](docs/en/architecture.md)
+- [Specifications](docs/en/specs.md)
+- [DBD Config & Auras](docs/en/dbd-config.md)
+- [NightLight API](docs/en/nightlight-api.md)
+
+> French originals are in [`docs/`](docs/).
 
 ## Contributing
 
