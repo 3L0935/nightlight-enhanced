@@ -107,9 +107,12 @@ nightlight-enhanced/
 - [ ] Upload stats & match history
 - [ ] Windows build testing
 - [ ] Auto-updater
+- [ ] Keyboard shortcuts
 
-## Credits
+## Contributing
 
-- Icon packs from [nightlight.gg](https://nightlight.gg) community
-- Fork base: [thatCleo/Nightlight_Pack_Downloader](https://github.com/thatCleo/Nightlight_Pack_Downloader)
-- Game: [Dead by Daylight](https://deadbydaylight.com) by Behaviour Interactive
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+[MIT](LICENSE) — free to use, modify, and distribute.
