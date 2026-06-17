@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="256" y2="256">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="moon" x1="0" y1="0" x2="256" y2="256">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="128" y1="128" x2="128" y2="0">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <rect width="256" height="256" rx="48" fill="url(#bg)"/>
+  <!-- Glow behind moon -->
+  <circle cx="140" cy="110" r="80" fill="url(#glow)"/>
+  <!-- Moon (crescent) -->
+  <circle cx="140" cy="110" r="55" fill="url(#moon)"/>
+  <circle cx="160" cy="95" r="45" fill="#1a1a2e"/>
+  <!-- Star -->
+  <circle cx="80" cy="80" r="6" fill="#fbbf24" opacity="0.8"/>
+  <circle cx="80" cy="80" r="12" fill="#fbbf24" opacity="0.15"/>
+  <!-- Small stars -->
+  <circle cx="60" cy="160" r="3" fill="#fff" opacity="0.4"/>
+  <circle cx="190" cy="180" r="2.5" fill="#fff" opacity="0.3"/>
+  <circle cx="200" cy="60" r="2" fill="#fff" opacity="0.25"/>
+  <circle cx="50" cy="120" r="2" fill="#fff" opacity="0.2"/>
+</svg>

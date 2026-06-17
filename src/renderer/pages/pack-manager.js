@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#revert-default').addEventListener('click', async () => {
     if (!confirm('This will remove ALL custom icons and restore defaults. Continue?')) return;
     try {
-      await window.nightlight.revertToDefault();
-      showNotification('Reverted to default icons', 'success');
+      const result = await window.nightlight.revertToDefault();
+      showNotification(`Reverted to default icons (${result.copied} files restored)`, 'success');
       loadInstalledPacks();
     } catch (err) {
       showNotification(`Error: ${err.message}`, 'error');

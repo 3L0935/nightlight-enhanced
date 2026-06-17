@@ -22,6 +22,11 @@ function registerIpcHandlers(ipcMain) {
     return api.getPreviewProgress();
   });
 
+  // Lazy-load a single icon's data URL from the preview cache
+  ipcMain.handle('packs:icon-data', async (_, packUrl, cat, iconName) => {
+    return api.getIconDataUrl(packUrl, cat, iconName);
+  });
+
   // ── Install with progress (streamed via events) ──
   ipcMain.handle('packs:install', async (event, packUrl, title, categories) => {
     const win = BrowserWindow.fromWebContents(event.sender);

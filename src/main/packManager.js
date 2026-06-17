@@ -213,11 +213,42 @@ function setPackOrder(order) {
   return ordered;
 }
 
-function revertToDefault() {
+async function revertToDefault() {
   const iconsPath = getDbdIconsPath();
   if (!iconsPath) throw new Error('DBD path not configured');
+
+  const packUrl = 'default-icons';
+  const packDir = getPackDir(packUrl);
+
+  // Download + extract default-icons pack if not cached
+  if (!fs.existsSync(path.join(packDir, '.extracted'))) {
+    const buffer = await downloadPackZip(packUrl, () => {});
+    if (!fs.existsSync(packDir)) fs.mkdirSync(packDir, { recursive: true });
+    const tmpZip = path.join(packDir, 'pack.zip');
+    fs.writeFileSync(tmpZip, buffer);
+    execSync(`unzip -o "${tmpZip}" -d "${packDir}/icons" 2>/dev/null`, { timeout: 30000 });
+    fs.unlinkSync(tmpZip);
+    fs.writeFileSync(path.join(packDir, '.extracted'), '');
+  }
+
+  // Copy all icon subdirectories to DBD icons path
+  const extractDir = path.join(packDir, 'icons');
+  if (!fs.existsSync(extractDir)) throw new Error('Default icons pack not found after download');
+
+  const entries = fs.readdirSync(extractDir, { withFileTypes: true });
+  let copied = 0;
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const srcDir = path.join(extractDir, entry.name);
+    const destDir = path.join(iconsPath, entry.name);
+    if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
+    copyFiles(srcDir, destDir, () => { copied++; });
+  }
+
+  // Clear installed packs
   saveInstalledPacks([]);
-  return true;
+
+  return { copied };
 }
 
 module.exports = {

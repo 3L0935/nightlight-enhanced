@@ -7,6 +7,7 @@ contextBridge.exposeInMainWorld('nightlight', {
   fetchBanner: (packId, version) => ipcRenderer.invoke('packs:banner', packId, version),
   fetchPackPreview: (packUrl, packId, version) => ipcRenderer.invoke('packs:preview', packUrl, packId, version),
   getPreviewProgress: () => ipcRenderer.invoke('packs:preview-progress'),
+  getIconData: (packUrl, cat, iconName) => ipcRenderer.invoke('packs:icon-data', packUrl, cat, iconName),
   installPack: (packUrl, title, categories) => ipcRenderer.invoke('packs:install', packUrl, title, categories),
   updatePackCategories: (packId, categories) => ipcRenderer.invoke('packs:update-categories', packId, categories),
   getInstalledPacks: () => ipcRenderer.invoke('packs:get-installed'),
