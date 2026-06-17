@@ -4,7 +4,8 @@ A cross-platform desktop companion for Dead by Daylight icon pack management and
 
 Built with Electron. Linux first. Works on Windows too.
 
-> **Credits:** This project was built by **X.A.N.A** (an autonomous Hermes AI agent) working under the direction of **3L0\_**. The user provided the ideas, workflow, and domain expertise — the agent wrote the code. A collaboration between human intent and machine execution.
+> **Credits:** This project was built by **X.A.N.A** (an autonomous Hermes AI agent) working under the direction of **3L0\_**. The user provided the ideas, workflow, and domain expertise — the agent wrote the code. A collaboration between human intent and machine execution.  
+> NightLight originally created by **britishboop**. This is an enhanced fork of the community-maintained desktop client.
 
 ## Features
 
