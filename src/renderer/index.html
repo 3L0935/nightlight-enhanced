@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://cdn.nightlight.gg data:; connect-src 'self' https://nightlight.gg https://api.nightlight.gg https://cdn.nightlight.gg;">
+  <title>NightLight Enhanced</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <h1>NL<span class="accent">+</span></h1>
+        <span class="version" id="version-label">v0.1.0</span>
+      </div>
+      <nav id="nav">
+        <button class="nav-item active" data-page="pack-browser">
+          <span class="nav-icon" id="nav-icon-packs"></span>
+          <span class="nav-label">Packs</span>
+        </button>
+        <button class="nav-item" data-page="pack-manager">
+          <span class="nav-icon" id="nav-icon-installed"></span>
+          <span class="nav-label">Installed</span>
+        </button>
+        <button class="nav-item" data-page="config-editor">
+          <span class="nav-icon" id="nav-icon-config"></span>
+          <span class="nav-label">Config</span>
+        </button>
+        <button class="nav-item" data-page="upload">
+          <span class="nav-icon" id="nav-icon-upload"></span>
+          <span class="nav-label">Upload</span>
+        </button>
+        <button class="nav-item" data-page="settings">
+          <span class="nav-icon" id="nav-icon-settings"></span>
+          <span class="nav-label">Settings</span>
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <div id="lock-indicator" class="lock-indicator locked hidden">
+          <span id="lock-icon"></span>
+          <span>Config Locked</span>
+        </div>
+      </div>
+    </aside>
+
+    <main id="content">
+      <div id="page-pack-browser" class="page active">
+        <div class="page-header">
+          <h2>Icon Packs</h2>
+          <div class="page-header-actions">
+            <button id="view-all-packs" class="btn btn-sm"></button>
+            <div class="search-bar">
+              <input type="text" id="pack-search" placeholder="Search packs..." />
+              <select id="pack-sort">
+                <option value="downloads">Most Downloaded</option>
+                <option value="name">Name</option>
+                <option value="last_updated">Last Updated</option>
+                <option value="creation_date">Newest</option>
+                <option value="random">Random</option>
+              </select>
+              <select id="filter-version">
+                <option value="">All versions</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="pack-grid" class="pack-grid">
+          <div class="loading">Loading packs...</div>
+        </div>
+        <div id="pack-pagination" class="pagination hidden">
+          <button id="page-prev">Prev</button>
+          <span id="page-info">Page 1</span>
+          <button id="page-next">Next</button>
+        </div>
+      </div>
+
+      <div id="page-pack-manager" class="page">
+        <div class="page-header">
+          <h2>Installed Packs</h2>
+          <button id="revert-default" class="btn btn-danger">Revert to Default</button>
+        </div>
+        <div id="installed-list" class="installed-list">
+          <div class="empty-state">No packs installed yet.</div>
+        </div>
+      </div>
+
+      <div id="page-config-editor" class="page">
+        <div class="page-header">
+          <h2>Config Editor</h2>
+          <div class="config-actions">
+            <label class="mode-switch" title="Toggle Pretty/Raw mode">
+              <span class="mode-switch-label" id="mode-label">Pretty</span>
+              <span class="switch-track">
+                <input type="checkbox" id="mode-toggle" checked />
+                <span class="switch-knob"></span>
+              </span>
+            </label>
+            <button id="config-refresh" class="btn"></button>
+            <button id="config-save" class="btn btn-primary"></button>
+            <button id="config-lock-toggle" class="btn"></button>
+          </div>
+        </div>
+        <div id="config-path-display" class="config-path"></div>
+        <div id="pretty-config" class="pretty-config"></div>
+        <textarea id="config-editor" class="config-editor" spellcheck="false" style="display:none"></textarea>
+        <div id="config-status" class="config-status"></div>
+      </div>
+
+      <div id="page-upload" class="page">
+        <div class="page-header">
+          <h2>Match Upload</h2>
+        </div>
+        <div class="upload-area" id="upload-area">
+          <div class="upload-placeholder">
+            <span class="upload-icon" id="upload-icon-placeholder"></span>
+            <p>Drop a screenshot here or click to select</p>
+            <p class="upload-hint">Scoreboard screenshots (JPG/PNG)</p>
+          </div>
+          <input type="file" id="upload-input" accept="image/png,image/jpeg" hidden />
+        </div>
+        <div id="upload-result" class="upload-result hidden"></div>
+      </div>
+
+      <div id="page-settings" class="page">
+        <div class="page-header">
+          <h2>Settings</h2>
+        </div>
+        <div class="settings-form">
+          <div class="setting-group">
+            <label for="setting-dbd-path">DBD Game Path</label>
+            <div class="input-with-btn">
+              <input type="text" id="setting-dbd-path" placeholder="/path/to/steamapps/common/Dead By Daylight" />
+              <button id="detect-dbd" class="btn btn-sm"></button>
+            </div>
+            <span class="setting-hint">Path to the DBD game folder (steamapps/common/Dead By Daylight)</span>
+          </div>
+          <div class="setting-group">
+            <label for="setting-api-token">NightLight API Token</label>
+            <input type="password" id="setting-api-token" placeholder="nl_..." />
+            <span class="setting-hint">Generate at <a href="#" id="api-token-link">nightlight.gg/account/api</a></span>
+          </div>
+          <div class="setting-group">
+            <label for="setting-capture-quality">Capture Quality</label>
+            <select id="setting-capture-quality">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+          <div class="setting-group">
+            <label for="setting-keep-screenshots">Keep Screenshots</label>
+            <select id="setting-keep-screenshots">
+              <option value="all">Keep All</option>
+              <option value="delete-after-upload">Delete After Upload</option>
+              <option value="keep-last-100">Keep Last 100</option>
+            </select>
+          </div>
+          <button id="settings-save" class="btn btn-primary"></button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="notification-container"></div>
+
+  <script src="icons.js"></script>
+  <script src="app.js"></script>
+  <script src="config-parser.js"></script>
+  <script src="config-pretty.js"></script>
+  <script src="pages/pack-browser.js"></script>
+  <script src="pages/pack-manager.js"></script>
+  <script src="pages/config-editor.js"></script>
+  <script src="pages/upload.js"></script>
+  <script src="pages/settings.js"></script>
+</body>
+</html>
