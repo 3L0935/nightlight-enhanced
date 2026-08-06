@@ -97,7 +97,7 @@ async function confirmUpload() {
 
     const url = response.data?.url;
 
-    if (url) {
+    if (url && typeof url === 'string' && url.startsWith('https://')) {
       progress.classList.add('hidden');
       result.innerHTML = `
         <div class="upload-result-success">

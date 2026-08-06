@@ -1803,10 +1803,6 @@ html, body {
   text-transform: uppercase;
 }
 
-.switch-track {
-  display: none;
-}
-
 .mode-switch:has(input:checked) .mode-switch-label:first-of-type {
   background: var(--accent);
   color: white;

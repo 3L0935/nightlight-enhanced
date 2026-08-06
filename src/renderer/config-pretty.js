@@ -388,10 +388,10 @@ function serializePrettyConfig() {
     } else if (key.startsWith('sg.')) {
       if (!sections['ScalabilityGroups']) sections['ScalabilityGroups'] = {};
       sections['ScalabilityGroups'][key] = value;
-    } else if (key.startsWith('bDisableLobbyMusic') || key.startsWith('bLowMemoryMode') || key.startsWith('bPreloadLobbyAssets')) {
+    } else if (key === 'bDisableLobbyMusic' || key === 'bLowMemoryMode' || key === 'bPreloadLobbyAssets') {
       if (!sections['DeadByDaylight.Optimization']) sections['DeadByDaylight.Optimization'] = {};
       sections['DeadByDaylight.Optimization'][key] = value;
-    } else if (key.startsWith('bEnableRawInput') || key.startsWith('bEnableDoubleClick') || key.startsWith('bEnableMenuClickSound')) {
+    } else if (key === 'bEnableRawInput' || key === 'bEnableDoubleClick' || key === 'bEnableMenuClickSound') {
       if (!sections['Input']) sections['Input'] = {};
       sections['Input'][key] = value;
     } else if (key === 'bUseVSync' || key === 'bUseDynamicResolution' || key === 'ResolutionSizeX' || key === 'ResolutionSizeY' || key === 'FullscreenMode' || key === 'PreferredFullscreenMode' || key === 'bUseDesiredScreenHeight' || key === 'Language' || key === 'AudioQualityLevel') {

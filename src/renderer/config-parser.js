@@ -237,28 +237,6 @@ function serializeIni(sections) {
   return output;
 }
 
-// ── Merge modified values back into parsed sections ──
-
-function applyChanges(sections, changes) {
-  // changes: { 'sg.ResolutionQuality': '100', 'FullscreenMode': '1', ... }
-  for (const [key, value] of Object.entries(changes)) {
-    // Determine which section this key belongs to
-    if (key.startsWith('sg.')) {
-      if (!sections['ScalabilityGroups']) sections['ScalabilityGroups'] = {};
-      sections['ScalabilityGroups'][key] = String(value);
-    } else if (key.startsWith('aura.')) {
-      // Aura changes are handled separately — they modify AuraColors string
-      continue;
-    } else {
-      if (!sections['/Script/DeadByDaylight.DBDGameUserSettings']) {
-        sections['/Script/DeadByDaylight.DBDGameUserSettings'] = {};
-      }
-      sections['/Script/DeadByDaylight.DBDGameUserSettings'][key] = String(value);
-    }
-  }
-  return sections;
-}
-
 // ── Aura colors parsing ──
 
 function parseAuraColors(raw) {
