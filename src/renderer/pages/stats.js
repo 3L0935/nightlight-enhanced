@@ -107,7 +107,7 @@ function renderTopChars(chars) {
         : '<span class="stat-mini-perk stat-mini-perk-empty"></span>';
     }).join('');
     return `
-      <div class="stat-char">
+      <div class="stat-char" data-char="${c.character_id}" title="Click to view details">
         ${img ? `<img class="stat-char-img" src="${img}" alt="${charName(c.character_id)}" loading="lazy" />` : ''}
         <div class="stat-char-body">
           <div class="stat-char-name">${charName(c.character_id)}</div>
@@ -116,6 +116,87 @@ function renderTopChars(chars) {
         <div class="stat-char-total">${c.total}%</div>
       </div>`;
   }).join('') + `</div>`;
+}
+
+// ── Character detail (focus view) ──
+function renderCharDetail(charId) {
+  const isK = !!_nlData?.killers?.[charId];
+  const c = isK ? _nlData.killers[charId] : _nlData.survivors[charId];
+  if (!c) return '<div class="empty-state">Character not found.</div>';
+  const img = charPortrait(charId);
+  const perks = (c.perks || []).map(pid => {
+    const pimg = perkImage(pid, 85);
+    const n = perkName(pid);
+    return perkTooltip(pid, pimg
+      ? `<img class="stat-detail-perk" src="${pimg}" alt="${n}" loading="lazy" />`
+      : `<img class="stat-detail-perk stat-build-perk-blank" src="img/blank.webp" alt="No perk" loading="lazy" />`);
+  }).join('');
+  const history = c.history || [];
+  const pickRate = c.pick_rate !== undefined ? `${c.pick_rate}%` : (c.total !== undefined ? `${c.total}%` : '—');
+  const rateLabel = isK ? 'Kill Rate' : 'Escape Rate';
+  const rateVal = isK ? (c.kill_rate !== undefined ? `${c.kill_rate}%` : '—') : (c.escape_rate !== undefined ? `${c.escape_rate}%` : '—');
+  const bio = c.bio || 'No bio available.';
+  const backStory = c.back_story || '';
+  return `
+    <div class="char-detail">
+      <button class="btn btn-sm char-detail-back">${icon('arrowUp')} Back</button>
+      <div class="char-detail-head">
+        ${img ? `<img class="char-detail-portrait" src="${img}" alt="${c.name}" />` : ''}
+        <div class="char-detail-title">
+          <div class="char-detail-name">${c.name}</div>
+          <div class="char-detail-role">${isK ? 'Killer' : 'Survivor'}</div>
+          <div class="char-detail-stats">
+            <span class="cd-stat"><b>${pickRate}</b> Pick Rate</span>
+            <span class="cd-stat"><b>${rateVal}</b> ${rateLabel}</span>
+          </div>
+        </div>
+      </div>
+      <div class="char-detail-perks">
+        <h4>Perks</h4>
+        <div class="char-detail-perks-row">${perks}</div>
+      </div>
+      <div class="char-detail-bio">
+        <h4>Bio</h4>
+        <p>${bio}</p>
+        ${backStory ? `<details class="char-detail-lore"><summary>Full Lore</summary><p>${backStory}</p></details>` : ''}
+      </div>
+      <div class="char-detail-graph">
+        <h4>Pick Rate Over Time</h4>
+        ${renderPickGraph(history)}
+      </div>
+    </div>`;
+}
+
+// ── Pick rate line graph (SVG) ──
+function renderPickGraph(history) {
+  if (!history || history.length < 2) return '<div class="empty-state">Not enough history data.</div>';
+  const W = 600, H = 180, PAD = 30;
+  const pts = history.map(h => ({ x: h.end, y: h.pick_rate }));
+  const maxY = Math.max(...pts.map(p => p.y), 1);
+  const minY = Math.min(...pts.map(p => p.y), 0);
+  const range = (maxY - minY) || 1;
+  const n = pts.length;
+  const px = (i) => PAD + (i / (n - 1)) * (W - 2 * PAD);
+  const py = (v) => H - PAD - ((v - minY) / range) * (H - 2 * PAD);
+  const line = pts.map((p, i) => `${i === 0 ? 'M' : 'L'} ${px(i).toFixed(1)} ${py(p.y).toFixed(1)}`).join(' ');
+  const area = `${line} L ${px(n-1).toFixed(1)} ${H-PAD} L ${px(0).toFixed(1)} ${H-PAD} Z`;
+  const labels = pts.filter((_, i) => i % Math.ceil(n / 6) === 0);
+  return `
+    <svg class="pick-graph" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="pickgrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="${area}" fill="url(#pickgrad)"/>
+      <path d="${line}" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      ${labels.map(p => {
+        const i = pts.indexOf(p);
+        return `<text x="${px(i)}" y="${H-8}" class="pick-graph-label">${p.x.slice(0,7)}</text>`;
+      }).join('')}
+      ${pts.map((p, i) => `<circle cx="${px(i)}" cy="${py(p.y)}" r="2.5" fill="var(--accent)"/>`).join('')}
+    </svg>`;
 }
 
 // ── Builds (global survivor/killer) ──
@@ -190,80 +271,95 @@ function pctBar(pct) {
   return `<div class="pct-track"><div class="pct-fill" style="width:${Math.min(pct, 100)}%"></div></div>`;
 }
 
+let _currentTab = 'perks';
+
 function renderStats(data) {
   const meta = $('#stats-meta');
   meta.innerHTML = `
     <span class="stats-patch">Since patch ${data.stat_start_patch || '?'}</span>
     <span class="stats-note">Aggregated from random players in community-submitted matches. Updated daily at 4PM UTC.</span>
   `;
+  renderTab(_currentTab, data);
+}
 
+function renderTab(tab, data) {
   const content = $('#stats-content');
-  content.innerHTML = `
-    <div class="stats-section">
-      <div class="stats-section-title">Most Used Perks</div>
-      <div class="stats-section-sub">Top 10 perks by usage rate across community matches.</div>
-      <div class="stats-cols">
-        <div class="stats-card">
-          <h3>Survivor Perks</h3>
-          ${renderTopPerks(data.top_survivor_perks)}
+  if (tab === 'perks') {
+    content.innerHTML = `
+      <div class="stats-section">
+        <div class="stats-section-title">Most Used Perks</div>
+        <div class="stats-section-sub">Top 10 perks by usage rate. Click a perk to see its popularity over time.</div>
+        <div class="stats-cols">
+          <div class="stats-card">
+            <h3>Survivor Perks</h3>
+            ${renderTopPerks(data.top_survivor_perks)}
+          </div>
+          <div class="stats-card">
+            <h3>Killer Perks</h3>
+            ${renderTopPerks(data.top_killer_perks)}
+          </div>
         </div>
-        <div class="stats-card">
-          <h3>Killer Perks</h3>
-          ${renderTopPerks(data.top_killer_perks)}
-        </div>
-      </div>
-    </div>
-
-    <div class="stats-section">
-      <div class="stats-section-title">Characters by Perk Usage</div>
-      <div class="stats-section-sub">Most played survivors and killers, with their signature perks.</div>
-      <div class="stats-cols">
-        <div class="stats-card">
-          <h3>Survivors</h3>
-          ${renderTopChars(data.top_survivors)}
-        </div>
-        <div class="stats-card">
-          <h3>Killers</h3>
-          ${renderTopChars(data.top_killers)}
-        </div>
-      </div>
-    </div>
-
-    <div class="stats-section">
-      <div class="stats-section-title">Most Seen Builds</div>
-      <div class="stats-section-sub">Most frequent perk combinations in community matches.</div>
-      <div class="stats-cols">
-        <div class="stats-card">
-          <h3>Survivor Builds</h3>
-          ${renderBuilds(data.top_survivor_builds, 'survivor')}
-        </div>
-        <div class="stats-card">
-          <h3>Killer Builds</h3>
-          ${renderBuilds(data.top_killer_builds, 'killer')}
+      </div>`;
+  } else if (tab === 'builds') {
+    content.innerHTML = `
+      <div class="stats-section">
+        <div class="stats-section-title">Most Seen Builds</div>
+        <div class="stats-section-sub">Most frequent perk combinations in community matches.</div>
+        <div class="stats-cols">
+          <div class="stats-card">
+            <h3>Survivor Builds</h3>
+            ${renderBuilds(data.top_survivor_builds, 'survivor')}
+          </div>
+          <div class="stats-card">
+            <h3>Killer Builds</h3>
+            ${renderBuilds(data.top_killer_builds, 'killer')}
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="stats-section">
-      <div class="stats-section-title">Builds by Killer</div>
-      <div class="stats-section-sub">Pick a killer to see their most popular builds.</div>
-      <div class="stats-card">
-        ${killerSelectorHtml()}
-        <div id="killer-builds-body"></div>
-      </div>
-    </div>`;
-
-  const sel = $('#killer-build-select');
-  if (sel) {
-    const show = (id) => {
-      $('#killer-builds-body').innerHTML = `<h3 class="kb-title">${charName(parseInt(id))}</h3>` + renderKillerBuilds(parseInt(id));
-      bindTooltips(content);
-    };
-    sel.addEventListener('change', () => show(sel.value));
-    show(sel.value);
+      <div class="stats-section">
+        <div class="stats-section-title">Builds by Killer</div>
+        <div class="stats-section-sub">Pick a killer to see their most popular builds.</div>
+        <div class="stats-card">
+          ${killerSelectorHtml()}
+          <div id="killer-builds-body"></div>
+        </div>
+      </div>`;
+    const sel = $('#killer-build-select');
+    if (sel) {
+      const show = (id) => {
+        $('#killer-builds-body').innerHTML = `<h3 class="kb-title">${charName(parseInt(id))}</h3>` + renderKillerBuilds(parseInt(id));
+        bindTooltips(content);
+      };
+      sel.addEventListener('change', () => show(sel.value));
+      show(sel.value);
+    }
+  } else if (tab === 'characters') {
+    content.innerHTML = `
+      <div class="stats-section">
+        <div class="stats-section-title">Characters</div>
+        <div class="stats-section-sub">Click a character to see their bio, perks, and pick rate over time.</div>
+        <div class="stats-cols">
+          <div class="stats-card">
+            <h3>Survivors</h3>
+            ${renderTopChars(data.top_survivors)}
+          </div>
+          <div class="stats-card">
+            <h3>Killers</h3>
+            ${renderTopChars(data.top_killers)}
+          </div>
+        </div>
+      </div>`;
+    // Click a character to open detail view
+    content.querySelectorAll('.stat-char[data-char]').forEach(el => {
+      el.addEventListener('click', () => {
+        const cid = el.dataset.char;
+        content.innerHTML = renderCharDetail(cid);
+        bindTooltips(content);
+        const back = content.querySelector('.char-detail-back');
+        if (back) back.addEventListener('click', () => renderTab('characters', data));
+      });
+    });
   }
-
-  // Bind hover tooltips on all perk elements in the rendered stats
   bindTooltips(content);
 }
 
@@ -327,6 +423,17 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#nav-icon-stats').innerHTML = icon('chart');
   $('#stats-refresh').innerHTML = `${icon('refresh')} Refresh`;
   $('#stats-refresh').addEventListener('click', () => loadStats(true));
+
+  // Tab switching
+  document.querySelectorAll('.stats-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      _currentTab = btn.dataset.tab;
+      document.querySelectorAll('.stats-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (_statsCache) renderTab(_currentTab, _statsCache);
+    });
+  });
+
   document.querySelector('.nav-item[data-page="stats"]').addEventListener('click', () => {
     setTimeout(() => loadStats(), 50);
   });

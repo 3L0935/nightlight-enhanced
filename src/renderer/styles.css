@@ -1834,6 +1834,35 @@ html, body {
   margin: 0 auto;
 }
 
+/* Tabs */
+.stats-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.stats-tab {
+  padding: 8px 18px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.stats-tab:hover {
+  color: var(--text-primary);
+}
+.stats-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
 .stats-section {
   margin-bottom: 28px;
 }
@@ -2076,6 +2105,112 @@ html, body {
   opacity: 0.35;
   filter: grayscale(1);
   border: 1px dashed var(--border-subtle);
+}
+
+/* ── Character detail (focus view) ── */
+.char-detail {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.char-detail-back {
+  margin-bottom: 16px;
+}
+.char-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.char-detail-portrait {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-tertiary);
+  object-fit: cover;
+}
+.char-detail-title {
+  flex: 1;
+}
+.char-detail-name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+.char-detail-role {
+  font-size: 12px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+.char-detail-stats {
+  display: flex;
+  gap: 20px;
+}
+.cd-stat {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.cd-stat b {
+  display: block;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+.char-detail-perks,
+.char-detail-bio,
+.char-detail-graph {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.char-detail h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 12px;
+}
+.char-detail-perks-row {
+  display: flex;
+  gap: 10px;
+}
+.stat-detail-perk {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  object-fit: cover;
+}
+.char-detail-bio p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.char-detail-lore {
+  margin-top: 10px;
+}
+.char-detail-lore summary {
+  font-size: 12px;
+  color: var(--accent);
+  cursor: pointer;
+}
+.char-detail-lore p {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.pick-graph {
+  width: 100%;
+  height: auto;
+}
+.pick-graph-label {
+  font-size: 9px;
+  fill: var(--text-muted);
+  text-anchor: middle;
 }
 
 /* ── Pretty/Raw Mode Switch (segmented control) ── */
