@@ -2310,6 +2310,21 @@ html, body {
   line-height: 1.5;
   color: var(--text-secondary);
 }
+.power-full-btn {
+  margin-top: 8px;
+  font-size: 11px;
+}
+.char-detail-power-full {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.char-detail-power-full b {
+  color: var(--text-primary);
+}
 
 /* ── Perk detail page ── */
 .perk-detail {

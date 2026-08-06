@@ -160,7 +160,9 @@ function renderCharDetail(charId) {
           <img class="char-detail-power-img" src="img/powers/${c.power_icon}" alt="${c.power_name || c.name} power" loading="lazy" />
           <div class="char-detail-power-info">
             <div class="char-detail-power-name">${c.power_name || `${c.name.replace('The ', '')}'s Power`}</div>
-            ${c.power_desc ? `<div class="char-detail-power-desc">${formatPowerDesc(c.power_desc)}</div>` : ''}
+            ${c.power_tldr ? `<div class="char-detail-power-desc">${formatPowerDesc(c.power_tldr)}</div>` : ''}
+            ${c.power_desc ? `<button class="btn btn-sm power-full-btn">${icon('arrowDown')} Full Power</button>
+              <div class="char-detail-power-full hidden">${formatPowerDesc(c.power_desc)}</div>` : ''}
           </div>
         </div>
       </div>`
@@ -423,6 +425,16 @@ function bindCharDetail(content, data) {
   // Graph hover tooltip
   const wrap = content.querySelector('.pick-graph-wrap');
   if (wrap) bindPickHover(wrap);
+  // Full Power toggle
+  const fullBtn = content.querySelector('.power-full-btn');
+  if (fullBtn) {
+    fullBtn.addEventListener('click', () => {
+      const full = content.querySelector('.char-detail-power-full');
+      const isHidden = full.classList.contains('hidden');
+      full.classList.toggle('hidden');
+      fullBtn.innerHTML = isHidden ? `${icon('arrowUp')} Hide Power` : `${icon('arrowDown')} Full Power`;
+    });
+  }
 }
 
 // ── Perk detail page (with its own pick-rate graph) ──
