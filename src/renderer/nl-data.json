@@ -1,0 +1,2354 @@
+{
+ "perks": {
+  "1": {
+   "id": 1,
+   "name": "Dark Sense",
+   "icon": "dark-sense",
+   "url": "/perks/Dark_Sense"
+  },
+  "2": {
+   "id": 2,
+   "name": "Deja Vu",
+   "icon": "deja-vu",
+   "url": "/perks/Deja_Vu"
+  },
+  "3": {
+   "id": 3,
+   "name": "Hope",
+   "icon": "hope",
+   "url": "/perks/Hope"
+  },
+  "4": {
+   "id": 4,
+   "name": "Lightweight",
+   "icon": "lightweight",
+   "url": "/perks/Lightweight"
+  },
+  "5": {
+   "id": 5,
+   "name": "No One Left Behind",
+   "icon": "no-one-left-behind",
+   "url": "/perks/No_One_Left_Behind"
+  },
+  "6": {
+   "id": 6,
+   "name": "Plunderer's Instinct",
+   "icon": "plunderers-instinct",
+   "url": "/perks/Plunderer%27s_Instinct"
+  },
+  "7": {
+   "id": 7,
+   "name": "Premonition",
+   "icon": "premonition",
+   "url": "/perks/Premonition"
+  },
+  "8": {
+   "id": 8,
+   "name": "Resilience",
+   "icon": "resilience",
+   "url": "/perks/Resilience"
+  },
+  "9": {
+   "id": 9,
+   "name": "Slippery Meat",
+   "icon": "slippery-meat",
+   "url": "/perks/Slippery_Meat"
+  },
+  "10": {
+   "id": 10,
+   "name": "Small Game",
+   "icon": "small-game",
+   "url": "/perks/Small_Game"
+  },
+  "11": {
+   "id": 11,
+   "name": "Spine Chill",
+   "icon": "spine-chill",
+   "url": "/perks/Spine_Chill"
+  },
+  "12": {
+   "id": 12,
+   "name": "This Is Not Happening",
+   "icon": "this-is-not-happening",
+   "url": "/perks/This_Is_Not_Happening"
+  },
+  "13": {
+   "id": 13,
+   "name": "We'll make it",
+   "icon": "well-make-it",
+   "url": "/perks/We%27ll_make_it"
+  },
+  "14": {
+   "id": 14,
+   "name": "Kindred",
+   "icon": "kindred",
+   "url": "/perks/Kindred"
+  },
+  "15": {
+   "id": 15,
+   "name": "Bitter Murmur",
+   "icon": "bitter-murmur",
+   "url": "/perks/Bitter_Murmur"
+  },
+  "16": {
+   "id": 16,
+   "name": "Deerstalker",
+   "icon": "deerstalker",
+   "url": "/perks/Deerstalker"
+  },
+  "17": {
+   "id": 17,
+   "name": "Distressing",
+   "icon": "distressing",
+   "url": "/perks/Distressing"
+  },
+  "18": {
+   "id": 18,
+   "name": "Hex: No One Escapes Death",
+   "icon": "hex-no-one-escapes-death",
+   "url": "/perks/Hex:_No_One_Escapes_Death"
+  },
+  "19": {
+   "id": 19,
+   "name": "Insidious",
+   "icon": "insidious",
+   "url": "/perks/Insidious"
+  },
+  "20": {
+   "id": 20,
+   "name": "Iron Grasp",
+   "icon": "iron-grasp",
+   "url": "/perks/Iron_Grasp"
+  },
+  "21": {
+   "id": 21,
+   "name": "Scourge Hook: Monstrous Shrine",
+   "icon": "scourge-hook-monstrous-shrine",
+   "url": "/perks/Scourge_Hook:_Monstrous_Shrine"
+  },
+  "22": {
+   "id": 22,
+   "name": "Sloppy Butcher",
+   "icon": "sloppy-butcher",
+   "url": "/perks/Sloppy_Butcher"
+  },
+  "23": {
+   "id": 23,
+   "name": "Spies from the Shadows",
+   "icon": "spies-from-the-shadows",
+   "url": "/perks/Spies_from_the_Shadows"
+  },
+  "24": {
+   "id": 24,
+   "name": "Unrelenting",
+   "icon": "unrelenting",
+   "url": "/perks/Unrelenting"
+  },
+  "25": {
+   "id": 25,
+   "name": "Whispers",
+   "icon": "whispers",
+   "url": "/perks/Whispers"
+  },
+  "26": {
+   "id": 26,
+   "name": "Hex: Thrill of the Hunt",
+   "icon": "hex-thrill-of-the-hunt",
+   "url": "/perks/Hex:_Thrill_of_the_Hunt"
+  },
+  "27": {
+   "id": 27,
+   "name": "Bond",
+   "icon": "bond",
+   "url": "/perks/Bond"
+  },
+  "28": {
+   "id": 28,
+   "name": "Leader",
+   "icon": "leader",
+   "url": "/perks/Leader"
+  },
+  "29": {
+   "id": 29,
+   "name": "Prove Thyself",
+   "icon": "prove-thyself",
+   "url": "/perks/Prove_Thyself"
+  },
+  "30": {
+   "id": 30,
+   "name": "Adrenaline",
+   "icon": "adrenaline",
+   "url": "/perks/Adrenaline"
+  },
+  "31": {
+   "id": 31,
+   "name": "Quick & Quiet",
+   "icon": "quick-quiet",
+   "url": "/perks/Quick_&_Quiet"
+  },
+  "32": {
+   "id": 32,
+   "name": "Sprint Burst",
+   "icon": "sprint-burst",
+   "url": "/perks/Sprint_Burst"
+  },
+  "33": {
+   "id": 33,
+   "name": "Botany Knowledge",
+   "icon": "botany-knowledge",
+   "url": "/perks/Botany_Knowledge"
+  },
+  "34": {
+   "id": 34,
+   "name": "Empathy",
+   "icon": "empathy",
+   "url": "/perks/Empathy"
+  },
+  "35": {
+   "id": 35,
+   "name": "Self-Care",
+   "icon": "self-care",
+   "url": "/perks/Self-Care"
+  },
+  "36": {
+   "id": 36,
+   "name": "Calm Spirit",
+   "icon": "calm-spirit",
+   "url": "/perks/Calm_Spirit"
+  },
+  "37": {
+   "id": 37,
+   "name": "Iron Will",
+   "icon": "iron-will",
+   "url": "/perks/Iron_Will"
+  },
+  "38": {
+   "id": 38,
+   "name": "Saboteur",
+   "icon": "saboteur",
+   "url": "/perks/Saboteur"
+  },
+  "39": {
+   "id": 39,
+   "name": "Agitation",
+   "icon": "agitation",
+   "url": "/perks/Agitation"
+  },
+  "40": {
+   "id": 40,
+   "name": "Brutal Strength",
+   "icon": "brutal-strength",
+   "url": "/perks/Brutal_Strength"
+  },
+  "41": {
+   "id": 41,
+   "name": "Unnerving Presence",
+   "icon": "unnerving-presence",
+   "url": "/perks/Unnerving_Presence"
+  },
+  "42": {
+   "id": 42,
+   "name": "Bloodhound",
+   "icon": "bloodhound",
+   "url": "/perks/Bloodhound"
+  },
+  "43": {
+   "id": 43,
+   "name": "Predator",
+   "icon": "predator",
+   "url": "/perks/Predator"
+  },
+  "44": {
+   "id": 44,
+   "name": "Shadowborn",
+   "icon": "shadowborn",
+   "url": "/perks/Shadowborn"
+  },
+  "45": {
+   "id": 45,
+   "name": "Enduring",
+   "icon": "enduring",
+   "url": "/perks/Enduring"
+  },
+  "46": {
+   "id": 46,
+   "name": "Lightborn",
+   "icon": "lightborn",
+   "url": "/perks/Lightborn"
+  },
+  "47": {
+   "id": 47,
+   "name": "Tinkerer",
+   "icon": "tinkerer",
+   "url": "/perks/Tinkerer"
+  },
+  "48": {
+   "id": 48,
+   "name": "A Nurse's Calling",
+   "icon": "a-nurses-calling",
+   "url": "/perks/A_Nurse%27s_Calling"
+  },
+  "49": {
+   "id": 49,
+   "name": "Stridor",
+   "icon": "stridor",
+   "url": "/perks/Stridor"
+  },
+  "50": {
+   "id": 50,
+   "name": "Thanatophobia",
+   "icon": "thanatophobia",
+   "url": "/perks/Thanatophobia"
+  },
+  "51": {
+   "id": 51,
+   "name": "Balanced Landing",
+   "icon": "balanced-landing",
+   "url": "/perks/Balanced_Landing"
+  },
+  "52": {
+   "id": 52,
+   "name": "Streetwise",
+   "icon": "streetwise",
+   "url": "/perks/Streetwise"
+  },
+  "53": {
+   "id": 53,
+   "name": "Urban Evasion",
+   "icon": "urban-evasion",
+   "url": "/perks/Urban_Evasion"
+  },
+  "54": {
+   "id": 54,
+   "name": "Dying Light",
+   "icon": "dying-light",
+   "url": "/perks/Dying_Light"
+  },
+  "55": {
+   "id": 55,
+   "name": "Play With Your Food",
+   "icon": "play-with-your-food",
+   "url": "/perks/Play_With_Your_Food"
+  },
+  "56": {
+   "id": 56,
+   "name": "Save the best for last",
+   "icon": "save-the-best-for-last",
+   "url": "/perks/Save_the_best_for_last"
+  },
+  "57": {
+   "id": 57,
+   "name": "Decisive Strike",
+   "icon": "decisive-strike",
+   "url": "/perks/Decisive_Strike"
+  },
+  "58": {
+   "id": 58,
+   "name": "Object of Obsession",
+   "icon": "object-of-obsession",
+   "url": "/perks/Object_of_Obsession"
+  },
+  "59": {
+   "id": 59,
+   "name": "Sole Survivor",
+   "icon": "sole-survivor",
+   "url": "/perks/Sole_Survivor"
+  },
+  "60": {
+   "id": 60,
+   "name": "Hex: Devour Hope",
+   "icon": "hex-devour-hope",
+   "url": "/perks/Hex:_Devour_Hope"
+  },
+  "61": {
+   "id": 61,
+   "name": "Hex: Ruin",
+   "icon": "hex-ruin",
+   "url": "/perks/Hex:_Ruin"
+  },
+  "62": {
+   "id": 62,
+   "name": "Hex: The Third Seal",
+   "icon": "hex-the-third-seal",
+   "url": "/perks/Hex:_The_Third_Seal"
+  },
+  "63": {
+   "id": 63,
+   "name": "Ace in the Hole",
+   "icon": "ace-in-the-hole",
+   "url": "/perks/Ace_in_the_Hole"
+  },
+  "64": {
+   "id": 64,
+   "name": "Open-Handed",
+   "icon": "open-handed",
+   "url": "/perks/Open-Handed"
+  },
+  "65": {
+   "id": 65,
+   "name": "Up the Ante",
+   "icon": "up-the-ante",
+   "url": "/perks/Up_the_Ante"
+  },
+  "66": {
+   "id": 66,
+   "name": "Borrowed Time",
+   "icon": "borrowed-time",
+   "url": "/perks/Borrowed_Time"
+  },
+  "67": {
+   "id": 67,
+   "name": "Left Behind",
+   "icon": "left-behind",
+   "url": "/perks/Left_Behind"
+  },
+  "68": {
+   "id": 68,
+   "name": "Unbreakable",
+   "icon": "unbreakable",
+   "url": "/perks/Unbreakable"
+  },
+  "69": {
+   "id": 69,
+   "name": "Overcharge",
+   "icon": "overcharge",
+   "url": "/perks/Overcharge"
+  },
+  "70": {
+   "id": 70,
+   "name": "Monitor & Abuse",
+   "icon": "monitor-abuse",
+   "url": "/perks/Monitor_&_Abuse"
+  },
+  "71": {
+   "id": 71,
+   "name": "Overwhelming Presence",
+   "icon": "overwhelming-presence",
+   "url": "/perks/Overwhelming_Presence"
+  },
+  "72": {
+   "id": 72,
+   "name": "Alert",
+   "icon": "alert",
+   "url": "/perks/Alert"
+  },
+  "73": {
+   "id": 73,
+   "name": "Lithe",
+   "icon": "lithe",
+   "url": "/perks/Lithe"
+  },
+  "74": {
+   "id": 74,
+   "name": "Technician",
+   "icon": "technician",
+   "url": "/perks/Technician"
+  },
+  "75": {
+   "id": 75,
+   "name": "Beast of Prey",
+   "icon": "beast-of-prey",
+   "url": "/perks/Beast_of_Prey"
+  },
+  "76": {
+   "id": 76,
+   "name": "Hex: Huntress Lullaby",
+   "icon": "hex-huntress-lullaby",
+   "url": "/perks/Hex:_Huntress_Lullaby"
+  },
+  "77": {
+   "id": 77,
+   "name": "Territorial Imperative",
+   "icon": "territorial-imperative",
+   "url": "/perks/Territorial_Imperative"
+  },
+  "78": {
+   "id": 78,
+   "name": "Dead Hard",
+   "icon": "dead-hard",
+   "url": "/perks/Dead_Hard"
+  },
+  "79": {
+   "id": 79,
+   "name": "No Mither",
+   "icon": "no-mither",
+   "url": "/perks/No_Mither"
+  },
+  "80": {
+   "id": 80,
+   "name": "We're Gonna Live Forever",
+   "icon": "were-gonna-live-forever",
+   "url": "/perks/We%27re_Gonna_Live_Forever"
+  },
+  "81": {
+   "id": 81,
+   "name": "Barbecue & Chili",
+   "icon": "barbecue-chili",
+   "url": "/perks/Barbecue_&_Chili"
+  },
+  "82": {
+   "id": 82,
+   "name": "Franklin's Demise",
+   "icon": "franklins-demise",
+   "url": "/perks/Franklin%27s_Demise"
+  },
+  "83": {
+   "id": 83,
+   "name": "Knock Out",
+   "icon": "knock-out",
+   "url": "/perks/Knock_Out"
+  },
+  "84": {
+   "id": 84,
+   "name": "Blood Warden",
+   "icon": "blood-warden",
+   "url": "/perks/Blood_Warden"
+  },
+  "85": {
+   "id": 85,
+   "name": "Fire Up",
+   "icon": "fire-up",
+   "url": "/perks/Fire_Up"
+  },
+  "86": {
+   "id": 86,
+   "name": "Remember Me",
+   "icon": "remember-me",
+   "url": "/perks/Remember_Me"
+  },
+  "87": {
+   "id": 87,
+   "name": "Pharmacy",
+   "icon": "pharmacy",
+   "url": "/perks/Pharmacy"
+  },
+  "88": {
+   "id": 88,
+   "name": "Vigil",
+   "icon": "vigil",
+   "url": "/perks/Vigil"
+  },
+  "89": {
+   "id": 89,
+   "name": "Wake Up!",
+   "icon": "wake-up",
+   "url": "/perks/Wake_Up%21"
+  },
+  "90": {
+   "id": 90,
+   "name": "Scourge Hook: Hangman's Trick",
+   "icon": "scourge-hook-hangmans-trick",
+   "url": "/perks/Scourge_Hook:_Hangman%27s_Trick"
+  },
+  "91": {
+   "id": 91,
+   "name": "Make your Choice",
+   "icon": "make-your-choice",
+   "url": "/perks/Make_your_Choice"
+  },
+  "92": {
+   "id": 92,
+   "name": "Surveillance",
+   "icon": "surveillance",
+   "url": "/perks/Surveillance"
+  },
+  "93": {
+   "id": 93,
+   "name": "Detective's Hunch",
+   "icon": "detectives-hunch",
+   "url": "/perks/Detective%27s_Hunch"
+  },
+  "94": {
+   "id": 94,
+   "name": "Stake Out",
+   "icon": "stake-out",
+   "url": "/perks/Stake_Out"
+  },
+  "95": {
+   "id": 95,
+   "name": "Tenacity",
+   "icon": "tenacity",
+   "url": "/perks/Tenacity"
+  },
+  "96": {
+   "id": 96,
+   "name": "Bamboozle",
+   "icon": "bamboozle",
+   "url": "/perks/Bamboozle"
+  },
+  "97": {
+   "id": 97,
+   "name": "Coulrophobia",
+   "icon": "coulrophobia",
+   "url": "/perks/Coulrophobia"
+  },
+  "98": {
+   "id": 98,
+   "name": "Pop Goes the Weasel",
+   "icon": "pop-goes-the-weasel",
+   "url": "/perks/Pop_Goes_the_Weasel"
+  },
+  "99": {
+   "id": 99,
+   "name": "Boil Over",
+   "icon": "boil-over",
+   "url": "/perks/Boil_Over"
+  },
+  "100": {
+   "id": 100,
+   "name": "Dance With Me",
+   "icon": "dance-with-me",
+   "url": "/perks/Dance_With_Me"
+  },
+  "101": {
+   "id": 101,
+   "name": "Windows of Opportunity",
+   "icon": "windows-of-opportunity",
+   "url": "/perks/Windows_of_Opportunity"
+  },
+  "102": {
+   "id": 102,
+   "name": "Hex: Haunted Ground",
+   "icon": "hex-haunted-ground",
+   "url": "/perks/Hex:_Haunted_Ground"
+  },
+  "103": {
+   "id": 103,
+   "name": "Rancor",
+   "icon": "rancor",
+   "url": "/perks/Rancor"
+  },
+  "104": {
+   "id": 104,
+   "name": "Spirit Fury",
+   "icon": "spirit-fury",
+   "url": "/perks/Spirit_Fury"
+  },
+  "105": {
+   "id": 105,
+   "name": "Autodidact",
+   "icon": "autodidact",
+   "url": "/perks/Autodidact"
+  },
+  "106": {
+   "id": 106,
+   "name": "Deliverance",
+   "icon": "deliverance",
+   "url": "/perks/Deliverance"
+  },
+  "107": {
+   "id": 107,
+   "name": "Diversion",
+   "icon": "diversion",
+   "url": "/perks/Diversion"
+  },
+  "108": {
+   "id": 108,
+   "name": "Discordance",
+   "icon": "discordance",
+   "url": "/perks/Discordance"
+  },
+  "109": {
+   "id": 109,
+   "name": "Iron Maiden",
+   "icon": "iron-maiden",
+   "url": "/perks/Iron_Maiden"
+  },
+  "110": {
+   "id": 110,
+   "name": "Mad Grit",
+   "icon": "mad-grit",
+   "url": "/perks/Mad_Grit"
+  },
+  "111": {
+   "id": 111,
+   "name": "Aftercare",
+   "icon": "aftercare",
+   "url": "/perks/Aftercare"
+  },
+  "112": {
+   "id": 112,
+   "name": "Breakdown",
+   "icon": "breakdown",
+   "url": "/perks/Breakdown"
+  },
+  "113": {
+   "id": 113,
+   "name": "Distortion",
+   "icon": "distortion",
+   "url": "/perks/Distortion"
+  },
+  "114": {
+   "id": 114,
+   "name": "Corrupt Intervention",
+   "icon": "corrupt-intervention",
+   "url": "/perks/Corrupt_Intervention"
+  },
+  "115": {
+   "id": 115,
+   "name": "Dark Devotion",
+   "icon": "dark-devotion",
+   "url": "/perks/Dark_Devotion"
+  },
+  "116": {
+   "id": 116,
+   "name": "Infectious Fright",
+   "icon": "infectious-fright",
+   "url": "/perks/Infectious_Fright"
+  },
+  "117": {
+   "id": 117,
+   "name": "Head On",
+   "icon": "head-on",
+   "url": "/perks/Head_On"
+  },
+  "118": {
+   "id": 118,
+   "name": "Poised",
+   "icon": "poised",
+   "url": "/perks/Poised"
+  },
+  "119": {
+   "id": 119,
+   "name": "Solidarity",
+   "icon": "solidarity",
+   "url": "/perks/Solidarity"
+  },
+  "120": {
+   "id": 120,
+   "name": "Buckle Up",
+   "icon": "buckle-up",
+   "url": "/perks/Buckle_Up"
+  },
+  "121": {
+   "id": 121,
+   "name": "Flip-Flop",
+   "icon": "flip-flop",
+   "url": "/perks/Flip-Flop"
+  },
+  "122": {
+   "id": 122,
+   "name": "Mettle of Man",
+   "icon": "mettle-of-man",
+   "url": "/perks/Mettle_of_Man"
+  },
+  "123": {
+   "id": 123,
+   "name": "Furtive Chase",
+   "icon": "furtive-chase",
+   "url": "/perks/Furtive_Chase"
+  },
+  "124": {
+   "id": 124,
+   "name": "I'm All Ears",
+   "icon": "im-all-ears",
+   "url": "/perks/I%27m_All_Ears"
+  },
+  "125": {
+   "id": 125,
+   "name": "Thrilling Tremors",
+   "icon": "thrilling-tremors",
+   "url": "/perks/Thrilling_Tremors"
+  },
+  "126": {
+   "id": 126,
+   "name": "Cruel Limits",
+   "icon": "cruel-limits",
+   "url": "/perks/Cruel_Limits"
+  },
+  "127": {
+   "id": 127,
+   "name": "Mindbreaker",
+   "icon": "mindbreaker",
+   "url": "/perks/Mindbreaker"
+  },
+  "128": {
+   "id": 128,
+   "name": "Surge",
+   "icon": "surge",
+   "url": "/perks/Surge"
+  },
+  "129": {
+   "id": 129,
+   "name": "Better Together",
+   "icon": "better-together",
+   "url": "/perks/Better_Together"
+  },
+  "130": {
+   "id": 130,
+   "name": "Fixated",
+   "icon": "fixated",
+   "url": "/perks/Fixated"
+  },
+  "131": {
+   "id": 131,
+   "name": "Inner Strength",
+   "icon": "inner-strength",
+   "url": "/perks/Inner_Strength"
+  },
+  "132": {
+   "id": 132,
+   "name": "Babysitter",
+   "icon": "babysitter",
+   "url": "/perks/Babysitter"
+  },
+  "133": {
+   "id": 133,
+   "name": "Camaraderie",
+   "icon": "camaraderie",
+   "url": "/perks/Camaraderie"
+  },
+  "134": {
+   "id": 134,
+   "name": "Second Wind",
+   "icon": "second-wind",
+   "url": "/perks/Second_Wind"
+  },
+  "135": {
+   "id": 135,
+   "name": "Blood Echo",
+   "icon": "blood-echo",
+   "url": "/perks/Blood_Echo"
+  },
+  "136": {
+   "id": 136,
+   "name": "Nemesis",
+   "icon": "nemesis",
+   "url": "/perks/Nemesis"
+  },
+  "137": {
+   "id": 137,
+   "name": "Zanshin Tactics",
+   "icon": "zanshin-tactics",
+   "url": "/perks/Zanshin_Tactics"
+  },
+  "138": {
+   "id": 138,
+   "name": "Any Means Necessary",
+   "icon": "any-means-necessary",
+   "url": "/perks/Any_Means_Necessary"
+  },
+  "139": {
+   "id": 139,
+   "name": "Breakout",
+   "icon": "breakout",
+   "url": "/perks/Breakout"
+  },
+  "140": {
+   "id": 140,
+   "name": "Lucky Break",
+   "icon": "lucky-break",
+   "url": "/perks/Lucky_Break"
+  },
+  "141": {
+   "id": 141,
+   "name": "Dead Man’s Switch",
+   "icon": "dead-mans-switch",
+   "url": "/perks/Dead_Man%E2%80%99s_Switch"
+  },
+  "142": {
+   "id": 142,
+   "name": "Gearhead",
+   "icon": "gearhead",
+   "url": "/perks/Gearhead"
+  },
+  "143": {
+   "id": 143,
+   "name": "Hex: Retribution",
+   "icon": "hex-retribution",
+   "url": "/perks/Hex:_Retribution"
+  },
+  "144": {
+   "id": 144,
+   "name": "For the People",
+   "icon": "for-the-people",
+   "url": "/perks/For_the_People"
+  },
+  "145": {
+   "id": 145,
+   "name": "Off the Record",
+   "icon": "off-the-record",
+   "url": "/perks/Off_the_Record"
+  },
+  "146": {
+   "id": 146,
+   "name": "Red Herring",
+   "icon": "red-herring",
+   "url": "/perks/Red_Herring"
+  },
+  "147": {
+   "id": 147,
+   "name": "Deathbound",
+   "icon": "deathbound",
+   "url": "/perks/Deathbound"
+  },
+  "148": {
+   "id": 148,
+   "name": "Forced Penance",
+   "icon": "forced-penance",
+   "url": "/perks/Forced_Penance"
+  },
+  "149": {
+   "id": 149,
+   "name": "Trail of Torment",
+   "icon": "trail-of-torment",
+   "url": "/perks/Trail_of_Torment"
+  },
+  "150": {
+   "id": 150,
+   "name": "Blood Pact",
+   "icon": "blood-pact",
+   "url": "/perks/Blood_Pact"
+  },
+  "151": {
+   "id": 151,
+   "name": "Repressed\\xA0Alliance",
+   "icon": "repressed-alliance",
+   "url": "/perks/Repressed%C2%A0Alliance"
+  },
+  "152": {
+   "id": 152,
+   "name": "Soul Guard",
+   "icon": "soul-guard",
+   "url": "/perks/Soul_Guard"
+  },
+  "153": {
+   "id": 153,
+   "name": "Dragon’s Grip",
+   "icon": "dragons-grip",
+   "url": "/perks/Dragon%E2%80%99s_Grip"
+  },
+  "154": {
+   "id": 154,
+   "name": "Hex: Blood Favor",
+   "icon": "hex-blood-favor",
+   "url": "/perks/Hex:_Blood_Favor"
+  },
+  "155": {
+   "id": 155,
+   "name": "Hex: Undying",
+   "icon": "hex-undying",
+   "url": "/perks/Hex:_Undying"
+  },
+  "156": {
+   "id": 156,
+   "name": "Built to Last",
+   "icon": "built-to-last",
+   "url": "/perks/Built_to_Last"
+  },
+  "157": {
+   "id": 157,
+   "name": "Desperate Measures",
+   "icon": "desperate-measures",
+   "url": "/perks/Desperate_Measures"
+  },
+  "158": {
+   "id": 158,
+   "name": "Visionary",
+   "icon": "visionary",
+   "url": "/perks/Visionary"
+  },
+  "159": {
+   "id": 159,
+   "name": "Hoarder",
+   "icon": "hoarder",
+   "url": "/perks/Hoarder"
+  },
+  "160": {
+   "id": 160,
+   "name": "Oppression",
+   "icon": "oppression",
+   "url": "/perks/Oppression"
+  },
+  "161": {
+   "id": 161,
+   "name": "Coup de Grâce",
+   "icon": "coup-de-grace",
+   "url": "/perks/Coup_de_Gr%C3%A2ce"
+  },
+  "162": {
+   "id": 162,
+   "name": "Appraisal",
+   "icon": "appraisal",
+   "url": "/perks/Appraisal"
+  },
+  "163": {
+   "id": 163,
+   "name": "Deception",
+   "icon": "deception",
+   "url": "/perks/Deception"
+  },
+  "164": {
+   "id": 164,
+   "name": "Power Struggle",
+   "icon": "power-struggle",
+   "url": "/perks/Power_Struggle"
+  },
+  "165": {
+   "id": 165,
+   "name": "Starstruck",
+   "icon": "starstruck",
+   "url": "/perks/Starstruck"
+  },
+  "166": {
+   "id": 166,
+   "name": "Hex: Crowd Control",
+   "icon": "hex-crowd-control",
+   "url": "/perks/Hex:_Crowd_Control"
+  },
+  "167": {
+   "id": 167,
+   "name": "No Way Out",
+   "icon": "no-way-out",
+   "url": "/perks/No_Way_Out"
+  },
+  "168": {
+   "id": 168,
+   "name": "Fast Track",
+   "icon": "fast-track",
+   "url": "/perks/Fast_Track"
+  },
+  "169": {
+   "id": 169,
+   "name": "Smash Hit",
+   "icon": "smash-hit",
+   "url": "/perks/Smash_Hit"
+  },
+  "170": {
+   "id": 170,
+   "name": "Self-Preservation",
+   "icon": "self-preservation",
+   "url": "/perks/Self-Preservation"
+  },
+  "171": {
+   "id": 171,
+   "name": "Lethal Pursuer",
+   "icon": "lethal-pursuer",
+   "url": "/perks/Lethal_Pursuer"
+  },
+  "172": {
+   "id": 172,
+   "name": "Hysteria",
+   "icon": "hysteria",
+   "url": "/perks/Hysteria"
+  },
+  "173": {
+   "id": 173,
+   "name": "Eruption",
+   "icon": "eruption",
+   "url": "/perks/Eruption"
+  },
+  "174": {
+   "id": 174,
+   "name": "Counterforce",
+   "icon": "counterforce",
+   "url": "/perks/Counterforce"
+  },
+  "175": {
+   "id": 175,
+   "name": "Resurgence",
+   "icon": "resurgence",
+   "url": "/perks/Resurgence"
+  },
+  "176": {
+   "id": 176,
+   "name": "Blast Mine",
+   "icon": "blast-mine",
+   "url": "/perks/Blast_Mine"
+  },
+  "177": {
+   "id": 177,
+   "name": "Bite the Bullet",
+   "icon": "bite-the-bullet",
+   "url": "/perks/Bite_the_Bullet"
+  },
+  "178": {
+   "id": 178,
+   "name": "Flashbang",
+   "icon": "flashbang",
+   "url": "/perks/Flashbang"
+  },
+  "179": {
+   "id": 179,
+   "name": "Rookie Spirit",
+   "icon": "rookie-spirit",
+   "url": "/perks/Rookie_Spirit"
+  },
+  "180": {
+   "id": 180,
+   "name": "Deadlock",
+   "icon": "deadlock",
+   "url": "/perks/Deadlock"
+  },
+  "181": {
+   "id": 181,
+   "name": "Hex: Plaything",
+   "icon": "hex-plaything",
+   "url": "/perks/Hex:_Plaything"
+  },
+  "182": {
+   "id": 182,
+   "name": "Scourge Hook: Gift of Pain",
+   "icon": "scourge-hook-gift-of-pain",
+   "url": "/perks/Scourge_Hook:_Gift_of_Pain"
+  },
+  "183": {
+   "id": 183,
+   "name": "Clairvoyance",
+   "icon": "clairvoyance",
+   "url": "/perks/Clairvoyance"
+  },
+  "184": {
+   "id": 184,
+   "name": "Boon: Circle of Healing",
+   "icon": "boon-circle-of-healing",
+   "url": "/perks/Boon:_Circle_of_Healing"
+  },
+  "185": {
+   "id": 185,
+   "name": "Boon: Shadow Step",
+   "icon": "boon-shadow-step",
+   "url": "/perks/Boon:_Shadow_Step"
+  },
+  "186": {
+   "id": 186,
+   "name": "Overcome",
+   "icon": "overcome",
+   "url": "/perks/Overcome"
+  },
+  "187": {
+   "id": 187,
+   "name": "Corrective Action",
+   "icon": "corrective-action",
+   "url": "/perks/Corrective_Action"
+  },
+  "188": {
+   "id": 188,
+   "name": "Boon: Exponential",
+   "icon": "boon-exponential",
+   "url": "/perks/Boon:_Exponential"
+  },
+  "189": {
+   "id": 189,
+   "name": "Grim Embrace",
+   "icon": "grim-embrace",
+   "url": "/perks/Grim_Embrace"
+  },
+  "190": {
+   "id": 190,
+   "name": "Scourge Hook: Pain Resonance",
+   "icon": "scourge-hook-pain-resonance",
+   "url": "/perks/Scourge_Hook:_Pain_Resonance"
+  },
+  "191": {
+   "id": 191,
+   "name": "Hex: Pentimento",
+   "icon": "hex-pentimento",
+   "url": "/perks/Hex:_Pentimento"
+  },
+  "192": {
+   "id": 192,
+   "name": "Parental Guidance",
+   "icon": "parental-guidance",
+   "url": "/perks/Parental_Guidance"
+  },
+  "193": {
+   "id": 193,
+   "name": "Empathic Connection",
+   "icon": "empathic-connection",
+   "url": "/perks/Empathic_Connection"
+  },
+  "194": {
+   "id": 194,
+   "name": "Boon: Dark Theory",
+   "icon": "boon-dark-theory",
+   "url": "/perks/Boon:_Dark_Theory"
+  },
+  "195": {
+   "id": 195,
+   "name": "Scourge Hook: Floods of Rage",
+   "icon": "scourge-hook-floods-of-rage",
+   "url": "/perks/Scourge_Hook:_Floods_of_Rage"
+  },
+  "196": {
+   "id": 196,
+   "name": "Call of Brine",
+   "icon": "call-of-brine",
+   "url": "/perks/Call_of_Brine"
+  },
+  "197": {
+   "id": 197,
+   "name": "Merciless Storm",
+   "icon": "merciless-storm",
+   "url": "/perks/Merciless_Storm"
+  },
+  "198": {
+   "id": 198,
+   "name": "Inner Focus",
+   "icon": "inner-focus",
+   "url": "/perks/Inner_Focus"
+  },
+  "199": {
+   "id": 199,
+   "name": "Residual Manifest",
+   "icon": "residual-manifest",
+   "url": "/perks/Residual_Manifest"
+  },
+  "200": {
+   "id": 200,
+   "name": "Overzealous",
+   "icon": "overzealous",
+   "url": "/perks/Overzealous"
+  },
+  "201": {
+   "id": 201,
+   "name": "Dissolution",
+   "icon": "dissolution",
+   "url": "/perks/Dissolution"
+  },
+  "202": {
+   "id": 202,
+   "name": "Darkness Revealed",
+   "icon": "darkness-revealed",
+   "url": "/perks/Darkness_Revealed"
+  },
+  "203": {
+   "id": 203,
+   "name": "Septic Touch",
+   "icon": "septic-touch",
+   "url": "/perks/Septic_Touch"
+  },
+  "204": {
+   "id": 204,
+   "name": "Shattered Hope",
+   "icon": "shattered-hope",
+   "url": "/perks/Shattered_Hope"
+  },
+  "205": {
+   "id": 205,
+   "name": "Wiretap",
+   "icon": "wiretap",
+   "url": "/perks/Wiretap"
+  },
+  "206": {
+   "id": 206,
+   "name": "Reactive Healing",
+   "icon": "reactive-healing",
+   "url": "/perks/Reactive_Healing"
+  },
+  "207": {
+   "id": 207,
+   "name": "Low Profile",
+   "icon": "low-profile",
+   "url": "/perks/Low_Profile"
+  },
+  "208": {
+   "id": 208,
+   "name": "Better Than New",
+   "icon": "better-than-new",
+   "url": "/perks/Better_Than_New"
+  },
+  "209": {
+   "id": 209,
+   "name": "Reassurance",
+   "icon": "reassurance",
+   "url": "/perks/Reassurance"
+  },
+  "210": {
+   "id": 210,
+   "name": "Hyperfocus",
+   "icon": "hyperfocus",
+   "url": "/perks/Hyperfocus"
+  },
+  "211": {
+   "id": 211,
+   "name": "Superior Anatomy",
+   "icon": "superior-anatomy",
+   "url": "/perks/Superior_Anatomy"
+  },
+  "212": {
+   "id": 212,
+   "name": "Awakened Awareness",
+   "icon": "awakened-awareness",
+   "url": "/perks/Awakened_Awareness"
+  },
+  "213": {
+   "id": 213,
+   "name": "Terminus",
+   "icon": "terminus",
+   "url": "/perks/Terminus"
+  },
+  "214": {
+   "id": 214,
+   "name": "Potential Energy",
+   "icon": "potential-energy",
+   "url": "/perks/Potential_Energy"
+  },
+  "215": {
+   "id": 215,
+   "name": "Fogwise",
+   "icon": "fogwise",
+   "url": "/perks/Fogwise"
+  },
+  "216": {
+   "id": 216,
+   "name": "Quick Gambit",
+   "icon": "quick-gambit",
+   "url": "/perks/Quick_Gambit"
+  },
+  "217": {
+   "id": 217,
+   "name": "Nowhere to Hide",
+   "icon": "nowhere-to-hide",
+   "url": "/perks/Nowhere_to_Hide"
+  },
+  "218": {
+   "id": 218,
+   "name": "Hex: Face the Darkness",
+   "icon": "hex-face-the-darkness",
+   "url": "/perks/Hex:_Face_the_Darkness"
+  },
+  "219": {
+   "id": 219,
+   "name": "Hubris",
+   "icon": "hubris",
+   "url": "/perks/Hubris"
+  },
+  "220": {
+   "id": 220,
+   "name": "Cut Loose",
+   "icon": "cut-loose",
+   "url": "/perks/Cut_Loose"
+  },
+  "221": {
+   "id": 221,
+   "name": "Friendly Competition",
+   "icon": "friendly-competition",
+   "url": "/perks/Friendly_Competition"
+  },
+  "222": {
+   "id": 222,
+   "name": "Teamwork: Power of Two",
+   "icon": "teamwork-power-of-two",
+   "url": "/perks/Teamwork:_Power_of_Two"
+  },
+  "223": {
+   "id": 223,
+   "name": "Background Player",
+   "icon": "background-player",
+   "url": "/perks/Background_Player"
+  },
+  "224": {
+   "id": 224,
+   "name": "Blood Rush",
+   "icon": "blood-rush",
+   "url": "/perks/Blood_Rush"
+  },
+  "225": {
+   "id": 225,
+   "name": "Teamwork: Collective Stealth",
+   "icon": "teamwork-collective-stealth",
+   "url": "/perks/Teamwork:_Collective_Stealth"
+  },
+  "226": {
+   "id": 226,
+   "name": "Game Afoot",
+   "icon": "game-afoot",
+   "url": "/perks/Game_Afoot"
+  },
+  "227": {
+   "id": 227,
+   "name": "THWACK!",
+   "icon": "thwack",
+   "url": "/perks/THWACK%21"
+  },
+  "228": {
+   "id": 228,
+   "name": "Leverage",
+   "icon": "leverage",
+   "url": "/perks/Leverage"
+  },
+  "229": {
+   "id": 229,
+   "name": "Troubleshooter",
+   "icon": "troubleshooter",
+   "url": "/perks/Troubleshooter"
+  },
+  "230": {
+   "id": 230,
+   "name": "Made for This",
+   "icon": "made-for-this",
+   "url": "/perks/Made_for_This"
+  },
+  "231": {
+   "id": 231,
+   "name": "Scavenger",
+   "icon": "scavenger",
+   "url": "/perks/Scavenger"
+  },
+  "232": {
+   "id": 232,
+   "name": "Genetic Limits",
+   "icon": "genetic-limits",
+   "url": "/perks/Genetic_Limits"
+  },
+  "233": {
+   "id": 233,
+   "name": "Forced Hesitation",
+   "icon": "forced-hesitation",
+   "url": "/perks/Forced_Hesitation"
+  },
+  "234": {
+   "id": 234,
+   "name": "Machine Learning",
+   "icon": "machine-learning",
+   "url": "/perks/Machine_Learning"
+  },
+  "235": {
+   "id": 235,
+   "name": "Dramaturgy",
+   "icon": "dramaturgy",
+   "url": "/perks/Dramaturgy"
+  },
+  "236": {
+   "id": 236,
+   "name": "Scene Partner",
+   "icon": "scene-partner",
+   "url": "/perks/Scene_Partner"
+  },
+  "237": {
+   "id": 237,
+   "name": "Plot Twist",
+   "icon": "plot-twist",
+   "url": "/perks/Plot_Twist"
+  },
+  "238": {
+   "id": 238,
+   "name": "Ultimate Weapon",
+   "icon": "ultimate-weapon",
+   "url": "/perks/Ultimate_Weapon"
+  },
+  "239": {
+   "id": 239,
+   "name": "Rapid Brutality",
+   "icon": "rapid-brutality",
+   "url": "/perks/Rapid_Brutality"
+  },
+  "240": {
+   "id": 240,
+   "name": "Alien Instinct",
+   "icon": "alien-instinct",
+   "url": "/perks/Alien_Instinct"
+  },
+  "241": {
+   "id": 241,
+   "name": "Lucky Star",
+   "icon": "lucky-star",
+   "url": "/perks/Lucky_Star"
+  },
+  "242": {
+   "id": 242,
+   "name": "Chemical Trap",
+   "icon": "chemical-trap",
+   "url": "/perks/Chemical_Trap"
+  },
+  "243": {
+   "id": 243,
+   "name": "Light-footed",
+   "icon": "light-footed",
+   "url": "/perks/Light-footed"
+  },
+  "244": {
+   "id": 244,
+   "name": "Hex: Two Can Play",
+   "icon": "hex-two-can-play",
+   "url": "/perks/Hex:_Two_Can_Play"
+  },
+  "245": {
+   "id": 245,
+   "name": "Friends ‘Til the End",
+   "icon": "friends-til-the-end",
+   "url": "/perks/Friends_%E2%80%98Til_the_End"
+  },
+  "246": {
+   "id": 246,
+   "name": "Batteries Included",
+   "icon": "batteries-included",
+   "url": "/perks/Batteries_Included"
+  },
+  "247": {
+   "id": 247,
+   "name": "Champion of Light",
+   "icon": "champion-of-light",
+   "url": "/perks/Champion_of_Light"
+  },
+  "248": {
+   "id": 248,
+   "name": "Boon: Illumination",
+   "icon": "boon-illumination",
+   "url": "/perks/Boon:_Illumination"
+  },
+  "249": {
+   "id": 249,
+   "name": "Deadline",
+   "icon": "deadline",
+   "url": "/perks/Deadline"
+  },
+  "250": {
+   "id": 250,
+   "name": "Unbound",
+   "icon": "unbound",
+   "url": "/perks/Unbound"
+  },
+  "251": {
+   "id": 251,
+   "name": "Unforeseen",
+   "icon": "unforeseen",
+   "url": "/perks/Unforeseen"
+  },
+  "252": {
+   "id": 252,
+   "name": "Undone",
+   "icon": "undone",
+   "url": "/perks/Undone"
+  },
+  "253": {
+   "id": 253,
+   "name": "Invocation: Weaving Spiders",
+   "icon": "invocation-weaving-spiders",
+   "url": "/perks/Invocation:_Weaving_Spiders"
+  },
+  "254": {
+   "id": 254,
+   "name": "Strength in Shadows",
+   "icon": "strength-in-shadows",
+   "url": "/perks/Strength_in_Shadows"
+  },
+  "255": {
+   "id": 255,
+   "name": "Wicked",
+   "icon": "wicked",
+   "url": "/perks/Wicked"
+  },
+  "256": {
+   "id": 256,
+   "name": "Weave Attunement",
+   "icon": "weave-attunement",
+   "url": "/perks/Weave_Attunement"
+  },
+  "257": {
+   "id": 257,
+   "name": "Languid Touch",
+   "icon": "languid-touch",
+   "url": "/perks/Languid_Touch"
+  },
+  "258": {
+   "id": 258,
+   "name": "Dark Arrogance",
+   "icon": "dark-arrogance",
+   "url": "/perks/Dark_Arrogance"
+  },
+  "259": {
+   "id": 259,
+   "name": "Mirrored Illusion",
+   "icon": "mirrored-illusion",
+   "url": "/perks/Mirrored_Illusion"
+  },
+  "260": {
+   "id": 260,
+   "name": "Bardic Inspiration",
+   "icon": "bardic-inspiration",
+   "url": "/perks/Bardic_Inspiration"
+  },
+  "261": {
+   "id": 261,
+   "name": "Still Sight",
+   "icon": "still-sight",
+   "url": "/perks/Still_Sight"
+  },
+  "262": {
+   "id": 262,
+   "name": "Finesse",
+   "icon": "finesse",
+   "url": "/perks/Finesse"
+  },
+  "263": {
+   "id": 263,
+   "name": "Hardened",
+   "icon": "hardened",
+   "url": "/perks/Hardened"
+  },
+  "264": {
+   "id": 264,
+   "name": "Specialist",
+   "icon": "specialist",
+   "url": "/perks/Specialist"
+  },
+  "265": {
+   "id": 265,
+   "name": "Hex: Wretched Fate",
+   "icon": "hex-wretched-fate",
+   "url": "/perks/Hex:_Wretched_Fate"
+  },
+  "266": {
+   "id": 266,
+   "name": "Human Greed",
+   "icon": "human-greed",
+   "url": "/perks/Human_Greed"
+  },
+  "267": {
+   "id": 267,
+   "name": "Dominance",
+   "icon": "dominance",
+   "url": "/perks/Dominance"
+  },
+  "268": {
+   "id": 268,
+   "name": "Eyes of Belmont",
+   "icon": "eyes-of-belmont",
+   "url": "/perks/Eyes_of_Belmont"
+  },
+  "269": {
+   "id": 269,
+   "name": "Exultation",
+   "icon": "exultation",
+   "url": "/perks/Exultation"
+  },
+  "270": {
+   "id": 270,
+   "name": "Moment of Glory",
+   "icon": "moment-of-glory",
+   "url": "/perks/Moment_of_Glory"
+  },
+  "271": {
+   "id": 271,
+   "name": "All-Shaking Thunder",
+   "icon": "all-shaking-thunder",
+   "url": "/perks/All-Shaking_Thunder"
+  },
+  "272": {
+   "id": 272,
+   "name": "Scourge Hook: Jagged Compass",
+   "icon": "scourge-hook-jagged-compass",
+   "url": "/perks/Scourge_Hook:_Jagged_Compass"
+  },
+  "273": {
+   "id": 273,
+   "name": "No Quarter",
+   "icon": "no-quarter",
+   "url": "/perks/No_Quarter"
+  },
+  "274": {
+   "id": 274,
+   "name": "Invocation: Treacherous Crows",
+   "icon": "invocation-treacherous-crows",
+   "url": "/perks/Invocation:_Treacherous_Crows"
+  },
+  "275": {
+   "id": 275,
+   "name": "Clean Break",
+   "icon": "clean-break",
+   "url": "/perks/Clean_Break"
+  },
+  "276": {
+   "id": 276,
+   "name": "Shoulder the Burden",
+   "icon": "shoulder-the-burden",
+   "url": "/perks/Shoulder_the_Burden"
+  },
+  "277": {
+   "id": 277,
+   "name": "Hex: Nothing But Misery",
+   "icon": "hex-nothing-but-misery",
+   "url": "/perks/Hex:_Nothing_But_Misery"
+  },
+  "278": {
+   "id": 278,
+   "name": "Forever Entwined",
+   "icon": "forever-entwined",
+   "url": "/perks/Forever_Entwined"
+  },
+  "279": {
+   "id": 279,
+   "name": "None Are Free",
+   "icon": "none-are-free",
+   "url": "/perks/None_Are_Free"
+  },
+  "280": {
+   "id": 280,
+   "name": "Do No Harm",
+   "icon": "do-no-harm",
+   "url": "/perks/Do_No_Harm"
+  },
+  "281": {
+   "id": 281,
+   "name": "Duty of Care",
+   "icon": "duty-of-care",
+   "url": "/perks/Duty_of_Care"
+  },
+  "282": {
+   "id": 282,
+   "name": "Rapid Response",
+   "icon": "rapid-response",
+   "url": "/perks/Rapid_Response"
+  },
+  "283": {
+   "id": 283,
+   "name": "Help Wanted",
+   "icon": "help-wanted",
+   "url": "/perks/Help_Wanted"
+  },
+  "284": {
+   "id": 284,
+   "name": "Phantom Fear",
+   "icon": "phantom-fear",
+   "url": "/perks/Phantom_Fear"
+  },
+  "285": {
+   "id": 285,
+   "name": "Haywire",
+   "icon": "haywire",
+   "url": "/perks/Haywire"
+  },
+  "286": {
+   "id": 286,
+   "name": "Apocalyptic Ingenuity",
+   "icon": "apocalyptic-ingenuity",
+   "url": "/perks/Apocalyptic_Ingenuity"
+  },
+  "287": {
+   "id": 287,
+   "name": "Come and Get Me!",
+   "icon": "come-and-get-me",
+   "url": "/perks/Come_and_Get_Me%21"
+  },
+  "288": {
+   "id": 288,
+   "name": "Teamwork: Toughen Up",
+   "icon": "teamwork-toughen-up",
+   "url": "/perks/Teamwork:_Toughen_Up"
+  },
+  "289": {
+   "id": 289,
+   "name": "Conviction",
+   "icon": "conviction",
+   "url": "/perks/Conviction"
+  },
+  "290": {
+   "id": 290,
+   "name": "Last Stand",
+   "icon": "last-stand",
+   "url": "/perks/Last_Stand"
+  },
+  "291": {
+   "id": 291,
+   "name": "Teamwork: Throw Down",
+   "icon": "teamwork-throw-down",
+   "url": "/perks/Teamwork:_Throw_Down"
+  },
+  "292": {
+   "id": 292,
+   "name": "Road Life",
+   "icon": "road-life",
+   "url": "/perks/Road_Life"
+  },
+  "293": {
+   "id": 293,
+   "name": "ONE-TWO-THREE-FOUR!",
+   "icon": "one-two-three-four",
+   "url": "/perks/ONE-TWO-THREE-FOUR%21"
+  },
+  "294": {
+   "id": 294,
+   "name": "Ghost Notes",
+   "icon": "ghost-notes",
+   "url": "/perks/Ghost_Notes"
+  },
+  "295": {
+   "id": 295,
+   "name": "Ravenous",
+   "icon": "ravenous",
+   "url": "/perks/Ravenous"
+  },
+  "296": {
+   "id": 296,
+   "name": "Wandering Eye",
+   "icon": "wandering-eye",
+   "url": "/perks/Wandering_Eye"
+  },
+  "297": {
+   "id": 297,
+   "name": "Hex: Overture of Doom",
+   "icon": "hex-overture-of-doom",
+   "url": "/perks/Hex:_Overture_of_Doom"
+  },
+  "298": {
+   "id": 298,
+   "name": "Bada Bada Boom",
+   "icon": "bada-bada-boom",
+   "url": "/perks/Bada_Bada_Boom"
+  },
+  "299": {
+   "id": 299,
+   "name": "Change of Plan",
+   "icon": "change-of-plan",
+   "url": "/perks/Change_of_Plan"
+  },
+  "300": {
+   "id": 300,
+   "name": "Teamwork: Full Circuit",
+   "icon": "teamwork-full-circuit",
+   "url": "/perks/Teamwork:_Full_Circuit"
+  },
+  "301": {
+   "id": 301,
+   "name": "Extrasensory Perception",
+   "icon": "extrasensory-perception",
+   "url": "/perks/Extrasensory_Perception"
+  },
+  "302": {
+   "id": 302,
+   "name": "We See You",
+   "icon": "we-see-you",
+   "url": "/perks/We_See_You"
+  },
+  "303": {
+   "id": 303,
+   "name": "Teamwork: Soft-Spoken",
+   "icon": "teamwork-soft-spoken",
+   "url": "/perks/Teamwork:_Soft-Spoken"
+  },
+  "304": {
+   "id": 304,
+   "name": "Turn Back The Clock",
+   "icon": "turn-back-the-clock",
+   "url": "/perks/Turn_Back_The_Clock"
+  },
+  "305": {
+   "id": 305,
+   "name": "Secret Project",
+   "icon": "secret-project",
+   "url": "/perks/Secret_Project"
+  },
+  "306": {
+   "id": 306,
+   "name": "Hex: Hive Mind",
+   "icon": "hex-hive-mind",
+   "url": "/perks/Hex:_Hive_Mind"
+  },
+  "307": {
+   "id": 307,
+   "name": "Flow State",
+   "icon": "flow-state",
+   "url": "/perks/Flow_State"
+  },
+  "308": {
+   "id": 308,
+   "name": "A Place For Us",
+   "icon": "a-place-for-us",
+   "url": "/perks/A_Place_For_Us"
+  },
+  "309": {
+   "id": 309,
+   "name": "Five Moves Ahead",
+   "icon": "five-moves-ahead",
+   "url": "/perks/Five_Moves_Ahead"
+  },
+  "310": {
+   "id": 310,
+   "name": "Hex: Scared to Death",
+   "icon": "hex-scared-to-death",
+   "url": "/perks/Hex:_Scared_to_Death"
+  },
+  "311": {
+   "id": 311,
+   "name": "Silent Shadow",
+   "icon": "silent-shadow",
+   "url": "/perks/Silent_Shadow"
+  },
+  "312": {
+   "id": 312,
+   "name": "Rampage",
+   "icon": "rampage",
+   "url": "/perks/Rampage"
+  },
+  "313": {
+   "id": 313,
+   "name": "Wide Open Throttle",
+   "icon": "wide-open-throttle",
+   "url": "/perks/Wide_Open_Throttle"
+  },
+  "314": {
+   "id": 314,
+   "name": "Lend a Hand",
+   "icon": "lend-a-hand",
+   "url": "/perks/Lend_a_Hand"
+  },
+  "315": {
+   "id": 315,
+   "name": "Cross-Examination",
+   "icon": "cross-examination",
+   "url": "/perks/Cross-Examination"
+  },
+  "316": {
+   "id": 316,
+   "name": "Fruits of Your Labor",
+   "icon": "fruits-of-your-labor",
+   "url": "/perks/Fruits_of_Your_Labor"
+  },
+  "317": {
+   "id": 317,
+   "name": "Salvation's Cry",
+   "icon": "salvations-cry",
+   "url": "/perks/Salvation%27s_Cry"
+  },
+  "318": {
+   "id": 318,
+   "name": "Boon: Steadfast",
+   "icon": "boon-steadfast",
+   "url": "/perks/Boon:_Steadfast"
+  },
+  "319": {
+   "id": 319,
+   "name": "Celestial Witness",
+   "icon": "celestial-witness",
+   "url": "/perks/Celestial_Witness"
+  },
+  "320": {
+   "id": 320,
+   "name": "Hex: Under Your Thumb",
+   "icon": "hex-under-your-thumb",
+   "url": "/perks/Hex:_Under_Your_Thumb"
+  },
+  "321": {
+   "id": 321,
+   "name": "Lay Waste",
+   "icon": "lay-waste",
+   "url": "/perks/Lay_Waste"
+  }
+ },
+ "survivors": {
+  "10": {
+   "id": 10,
+   "name": "Dwight Fairfield",
+   "portrait": "dwight-fairfield.png"
+  },
+  "20": {
+   "id": 20,
+   "name": "Meg Thomas",
+   "portrait": "meg-thomas.png"
+  },
+  "30": {
+   "id": 30,
+   "name": "Claudette Morel",
+   "portrait": "claudette-morel.png"
+  },
+  "40": {
+   "id": 40,
+   "name": "Jake Park",
+   "portrait": "jake-park.png"
+  },
+  "50": {
+   "id": 50,
+   "name": "Nea Karlsson",
+   "portrait": "nea-karlsson.png"
+  },
+  "60": {
+   "id": 60,
+   "name": "Laurie Strode",
+   "portrait": "laurie-strode.png"
+  },
+  "70": {
+   "id": 70,
+   "name": "Ace Visconti",
+   "portrait": "ace-visconti.png"
+  },
+  "90": {
+   "id": 90,
+   "name": "Feng Min",
+   "portrait": "feng-min.png"
+  },
+  "100": {
+   "id": 100,
+   "name": "David King",
+   "portrait": "david-king.png"
+  },
+  "110": {
+   "id": 110,
+   "name": "Kate Denson",
+   "portrait": "kate-denson.png"
+  },
+  "120": {
+   "id": 120,
+   "name": "Quentin Smith",
+   "portrait": "quentin-smith.png"
+  },
+  "140": {
+   "id": 140,
+   "name": "Adam Francis",
+   "portrait": "adam-francis.png"
+  },
+  "150": {
+   "id": 150,
+   "name": "Jeff Johansen",
+   "portrait": "jeff-johansen.png"
+  },
+  "160": {
+   "id": 160,
+   "name": "Jane Romero",
+   "portrait": "jane-romero.png"
+  },
+  "170": {
+   "id": 170,
+   "name": "Ashley J. Williams",
+   "portrait": "ashley-j-williams.png"
+  },
+  "180": {
+   "id": 180,
+   "name": "Nancy Wheeler",
+   "portrait": "nancy-wheeler.png"
+  },
+  "190": {
+   "id": 190,
+   "name": "Steve Harrington",
+   "portrait": "steve-harrington.png"
+  },
+  "200": {
+   "id": 200,
+   "name": "Yui Kimura",
+   "portrait": "yui-kimura.png"
+  },
+  "210": {
+   "id": 210,
+   "name": "Zarina Kassir",
+   "portrait": "zarina-kassir.png"
+  },
+  "220": {
+   "id": 220,
+   "name": "Cheryl Mason",
+   "portrait": "cheryl-mason.png"
+  },
+  "230": {
+   "id": 230,
+   "name": "Felix Richter",
+   "portrait": "felix-richter.png"
+  },
+  "240": {
+   "id": 240,
+   "name": "Elodie Rakoto",
+   "portrait": "elodie-rakoto.png"
+  },
+  "250": {
+   "id": 250,
+   "name": "Lee Yun-Jin",
+   "portrait": "yun-jin-lee.png"
+  },
+  "260": {
+   "id": 260,
+   "name": "Jill Valentine",
+   "portrait": "jill-valentine.png"
+  },
+  "270": {
+   "id": 270,
+   "name": "Leon S. Kennedy",
+   "portrait": "leon-s-kennedy.png"
+  },
+  "280": {
+   "id": 280,
+   "name": "Mikaela Reid",
+   "portrait": "mikaela-reid.png"
+  },
+  "290": {
+   "id": 290,
+   "name": "Jonah Vasquez",
+   "portrait": "jonah-vasquez.png"
+  },
+  "300": {
+   "id": 300,
+   "name": "Yoichi Asakawa",
+   "portrait": "yoichi-asakawa.png"
+  },
+  "310": {
+   "id": 310,
+   "name": "Haddie Kaur",
+   "portrait": "haddie-kaur.png"
+  },
+  "320": {
+   "id": 320,
+   "name": "Ada Wong",
+   "portrait": "ada-wong.png"
+  },
+  "330": {
+   "id": 330,
+   "name": "Rebecca Chambers",
+   "portrait": "rebecca-chambers.png"
+  },
+  "340": {
+   "id": 340,
+   "name": "Vittorio Toscano",
+   "portrait": "vittorio-toscano.png"
+  },
+  "350": {
+   "id": 350,
+   "name": "Thalita Lyra",
+   "portrait": "thalita-lyra.png"
+  },
+  "360": {
+   "id": 360,
+   "name": "Renato Lyra",
+   "portrait": "renato-lyra.png"
+  },
+  "370": {
+   "id": 370,
+   "name": "Gabriel Soma",
+   "portrait": "gabriel-soma.png"
+  },
+  "380": {
+   "id": 380,
+   "name": "Nicolas Cage",
+   "portrait": "nicolas-cage.png"
+  },
+  "390": {
+   "id": 390,
+   "name": "Ellen Ripley",
+   "portrait": "ellen-ripley.png"
+  },
+  "400": {
+   "id": 400,
+   "name": "Alan Wake",
+   "portrait": "alan-wake.png"
+  },
+  "410": {
+   "id": 410,
+   "name": "Sable Ward",
+   "portrait": "sable-ward.png"
+  },
+  "420": {
+   "id": 420,
+   "name": "Aestri Yazar",
+   "portrait": "aestri-yazar.png"
+  },
+  "430": {
+   "id": 430,
+   "name": "Lara Croft",
+   "portrait": "lara-croft.png"
+  },
+  "440": {
+   "id": 440,
+   "name": "Trevor Belmont",
+   "portrait": "trevor-belmont.png"
+  },
+  "450": {
+   "id": 450,
+   "name": "Taurie Cain",
+   "portrait": "taurie-cain.png"
+  },
+  "460": {
+   "id": 460,
+   "name": "Orela Rose",
+   "portrait": "orela-rose.png"
+  },
+  "470": {
+   "id": 470,
+   "name": "Rick Grimes",
+   "portrait": "rick-grimes.png"
+  },
+  "480": {
+   "id": 480,
+   "name": "Michonne Grimes",
+   "portrait": "michonne-grimes.png"
+  },
+  "490": {
+   "id": 490,
+   "name": "Vee Boonyasak",
+   "portrait": "vee-boonyasak.png"
+  },
+  "500": {
+   "id": 500,
+   "name": "Dustin Henderson",
+   "portrait": "dustin-henderson.png"
+  },
+  "510": {
+   "id": 510,
+   "name": "Eleven",
+   "portrait": "eleven.png"
+  },
+  "520": {
+   "id": 520,
+   "name": "Kwon Tae-young",
+   "portrait": "kwon-tae-young.png"
+  },
+  "530": {
+   "id": 530,
+   "name": "Shane Wiigwaas",
+   "portrait": "shane-wiigwaas.png"
+  },
+  "540": {
+   "id": 540,
+   "name": "Aurora Stardotter",
+   "portrait": "aurora-stardotter.png"
+  }
+ },
+ "killers": {
+  "10010": {
+   "id": 10010,
+   "name": "The Trapper",
+   "portrait": "the-trapper.png"
+  },
+  "10020": {
+   "id": 10020,
+   "name": "The Wraith",
+   "portrait": "the-wraith.png"
+  },
+  "10030": {
+   "id": 10030,
+   "name": "The Hillbilly",
+   "portrait": "the-hillbilly.png"
+  },
+  "10040": {
+   "id": 10040,
+   "name": "The Nurse",
+   "portrait": "the-nurse.png"
+  },
+  "10050": {
+   "id": 10050,
+   "name": "The Hag",
+   "portrait": "the-hag.png"
+  },
+  "10070": {
+   "id": 10070,
+   "name": "The Doctor",
+   "portrait": "the-doctor.png"
+  },
+  "10080": {
+   "id": 10080,
+   "name": "The Huntress",
+   "portrait": "the-huntress.png"
+  },
+  "10110": {
+   "id": 10110,
+   "name": "The Pig",
+   "portrait": "the-pig.png"
+  },
+  "10120": {
+   "id": 10120,
+   "name": "The Clown",
+   "portrait": "the-clown.png"
+  },
+  "10130": {
+   "id": 10130,
+   "name": "The Spirit",
+   "portrait": "the-spirit.png"
+  },
+  "10140": {
+   "id": 10140,
+   "name": "The Legion",
+   "portrait": "the-legion.png"
+  },
+  "10150": {
+   "id": 10150,
+   "name": "The Plague",
+   "portrait": "the-plague.png"
+  },
+  "10180": {
+   "id": 10180,
+   "name": "The Oni",
+   "portrait": "the-oni.png"
+  },
+  "10210": {
+   "id": 10210,
+   "name": "The Blight",
+   "portrait": "the-blight.png"
+  },
+  "10220": {
+   "id": 10220,
+   "name": "The Twins",
+   "portrait": "the-twins.png"
+  },
+  "10230": {
+   "id": 10230,
+   "name": "The Trickster",
+   "portrait": "the-trickster.png"
+  },
+  "10240": {
+   "id": 10240,
+   "name": "The Nemesis",
+   "portrait": "the-nemesis.png"
+  },
+  "10260": {
+   "id": 10260,
+   "name": "The Artist",
+   "portrait": "the-artist.png"
+  },
+  "10280": {
+   "id": 10280,
+   "name": "The Dredge",
+   "portrait": "the-dredge.png"
+  },
+  "10300": {
+   "id": 10300,
+   "name": "The Knight",
+   "portrait": "the-knight.png"
+  },
+  "10320": {
+   "id": 10320,
+   "name": "The Singularity",
+   "portrait": "the-singularity.png"
+  },
+  "10340": {
+   "id": 10340,
+   "name": "The Good Guy",
+   "portrait": "the-good-guy.png"
+  },
+  "10350": {
+   "id": 10350,
+   "name": "The Unknown",
+   "portrait": "the-unknown.png"
+  },
+  "10360": {
+   "id": 10360,
+   "name": "The Lich",
+   "portrait": "the-lich.png"
+  },
+  "10370": {
+   "id": 10370,
+   "name": "The Dark Lord",
+   "portrait": "the-dark-lord.png"
+  },
+  "10380": {
+   "id": 10380,
+   "name": "The Houndmaster",
+   "portrait": "the-houndmaster.png"
+  },
+  "10390": {
+   "id": 10390,
+   "name": "The Ghoul",
+   "portrait": "the-ghoul.png"
+  },
+  "10400": {
+   "id": 10400,
+   "name": "The Animatronic",
+   "portrait": "the-animatronic.png"
+  },
+  "10410": {
+   "id": 10410,
+   "name": "The Krasue",
+   "portrait": "the-krasue.png"
+  },
+  "10420": {
+   "id": 10420,
+   "name": "The First",
+   "portrait": "the-first.png"
+  },
+  "10430": {
+   "id": 10430,
+   "name": "The Slasher",
+   "portrait": "the-slasher.png"
+  },
+  "10440": {
+   "id": 10440,
+   "name": "The Judgment",
+   "portrait": "the-judgement.png"
+  }
+ }
+}
