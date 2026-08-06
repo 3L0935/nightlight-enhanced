@@ -24,6 +24,7 @@
   --radius: 6px;
   --radius-sm: 4px;
   --radius-lg: 8px;
+  --ui-scale: 1;
 }
 
 html, body {
@@ -31,7 +32,7 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-size: 14px;
+  font-size: calc(14px * var(--ui-scale));
   overflow: hidden;
 }
 
@@ -161,6 +162,7 @@ html, body {
   overflow-y: auto;
   padding: 28px 32px;
   background: var(--bg-primary);
+  zoom: var(--ui-scale);
 }
 
 .page { display: none; }
@@ -1387,6 +1389,33 @@ html, body {
   text-decoration: none;
 }
 
+/* UI scale slider */
+.setting-scale-val {
+  font-size: 12px;
+  color: var(--text-secondary);
+  min-width: 40px;
+  text-align: right;
+  font-family: 'SF Mono', 'JetBrains Mono', monospace;
+}
+#setting-ui-scale {
+  flex: 1;
+  -webkit-appearance: none;
+  height: 6px;
+  background: var(--bg-hover);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+#setting-ui-scale::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 2px solid var(--bg-secondary);
+}
+
 /* ── Notifications ── */
 #notification-container {
   position: fixed;
@@ -1829,6 +1858,12 @@ html, body {
   gap: 16px;
 }
 
+@media (max-width: 900px) {
+  .stats-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
 .stats-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
@@ -1865,8 +1900,8 @@ html, body {
 }
 
 .stat-perk-img {
-  width: 38px;
-  height: 38px;
+  width: calc(38px * var(--ui-scale));
+  height: calc(38px * var(--ui-scale));
   border-radius: var(--radius-sm);
   background: var(--bg-tertiary);
   object-fit: cover;
@@ -1875,8 +1910,8 @@ html, body {
 
 .stat-perk-img-none {
   display: inline-block;
-  width: 38px;
-  height: 38px;
+  width: calc(38px * var(--ui-scale));
+  height: calc(38px * var(--ui-scale));
 }
 
 .stat-perk-body {
@@ -1885,7 +1920,7 @@ html, body {
 }
 
 .stat-perk-name {
-  font-size: 13px;
+  font-size: calc(13px * var(--ui-scale));
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
@@ -1893,13 +1928,13 @@ html, body {
 }
 
 .stat-perk-pct {
-  font-size: 11px;
+  font-size: calc(11px * var(--ui-scale));
   color: var(--text-muted);
   margin-bottom: 4px;
 }
 
 .pct-track {
-  height: 5px;
+  height: calc(5px * var(--ui-scale));
   background: var(--bg-hover);
   border-radius: 3px;
   overflow: hidden;
@@ -1930,8 +1965,8 @@ html, body {
 .stat-char:hover { border-color: var(--accent); }
 
 .stat-char-img {
-  width: 40px;
-  height: 40px;
+  width: calc(40px * var(--ui-scale));
+  height: calc(40px * var(--ui-scale));
   border-radius: var(--radius-sm);
   background: var(--bg-hover);
   object-fit: cover;
@@ -1941,7 +1976,7 @@ html, body {
 .stat-char-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
 
 .stat-char-name {
-  font-size: 13px;
+  font-size: calc(13px * var(--ui-scale));
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
@@ -1949,7 +1984,7 @@ html, body {
 }
 
 .stat-char-total {
-  font-size: 12px;
+  font-size: calc(12px * var(--ui-scale));
   color: var(--accent);
   font-weight: 600;
   flex-shrink: 0;
@@ -1961,8 +1996,8 @@ html, body {
 }
 
 .stat-mini-perk {
-  width: 24px;
-  height: 24px;
+  width: calc(24px * var(--ui-scale));
+  height: calc(24px * var(--ui-scale));
   border-radius: 3px;
   background: var(--bg-hover);
   object-fit: cover;
@@ -1988,8 +2023,8 @@ html, body {
 }
 
 .stat-build-perk {
-  width: 44px;
-  height: 44px;
+  width: calc(44px * var(--ui-scale));
+  height: calc(44px * var(--ui-scale));
   border-radius: var(--radius-sm);
   background: var(--bg-tertiary);
   object-fit: cover;
@@ -2002,13 +2037,13 @@ html, body {
 }
 
 .stat-build-usage {
-  font-size: 14px;
+  font-size: calc(14px * var(--ui-scale));
   font-weight: 700;
   color: var(--text-primary);
 }
 
 .stat-build-rate {
-  font-size: 11px;
+  font-size: calc(11px * var(--ui-scale));
   color: var(--text-muted);
   margin-top: 2px;
 }
@@ -2036,12 +2071,9 @@ html, body {
   text-transform: uppercase;
   letter-spacing: 0.2px;
 }
-.stat-build-perk-empty {
-  display: inline-block;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-tertiary);
+.stat-build-perk-blank {
+  opacity: 0.35;
+  filter: grayscale(1);
   border: 1px dashed var(--border-subtle);
 }
 

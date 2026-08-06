@@ -68,4 +68,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (typeof loadSettings === 'function') loadSettings();
   updateLockIndicator();
   setInterval(updateLockIndicator, 5000);
+
+  // Apply saved UI scale
+  try {
+    const all = await window.nightlight.getAllSettings();
+    const scale = all.uiScale || 1;
+    document.documentElement.style.setProperty('--ui-scale', String(scale));
+  } catch (e) {}
 });

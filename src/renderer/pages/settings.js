@@ -7,6 +7,9 @@ async function loadSettings() {
     $('#setting-api-token').value = all.apiToken || '';
     $('#setting-capture-quality').value = all.captureQuality || 'high';
     $('#setting-keep-screenshots').value = all.keepScreenshots || 'delete-after-upload';
+    const scale = all.uiScale || 1;
+    $('#setting-ui-scale').value = scale;
+    $('#setting-ui-scale-val').textContent = Math.round(scale * 100) + '%';
   } catch (err) {
     console.error('Failed to load settings:', err);
   }
@@ -18,10 +21,18 @@ async function saveSettings() {
     await window.nightlight.setSetting('apiToken', $('#setting-api-token').value);
     await window.nightlight.setSetting('captureQuality', $('#setting-capture-quality').value);
     await window.nightlight.setSetting('keepScreenshots', $('#setting-keep-screenshots').value);
+    const scale = parseFloat($('#setting-ui-scale').value) || 1;
+    await window.nightlight.setSetting('uiScale', scale);
+    applyUiScale(scale);
     showNotification('Settings saved!', 'success');
   } catch (err) {
     showNotification(`Error saving settings: ${err.message}`, 'error');
   }
+}
+
+// Apply UI scale to the whole app via a CSS variable on <html>.
+function applyUiScale(scale) {
+  document.documentElement.style.setProperty('--ui-scale', String(scale));
 }
 
 async function detectDbdPath() {
@@ -109,6 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#api-token-link').addEventListener('click', (e) => {
     e.preventDefault();
     window.open('https://nightlight.gg/account/api', '_blank');
+  });
+
+  // Live-update the scale label while dragging
+  $('#setting-ui-scale').addEventListener('input', () => {
+    const v = parseFloat($('#setting-ui-scale').value) || 1;
+    $('#setting-ui-scale-val').textContent = Math.round(v * 100) + '%';
   });
 
   document.querySelector('.nav-item[data-page="settings"]').addEventListener('click', () => {

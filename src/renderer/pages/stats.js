@@ -46,6 +46,9 @@ async function fetchStats() {
 
 // ── Perk tooltip: renders description HTML with level-tinted tunable values ──
 function perkTooltipContent(perkId) {
+  if (perkId === -1 || perkId === '-1') {
+    return `<div class="pt-name">No Perk</div><div class="pt-desc">This build slot is empty.</div>`;
+  }
   const perk = _nlData?.perks?.[perkId];
   const name = perk?.name || 'Unknown';
   if (!perk?.desc_html) {
@@ -120,12 +123,12 @@ function renderBuilds(builds, role) {
   if (!builds || builds.length === 0) return '<div class="empty-state">No data yet.</div>';
   return builds.map((b, i) => {
     const icons = b.build.map(pid => {
-      if (pid === -1) return `<span class="stat-build-perk stat-build-perk-empty"></span>`;
+      if (pid === -1) return perkTooltip(-1, `<img class="stat-build-perk stat-build-perk-blank" src="assets/img/blank.webp" alt="No perk" loading="lazy" />`);
       const img = perkImage(pid, 85);
       const n = perkName(pid);
       return perkTooltip(pid, img
         ? `<img class="stat-build-perk" src="${img}" alt="${n}" loading="lazy" />`
-        : `<span class="stat-build-perk stat-build-perk-empty"></span>`);
+        : `<img class="stat-build-perk stat-build-perk-blank" src="assets/img/blank.webp" alt="No perk" loading="lazy" />`);
     }).join('');
     const metric = role === 'killer'
       ? `${Math.round((1000 * (b.survivors - b.escapes)) / b.survivors) / 10}% kill`
@@ -149,12 +152,12 @@ function renderKillerBuilds(killerId) {
   if (!builds || builds.length === 0) return '<div class="empty-state">No build data for this killer.</div>';
   return builds.slice(0, 8).map((b, i) => {
     const icons = b.perks.map(pid => {
-      if (pid === -1) return `<span class="stat-build-perk stat-build-perk-empty"></span>`;
+      if (pid === -1) return perkTooltip(-1, `<img class="stat-build-perk stat-build-perk-blank" src="assets/img/blank.webp" alt="No perk" loading="lazy" />`);
       const img = perkImage(pid, 85);
       const n = perkName(pid);
       return perkTooltip(pid, img
         ? `<img class="stat-build-perk" src="${img}" alt="${n}" loading="lazy" />`
-        : `<span class="stat-build-perk stat-build-perk-empty"></span>`);
+        : `<img class="stat-build-perk stat-build-perk-blank" src="assets/img/blank.webp" alt="No perk" loading="lazy" />`);
     }).join('');
     return `
       <div class="stat-build">

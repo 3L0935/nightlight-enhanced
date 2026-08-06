@@ -26,6 +26,12 @@ const schema = {
   configLocked: {
     type: 'boolean',
     default: false
+  },
+  uiScale: {
+    type: 'number',
+    minimum: 0.8,
+    maximum: 1.6,
+    default: 1
   }
 };
 
