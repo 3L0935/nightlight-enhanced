@@ -107,11 +107,10 @@ nightlight-enhanced/
 - [x] Pack browser with preview
 - [x] Selective install with progress
 - [x] Config editor (pretty + raw)
-- [x] Aura color editor
 - [x] Config lock
-- [ ] Finalize aura customization list
-- [ ] Screenshot upload rework (proper API integration)
-- [ ] Upload stats & match history
+- [x] Screenshot upload (preview + review flow)
+- [x] Community stats (perks, builds, killers/survivors)
+- [ ] Personal match history (uploaded matches list + detail)
 - [ ] Windows build testing
 - [ ] Auto-updater
 - [ ] Keyboard shortcuts
