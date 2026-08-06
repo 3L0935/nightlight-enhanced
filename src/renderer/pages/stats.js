@@ -118,6 +118,18 @@ function renderTopChars(chars) {
   }).join('') + `</div>`;
 }
 
+// ── Format power description: line breaks + bold SPECIAL sections ──
+function formatPowerDesc(desc) {
+  if (!desc) return '';
+  // Escape HTML first
+  let s = desc.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  // Bold the SPECIAL ... headings
+  s = s.replace(/(SPECIAL [A-Z]+: [^\n]+)/g, '<b>$1</b>');
+  // Convert newlines to <br>
+  s = s.replace(/\n+/g, '<br>');
+  return s;
+}
+
 // ── Character detail (focus view) ──
 function renderCharDetail(charId) {
   const isK = !!_nlData?.killers?.[charId];
@@ -148,7 +160,7 @@ function renderCharDetail(charId) {
           <img class="char-detail-power-img" src="img/powers/${c.power_icon}" alt="${c.power_name || c.name} power" loading="lazy" />
           <div class="char-detail-power-info">
             <div class="char-detail-power-name">${c.power_name || `${c.name.replace('The ', '')}'s Power`}</div>
-            ${c.power_desc ? `<div class="char-detail-power-desc">${c.power_desc}</div>` : ''}
+            ${c.power_desc ? `<div class="char-detail-power-desc">${formatPowerDesc(c.power_desc)}</div>` : ''}
           </div>
         </div>
       </div>`
