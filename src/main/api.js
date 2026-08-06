@@ -48,6 +48,13 @@ async function fetchPacks({ page = 1, perPage = 12, sortBy = 'downloads', search
 
 async function fetchAuthors() { return request(`${WEB_API_BASE}/packs/authors`); }
 
+// ── Community stats (public aggregate perk/build usage) ──
+async function fetchCommunityStats() {
+  return request(`${WEB_API_BASE}/stats/global/perks_and_builds`, {
+    headers: { 'Origin': 'https://nightlight.gg', 'Referer': 'https://nightlight.gg/perks' }
+  });
+}
+
 async function uploadScreenshot(filePath, apiToken) {
   const boundary = '----NightLightEnhanced' + Date.now();
   const fileContent = fs.readFileSync(filePath);
@@ -371,4 +378,4 @@ function installFromPreview(packUrl, packTitle, categories, dbdIconsPath) {
   return { copied: copiedCount, categories };
 }
 
-module.exports = { fetchPacks, fetchAuthors, uploadScreenshot, fetchBannerBase64, fetchPackPreview, getPreviewProgress, getIconDataUrl, installFromPreview };
+module.exports = { fetchPacks, fetchAuthors, fetchCommunityStats, uploadScreenshot, fetchBannerBase64, fetchPackPreview, getPreviewProgress, getIconDataUrl, installFromPreview };

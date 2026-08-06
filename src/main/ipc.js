@@ -220,6 +220,11 @@ function registerIpcHandlers(ipcMain) {
       }).on('error', reject);
     });
   });
+
+  // ── Community stats ──
+  ipcMain.handle('stats:community', async () => {
+    return api.fetchCommunityStats();
+  });
 }
 
 module.exports = { registerIpcHandlers };

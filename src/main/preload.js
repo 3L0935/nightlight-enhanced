@@ -43,6 +43,9 @@ contextBridge.exposeInMainWorld('nightlight', {
   // Game versions
   fetchGameVersions: () => ipcRenderer.invoke('game-versions'),
 
+  // Community stats
+  fetchCommunityStats: () => ipcRenderer.invoke('stats:community'),
+
   // Events from main
   onConfigOverwritten: (callback) => ipcRenderer.on('config:overwritten', (_, data) => callback(data)),
   onInstallProgress: (callback) => {

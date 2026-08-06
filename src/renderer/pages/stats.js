@@ -41,12 +41,8 @@ async function loadNlData() {
 
 async function fetchStats() {
   if (_statsCache) return _statsCache;
-  const res = await fetch('https://nightlight.gg/api/v1/stats/global/perks_and_builds', {
-    credentials: 'include'
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const json = await res.json();
-  if (json.status !== 'success') throw new Error(json.error?.message || 'Stats API error');
+  const json = await window.nightlight.fetchCommunityStats();
+  if (!json || json.status !== 'success') throw new Error(json?.error?.message || 'Stats API error');
   _statsCache = json.data;
   return _statsCache;
 }
