@@ -1831,6 +1831,7 @@ html, body {
 /* Layout: stacked sections, max width, breathing room */
 .stats-content {
   max-width: 1100px;
+  margin: 0 auto;
 }
 
 .stats-section {
