@@ -35,7 +35,7 @@ const FIELD_DEFS = {
       { key: 'PreferredFullscreenMode', label: 'Preferred Fullscreen', type: 'select', options: { '0': 'Fullscreen', '1': 'Windowed Fullscreen', '2': 'Windowed' }, impact: 'low', desc: 'Preferred display mode (set in-game).' },
       { key: 'bUseVSync', label: 'VSync', type: 'bool', impact: 'low', desc: 'Synchronize with monitor refresh rate. Disable for lower input lag.' },
       { key: 'bUseDynamicResolution', label: 'Dynamic Resolution', type: 'bool', impact: 'medium', desc: 'Auto-adjust resolution to maintain FPS.' },
-      { key: 'FrameRateLimit', label: 'FPS Limit (Engine)', min: 0, max: 360, step: 1, unit: 'fps', impact: 'low', desc: 'Engine-level FPS cap. 0 = unlimited. DBD also has its own FPS cap below.' },
+      { key: 'engine.FrameRateLimit', label: 'FPS Limit (Engine)', min: 0, max: 360, step: 1, unit: 'fps', impact: 'low', desc: 'Engine-level FPS cap. 0 = unlimited. DBD also has its own FPS cap below.' },
       { key: 'AntiAliasingMode', label: 'Anti-Aliasing Mode', type: 'select', options: { '0': 'Off', '1': 'FXAA', '2': 'TAA' }, impact: 'low', desc: 'AA technique. TAA recommended for DBD.' },
       { key: 'EnableFSR', label: 'FSR / Upscaling', type: 'bool', impact: 'medium', desc: 'AMD FidelityFX Super Resolution. Boosts FPS at cost of sharpness.' },
       { key: 'XeSSMode', label: 'XeSS Mode', type: 'select', options: { '0': 'Off', '1': 'Ultra Quality', '2': 'Quality', '3': 'Balanced', '4': 'Performance' }, impact: 'medium', desc: 'Intel XeSS upscaling. Alternative to FSR.' },

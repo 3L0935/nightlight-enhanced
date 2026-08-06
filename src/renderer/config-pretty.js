@@ -37,7 +37,16 @@ function renderPrettyMode(rawContent) {
 
   // ── Section: Video ──
   const engineSection = _currentSections['/Script/Engine.GameUserSettings'] || {};
-  html += renderSection('video', { ...engineSection, ...dbdSection });
+  // FrameRateLimit lives in BOTH Engine and DBD sections. The video field uses the
+  // namespaced key 'engine.FrameRateLimit' to avoid colliding with the DBD gameplay
+  // field. Pass engine values through, then override DBD keys only for DBD-owned fields.
+  const videoData = { ...engineSection, ...dbdSection };
+  if (_modifiedValues['engine.FrameRateLimit'] !== undefined) {
+    videoData['engine.FrameRateLimit'] = _modifiedValues['engine.FrameRateLimit'];
+  } else if (engineSection['FrameRateLimit'] !== undefined) {
+    videoData['engine.FrameRateLimit'] = engineSection['FrameRateLimit'];
+  }
+  html += renderSection('video', videoData);
 
   // ── Section: Audio ──
   html += renderSection('audio', dbdSection);
@@ -373,7 +382,11 @@ function serializePrettyConfig() {
 
   // Apply modified values to correct sections
   for (const [key, value] of Object.entries(_modifiedValues)) {
-    if (key.startsWith('sg.')) {
+    if (key === 'engine.FrameRateLimit') {
+      // Namespaced key → Engine.GameUserSettings (distinct from DBD's FrameRateLimit)
+      if (!sections['/Script/Engine.GameUserSettings']) sections['/Script/Engine.GameUserSettings'] = {};
+      sections['/Script/Engine.GameUserSettings']['FrameRateLimit'] = value;
+    } else if (key.startsWith('sg.')) {
       if (!sections['ScalabilityGroups']) sections['ScalabilityGroups'] = {};
       sections['ScalabilityGroups'][key] = value;
     } else if (key.startsWith('bDisableLobbyMusic') || key.startsWith('bLowMemoryMode') || key.startsWith('bPreloadLobbyAssets')) {
@@ -382,11 +395,12 @@ function serializePrettyConfig() {
     } else if (key.startsWith('bEnableRawInput') || key.startsWith('bEnableDoubleClick') || key.startsWith('bEnableMenuClickSound')) {
       if (!sections['Input']) sections['Input'] = {};
       sections['Input'][key] = value;
-    } else if (key === 'bUseVSync' || key === 'bUseDynamicResolution' || key === 'ResolutionSizeX' || key === 'ResolutionSizeY' || key === 'FullscreenMode' || key === 'PreferredFullscreenMode' || key === 'FrameRateLimit' || key === 'bUseDesiredScreenHeight' || key === 'Language' || key === 'AudioQualityLevel') {
+    } else if (key === 'bUseVSync' || key === 'bUseDynamicResolution' || key === 'ResolutionSizeX' || key === 'ResolutionSizeY' || key === 'FullscreenMode' || key === 'PreferredFullscreenMode' || key === 'bUseDesiredScreenHeight' || key === 'Language' || key === 'AudioQualityLevel') {
       // These go to Engine.GameUserSettings
       if (!sections['/Script/Engine.GameUserSettings']) sections['/Script/Engine.GameUserSettings'] = {};
       sections['/Script/Engine.GameUserSettings'][key] = value;
     } else {
+      // Plain FrameRateLimit and all DBD-only keys go to DBDGameUserSettings
       if (!sections['/Script/DeadByDaylight.DBDGameUserSettings']) {
         sections['/Script/DeadByDaylight.DBDGameUserSettings'] = {};
       }
