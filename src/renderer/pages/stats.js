@@ -145,8 +145,11 @@ function renderCharDetail(charId) {
     ? `<div class="char-detail-power">
         <h4>Power</h4>
         <div class="char-detail-power-box">
-          <img class="char-detail-power-img" src="img/powers/${c.power_icon}" alt="${c.name} power" loading="lazy" />
-          <span class="char-detail-power-name">${c.name.replace('The ', '')}'s Power</span>
+          <img class="char-detail-power-img" src="img/powers/${c.power_icon}" alt="${c.power_name || c.name} power" loading="lazy" />
+          <div class="char-detail-power-info">
+            <div class="char-detail-power-name">${c.power_name || `${c.name.replace('The ', '')}'s Power`}</div>
+            ${c.power_desc ? `<div class="char-detail-power-desc">${c.power_desc}</div>` : ''}
+          </div>
         </div>
       </div>`
     : '';

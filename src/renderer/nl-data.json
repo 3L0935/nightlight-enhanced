@@ -58553,7 +58553,9 @@
    "patch_date": "14 June 2016",
    "licensed": false,
    "image": "portraits/the-trapper.png",
-   "power_icon": "trapper.png"
+   "power_icon": "trapper.png",
+   "power_name": "Bear Trap",
+   "power_desc": "Armed with a bag of Bear Traps, The Trapper specializes in catching unsuspecting Survivors. By placing traps in high-traffic areas and thick patches of grass, he creates a deadly area that forces Survivors to move with caution. When dealing with The Trapper, a simple misstep can prove fatal. The Trapper is an area-control Killer, able to apply pressure across the Map by placing deadly Bear Traps for Survivors to step in. His personal Perks, Unnerving Presence , Brutal Strength , and Agitation , allow him to chase and carry Survivors more effectively. He is focused on physical attributes and making use of his strength and the Survivors' fear. Difficulty Rating: Easy ( These Killers are the easiest for a first-time Player )"
   },
   "10020": {
    "id": 10020,
@@ -59831,7 +59833,9 @@
    "patch_date": "14 June 2016",
    "licensed": false,
    "image": "portraits/the-wraith.png",
-   "power_icon": "wraith.png"
+   "power_icon": "wraith.png",
+   "power_name": "Wailing Bell",
+   "power_desc": "Using his Wailing Bell to render himself invisible, The Wraith tracks his prey and strikes with little warning. Upon hearing the Bell’s fateful chime, Survivors must think fast or suffer the consequences. A hit-and-run specialist, The Wraith is adept at keeping everybody injured. The Wraith is a stealth Killer, able to Cloak and Uncloak at the ringing of his Wailing Bell . His personal Perks, Predator , Bloodhound , and Shadowborn , give him extra abilities to track and locate Survivors, making him a very efficient hunter. He focuses on tracking and hunting Survivors, making it easier to catch and kill them. Difficulty Rating: Easy ( These Killers are the easiest for a first-time Player )"
   },
   "10030": {
    "id": 10030,
@@ -61109,7 +61113,9 @@
    "patch_date": "14 June 2016",
    "licensed": false,
    "image": "portraits/the-hillbilly.png",
-   "power_icon": "hillbilly.png"
+   "power_icon": "hillbilly.png",
+   "power_name": "Chainsaw",
+   "power_desc": "The sound of a revving motor, followed by a bloodthirsty scream of rage. The Hillbilly isn’t exactly subtle, but he makes up for it in brutal efficiency. Capable of traversing great distances at a rapid pace, those in his path will be rudely introduced to one-hundred gnashing chainsaw blades. The Hillbilly is a high-mobility Killer, able to cover large distances in a short amount of time and instantly down Survivors using his Chainsaw . His personal Perks, Enduring , Lightborn , and Tinkerer , allow him to enhance his power and make him harder to lose during chases. He is about persistence and resilience. This will make it harder for Survivors to foil him. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10040": {
    "id": 10040,
@@ -62387,7 +62393,9 @@
    "patch_date": "18 August 2016",
    "licensed": false,
    "image": "portraits/the-nurse.png",
-   "power_icon": "nurse.png"
+   "power_icon": "nurse.png",
+   "power_name": "Spencer's Last Breath",
+   "power_desc": "Using her Blink ability, The Nurse can teleport great distances in moments, predicting and cutting off Survivor routes. A powerful process best honed by experience, careless Blinks are punished with a wave of fatigue. The epitome of high risk, high reward, The Nurse can end chases with surgical precision. The Nurse is a warping Killer, able to Blink through obstacles and quickly close gaps with her power, Spencer's Last Breath . Her personal Perks, Stridor , Thanatophobia , and A Nurse's Calling , allow her to decrease Survivor abilities and track them when they are injured. She is focused on spotting and tracking, making it harder for Survivors to hide. Difficulty Rating: Very Hard ( These Killers require a high amount of practice and understanding, inexperienced Players are likely to find little success when using them )"
   },
   "10050": {
    "id": 10050,
@@ -63665,7 +63673,9 @@
    "patch_date": "8 December 2016",
    "licensed": false,
    "image": "portraits/the-hag.png",
-   "power_icon": "hag.png"
+   "power_icon": "hag.png",
+   "power_name": "Blackened Catalyst",
+   "power_desc": "The Hag specializes in creating a dangerous web of Phantasm Traps, to be triggered by unsuspecting Survivors. She can instantly teleport to a triggered Trap, striking the Survivor that sprung it. Lock down key areas, make rescues a deadly gamble, and end chases quickly with strategic Phantasm Trap placement. The Hag is a cursed Killer, able to place traps and then Teleport to them when activated, using her Blackened Catalyst . Her personal Perks, Hex: The Third Seal , Hex: Ruin , and Hex: Devour Hope , apply crippling penalties to Survivors as long as the Totem they are attached to remains uncleansed. Her Perks revolve around Hex Totems . They are focused on cursing the Survivors and sapping their abilities. The curse lasts until the Survivors manage to track the Hex Totem down and cleanse it. Difficulty Rating: Very Hard ( These Killers require a high amount of practice and understanding, inexperienced Players are likely to find little success when using them )"
   },
   "10060": {
    "id": 10060,
@@ -64943,7 +64953,9 @@
    "patch_date": "25 October 2016",
    "licensed": true,
    "image": "portraits/the-shape.png",
-   "power_icon": "shape.png"
+   "power_icon": "shape.png",
+   "power_name": "Evil Within",
+   "power_desc": "The Shape lurks in the distance, patiently biding his time. His evil builds while stalking Survivors, fueling him with malevolent power. As the trial progresses, The Shape evolves from a quiet menace to an unstoppable juggernaut capable of shredding through even the most resilient teams. The Shape is a haunting Killer, intent on monitoring Survivors from a distance to feed his power, Evil Within . The more he Stalks, the stronger and faster he becomes. His personal Perks, Save the Best for Last , Play with Your Food , and Dying Light , select one Survivor to become his Obsession and will trigger deadly effects based on the Obsession 's status. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10070": {
    "id": 10070,
@@ -66221,7 +66233,9 @@
    "patch_date": "11 May 2017",
    "licensed": false,
    "image": "portraits/the-doctor.png",
-   "power_icon": "doctor.png"
+   "power_icon": "doctor.png",
+   "power_name": "Carter's Spark",
+   "power_desc": "Even the simplest tasks become exceedingly difficult in the clutches of madness. The Doctor’s disturbing methods drive Survivors deep into insanity, filling the air with their deranged screams and revealing their locations. Nothing stops a window vault in its tracks like a healthy dose of Shock Therapy. The Doctor is a madness-inducing Killer who is able to use his power, Carter's Spark , to trigger electrical charges, incapacitating Survivors and eventually causing them to hallucinate and scream in terror, revealing their position. His personal Perks, Overwhelming Presence , Monitor &amp; Abuse , and Overcharge , encourage chases, impact Survivors' ability to repair effectively, and make him harder to detect when not in a chase. His Perks are about hindering and creating problems for the Survivors. The sheer stature of The Doctor infuses fear and terror in those around him. Difficulty Rating: Hard ( These Killers use mechanics that are specific to them and require more practice to be effective )"
   },
   "10080": {
    "id": 10080,
@@ -67499,7 +67513,9 @@
    "patch_date": "27 July 2017",
    "licensed": false,
    "image": "portraits/the-huntress.png",
-   "power_icon": "huntress.png"
+   "power_icon": "huntress.png",
+   "power_name": "Hunting Hatchets",
+   "power_desc": "Armed with throwable hatchets, The Huntress is a constant threat to Survivors, even those at a great distance. With patience and precision, chases can end as quickly as they begin. Predict Survivor movement and let your hatchet fly – there's nothing quite like the rewarding sound of a target struck. The Huntress is a ranged Killer, able to throw Hunting Hatchets at Survivors to injure them from a distance. Her personal Perks, Beast of Prey , Territorial Imperative , and Hex: Huntress Lullaby , allow her to apply pressure through better map awareness and enhanced chasing abilities. Her Perks revolve around the hunt of the prey, to track and find so that she can get close enough to make the kill. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10090": {
    "id": 10090,
@@ -68777,7 +68793,9 @@
    "patch_date": "14 September 2017",
    "licensed": true,
    "image": "portraits/the-cannibal.png",
-   "power_icon": "cannibal.png"
+   "power_icon": "cannibal.png",
+   "power_name": "Bubba's Chainsaw",
+   "power_desc": "Leatherface knows a thing or two about chainsaw massacres. Any Survivor in his path will be instantly cut down, and his presence alone is enough to instill sheer panic. Capable of hitting multiple targets with a single swing, Leatherface is an unstoppable force with an insatiable appetite. The Cannibal is a chainsaw-wielding Killer, able to trigger a deadly frenzy using Bubba's Chainsaw , immediately downing anyone in its path. His personal Perks, Knock Out , Barbecue &amp; Chilli , and Franklin's Demise , make Survivors easier to locate while robbing them of their tools and abilities. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10100": {
    "id": 10100,
@@ -70055,7 +70073,9 @@
    "patch_date": "26 October 2017",
    "licensed": true,
    "image": "portraits/the-nightmare.png",
-   "power_icon": "nightmare.png"
+   "power_icon": "nightmare.png",
+   "power_name": "Dream Demon",
+   "power_desc": "Over time, The Nightmare forces Survivors into the Dream World. Once inside, Survivors will quickly realize the absence of a Terror Radius. With the ability to slow Survivors with Dream Snares, deceive with fake Dream Pallets, and pressure the map by teleporting directly to generators, The Nightmare lives up to his name. The Nightmare is a nightmare Killer, passively forcing Survivors into his Dream World using his power Dream Demon . It is here that Survivors become extremely vulnerable to his dream abilities. Using his Dream Projection ability he is able to quickly appear across the map and put pressure on Survivors. His personal Perks, Fire Up , Remember Me , and Blood Warden , improve his abilities over time and make him stronger as the trial reaches its climax. His Perks revolve around stopping Survivors from fleeing. They will make surviving a real pain for all, and managing to escape the Hunting Ground won't be easy. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10110": {
    "id": 10110,
@@ -71333,7 +71353,9 @@
    "patch_date": "23 January 2018",
    "licensed": true,
    "image": "portraits/the-pig.png",
-   "power_icon": "pig.png"
+   "power_icon": "pig.png",
+   "power_name": "Jigsaw's Baptism",
+   "power_desc": "Creep up and ambush Survivors with The Pig, the stealthy successor to the legendary Jigsaw. But simply hooking them isn’t enough. Survivors can first be punished with a Reverse Bear Trap, which they must race to remove at Jigsaw Boxes across the map. Suddenly, repairing generators isn’t quite so pressing... The Pig is a tormenting Killer, able to Crouch into stealth mode, then Ambush Survivors from a short distance. She can also apply Reverse Bear Traps to downed Survivors, forcing them to remove it before the timer runs out. If the timer expires, they die instantly. Her personal Perks, Scourge Hook: Hangman's Trick , Surveillance , and Make Your Choice , give her more map control and expose altruistic Survivors. Difficulty Rating: Hard ( These Killers use mechanics that are specific to them and require more practice to be effective )"
   },
   "10120": {
    "id": 10120,
@@ -72604,7 +72626,9 @@
    "patch_date": "12 June 2018",
    "licensed": false,
    "image": "portraits/the-clown.png",
-   "power_icon": "clown.png"
+   "power_icon": "clown.png",
+   "power_name": "The Afterpiece Tonic",
+   "power_desc": "Using his Afterpiece concoctions, The Clown can steer Survivors into dangerous areas and shorten chases. His purple bottle emits a cloud of noxious gas that disorients, slows down, and hinders Survivors. Throwing the yellow bottle requires foresight, as anyone who passes through the gas experiences a speed burst. The Clown is a strategic Killer, able to control and corral Survivors by throwing bottles of The Afterpiece Tonic to create clouds of noxious gas that cover large areas for a short amount of time. Survivors intoxicated by the gas are inflicted with impaired vision and movement speed, and give away their location by coughing loudly. His personal Perks, Bamboozle , Coulrophobia , and Pop Goes the Weasel , provide vaulting advantages and negatively impact Survivor healing speed and repairs. He has a surprising agility for a man of his size, along with a terrifying appearance and the ability to sabotage the Survivor's efforts. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10130": {
    "id": 10130,
@@ -73875,7 +73899,9 @@
    "patch_date": "18 September 2018",
    "licensed": false,
    "image": "portraits/the-spirit.png",
-   "power_icon": "spirit.png"
+   "power_icon": "spirit.png",
+   "power_name": "Yamaoka's Haunting",
+   "power_desc": "While using her Yamaoka’s Haunting Power, both The Spirit and Survivors cannot be seen by one another. Instead, Survivors are revealed by their Scratch Marks, breathing, and interactions with the environment. Each chase becomes a battle of wits, a duel where only the sharpest mind-games prevail. The Spirit is a phase-walking Killer, able to catch Survivors off-guard with her traversal Power, Yamaoka's Haunting . Her power allows her to Teleport from one place to another without being seen. Her personal Perks, Spirit Fury , Hex: Haunted Ground , and Rancor , give her tools to observe and bait Survivors, and deal with obstacles directly in her path. She inherited incredible fury from her ancestors. The wrath that flows through her veins is her legacy. The terrible pain she suffered set it off. Swift and lethal, The Spirit exacts her revenge endlessly. Difficulty Rating: Hard ( These Killers use mechanics that are specific to them and require more practice to be effective )"
   },
   "10140": {
    "id": 10140,
@@ -75146,7 +75172,9 @@
    "patch_date": "11 December 2018",
    "licensed": false,
    "image": "portraits/the-legion.png",
-   "power_icon": "legion.png"
+   "power_icon": "legion.png",
+   "power_name": "Feral Frenzy",
+   "power_desc": "The Legion are a close-knit group of murderous Killers, linked by the desire to dole out pain in equal measure. Keep the injuries coming with Feral Frenzy, a high-intensity sprint that can set off a devastating chain reaction. Survivors will be constantly tending to their wounds, leaving them vulnerable to be picked off one by one. The Legion are a band of merciless Killers, able to rushdown helpless Survivors with their power, Feral Frenzy . Attacks made during their frenzy inflict lingering internal damage, downing any Survivors that are not quick enough to react. Their personal Perks, Discordance , Mad Grit , and Iron Maiden , give them the ability to locate their prey and attack savagely while transporting Survivors to the hook. Difficulty Rating: Easy ( These Killers are the easiest for a first-time Player )"
   },
   "10150": {
    "id": 10150,
@@ -76417,7 +76445,9 @@
    "patch_date": "19 March 2019",
    "licensed": false,
    "image": "portraits/the-plague.png",
-   "power_icon": "plague.png"
+   "power_icon": "plague.png",
+   "power_name": "Vile Purge",
+   "power_desc": "Traditional healing methods are ineffective against The Plague’s vile Purge, which can infect generators and Survivors. Pools of Devotion are the only respite from the spreading pestilence. The more Survivors heal, the stronger The Plague’s power becomes, transforming her Purge into a sickening projectile of pain. The Plague is a devout Killer, able to infect Survivors from a short distance using her power, Vile Purge . Survivors inflicted by this contamination risk becoming injured or broken, unless they find a way to cure themselves in a Pool of Devotion. Her personal Perks, Corrupt Intervention , Infectious Fright , and Dark Devotion , give her the ability to hinder Survivor objectives, while simultaneously confusing and frightening those within her presence. Difficulty Rating: Hard ( These Killers use mechanics that are specific to them and require more practice to be effective )"
   },
   "10160": {
    "id": 10160,
@@ -77688,7 +77718,9 @@
    "patch_date": "18 June 2019",
    "licensed": true,
    "image": "portraits/the-ghost-face.png",
-   "power_icon": "ghostface.png"
+   "power_icon": "ghostface.png",
+   "power_name": "Night Shroud",
+   "power_desc": "A stealth-focused Killer capable of approaching unseen, The Ghost Face is adept at stalking his prey. Keep tabs on each individual Survivor, patiently marking them for death – provided you can remain hidden. Lie in wait until the perfect time to strike, and down Survivors before they know what hit them. The Ghost Face is a stealthy Killer, able to Stalk his victims and sneak up silently using his power, Night Shroud . Affected Survivors will find themselves vulnerable and oblivious to his presence and must use all of their perception and awareness to protect themselves from his approach. His personal Perks, I'm All Ears , Thrilling Tremors , and Furtive Chase , give him the ability to locate Survivors, defend Generators, and make his chases unpredictable. Difficulty Rating: Hard ( These Killers use mechanics that are specific to them and require more practice to be effective )"
   },
   "10170": {
    "id": 10170,
@@ -78959,7 +78991,9 @@
    "patch_date": "17 September 2019",
    "licensed": true,
    "image": "portraits/the-demogorgon.png",
-   "power_icon": "demogorgon.png"
+   "power_icon": "demogorgon.png",
+   "power_name": "Of the Abyss",
+   "power_desc": "The Demogorgon is an unidentified Killer, able to open multiple Portals and traverse between them to cover large distances. Using its Power, Of the Abyss , it can detect any Survivors within a close proximity to the Portals then unleash a leaping attack to inflict damage from a distance. Its personal Perks, Surge , Mindbreaker , and Cruel Limits , impact the environment close to Generators and affect nearby Survivors in unexpected ways. During the Chapter's temporary departure from Dead by Daylight , these Perks were replaced with a generic variant each: Jolt , Fearmonger , and Claustrophobia . These generic perks have been replaced with The Demogorgon's original Teachable Perks with the Chapter's return to Dead by Daylight . Difficulty Rating: Hard ( These Killers use mechanics that are specific to them and require more practice to be effective )"
   },
   "10180": {
    "id": 10180,
@@ -80230,7 +80264,9 @@
    "patch_date": "3 December 2019",
    "licensed": false,
    "image": "portraits/the-oni.png",
-   "power_icon": "oni.png"
+   "power_icon": "oni.png",
+   "power_name": "Yamaoka's Wrath",
+   "power_desc": "Redefine wrath with The Oni, a truly formidable force. Injured Survivors leave a trail of Blood Orbs, fuelling The Oni’s rage and sending him into a state of fury. Upon unleashing a bloodcurdling roar, The Oni gains the ability to charge with vengeful purpose, instantly cutting down anyone in his way. The Oni is a monstrous Killer, able to absorb the blood energy of his injured foes, and then use that energy to transform into a brutal demon. Using his power, Yamaoka's Wrath , he can rush down Survivors at great speed and deal deadly strikes with his kanabō. His personal Perks, Zanshin Tactics , Blood Echo , and Nemesis , provide navigational information, punish injured Survivors, and gain advantages over those that interfere. Difficulty Rating: Very Hard ( These Killers require a high amount of practice and understanding, inexperienced Players are likely to find little success when using them )"
   },
   "10190": {
    "id": 10190,
@@ -81501,7 +81537,9 @@
    "patch_date": "10 March 2020",
    "licensed": false,
    "image": "portraits/the-deathslinger.png",
-   "power_icon": "deathlinger.png"
+   "power_icon": "deathlinger.png",
+   "power_name": "The Redeemer",
+   "power_desc": "Upon catching prey unaware, the Deathslinger uses his handmade gun – The Redeemer – to skewer fleeing Survivors with a long-distance harpoon. Accurate aim, patient tracking, and sharp predictions are crucial to landing successful shots, but the reward of a Survivor’s scream as they’re reeled in will never sound so sweet. The Deathslinger is a vengeful Killer, able to spear Survivors from a distance and Reel them in using his power, The Redeemer . His personal Perks, Gearhead , Dead Man's Switch , and Hex: Retribution , allow him to locate and impede Survivor objectives, and punish Survivors for destroying Totems. Difficulty Rating: Hard ( These Killers use mechanics that are specific to them and require more practice to be effective )"
   },
   "10200": {
    "id": 10200,
@@ -82772,7 +82810,9 @@
    "patch_date": "16 June 2020",
    "licensed": true,
    "image": "portraits/the-executioner.png",
-   "power_icon": "executioner.png"
+   "power_icon": "executioner.png",
+   "power_name": "Rites of Judgement",
+   "power_desc": "Merciless and unforgiving, The Executioner brings his own form of twisted justice to The Fog, tormenting Survivors with hazards around the map. Hooks are an effective tool, but nothing punishes quite like a Cage of Torment. All hope will swiftly fade the moment Pyramid Head raises his mighty blade to deliver the Final Judgment. The Executioner is a map-manipulation Killer, able to torment Survivors with the hazards he creates. Affected Survivors will be vulnerable to his special hook, the Cage of Atonement , and his unique mori, Final Judgment . His personal Perks, Forced Penance , Trail of Torment , and Deathbound , allow him to aggressively pursue his prey while deceiving and tracking Survivors. Difficulty Rating: Very Hard ( These Killers require a high amount of practice and understanding, inexperienced Players are likely to find little success when using them )"
   },
   "10210": {
    "id": 10210,
@@ -84043,7 +84083,9 @@
    "patch_date": "8 September 2020",
    "licensed": false,
    "image": "portraits/the-blight.png",
-   "power_icon": "blight.png"
+   "power_icon": "blight.png",
+   "power_name": "Blighted Corruption",
+   "power_desc": "Capable of gaining ground on Survivors in mere moments, The Blight’s lethal efficiency must never be underestimated. With the ability to bounce off surfaces and realign his trajectory, his relentless presence forces Survivors into snap decisions. The learning curve may feel steep, but mastering The Blight is a worthwhile pursuit. The Blight is an unpredictable Killer, able to rush forward in a burst of speed and carom off obstacles to injure Survivors using his power, Blighted Corruption . His personal Perks, Dragon's Grip , Hex: Blood Favour , and Hex: Undying , allow him to impose powerful effects on generators, Totems and pallets. Difficulty Rating: Very Hard ( These Killers require a high amount of practice and understanding, inexperienced Players are likely to find little success when using them )"
   },
   "10220": {
    "id": 10220,
@@ -85314,7 +85356,9 @@
    "patch_date": "1 December 2020",
    "licensed": false,
    "image": "portraits/the-twins.png",
-   "power_icon": "twins.png"
+   "power_icon": "twins.png",
+   "power_name": "Blood Bond",
+   "power_desc": "Though forever bound through blood and trauma, The Twins have been granted the power to separate from their shared body. Together they hunt as brother and sister, doubling the threat to Survivors. SPECIAL ABILITY: BLOOD BOND Their shared bond allows The Twins to take control individually. The Twins see the other sibling's aura at all times. SPECIAL INTERACTION: UNBIND VICTOR Press the power button while controlling Charlotte to unbind Victor from her chest, granting him control while she enters a Dormant State. SPECIAL STATE: DORMANT While in the Dormant State, Charlotte experiences the following effects: Suppresses her terror radius and..."
   },
   "10230": {
    "id": 10230,
@@ -86585,7 +86629,9 @@
    "patch_date": "30 March 2021",
    "licensed": false,
    "image": "portraits/the-trickster.png",
-   "power_icon": "trickster.png"
+   "power_icon": "trickster.png",
+   "power_name": "Showstopper",
+   "power_desc": "Armed with an arsenal of throwing knives, The Trickster overwhelms fleeing Survivors with a relentless barrage of blades. Seemingly safe actions like vaulting windows and dropping Pallets turn into target practice for this twisted K-Pop Idol, whose stylish showmanship is rivalled only by his gleeful bloodlust. The Trickster is a ranged Killer, able to quickly unleash a flurry of blades by using his power, Showstopper . His personal Perks, Starstruck , Hex: Crowd Control , and No Way Out , allow him to quickly down would-be rescuers and block areas of the environment to his advantage. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10240": {
    "id": 10240,
@@ -87849,7 +87895,9 @@
    "patch_date": "15 June 2021",
    "licensed": true,
    "image": "portraits/the-nemesis.png",
-   "power_icon": "nemesis.png"
+   "power_icon": "nemesis.png",
+   "power_name": "T-Virus",
+   "power_desc": "An unstoppable force relentless in his pursuit, nothing can stop The Nemesis from achieving his goal. His sweeping Tentacle infects Survivors with the T-Virus, further enhancing his destructive power in the process. Easily smash through pallets and breakable walls while two A.I-controlled Zombies patrol the map, applying additional pressure. The Nemesis is an unrelenting Killer, capable of attacking at mid-range with his tentacle, while receiving support from Zombies roaming the area. His personal Perks, Lethal Pursuer , Hysteria , and Eruption , allow him to quickly ambush Survivors, while sowing confusion and fear when injuring and hooking them. Difficulty Rating: Hard ( These Killers use mechanics that are specific to them and require more practice to be effective )"
   },
   "10250": {
    "id": 10250,
@@ -89099,7 +89147,9 @@
    "patch_date": "7 September 2021",
    "licensed": true,
    "image": "portraits/the-cenobite.png",
-   "power_icon": "cenobite.png"
+   "power_icon": "cenobite.png",
+   "power_name": "Summons of Pain",
+   "power_desc": "The Cenobite, also known as Pinhead, specializes in inflicting map-wide suffering. Survivors must find the Lament Configuration lest a Chain Hunt begin, debilitating their movement with a relentless barrage of otherworldly shackles. The Cenobite can also summon a chain to bind Survivors, allowing him to gain ground and inflict punishment. The Cenobite is a summoning Killer, able to possess Chain Projectiles and solve the Lament Configuration to torture every Survivor at once. His personal Perks, No Holds Barred / Deadlock, Hex: Fortune's Fool / Hex: Plaything, and Scourge Hook: Weeping Wounds / Scourge Hook: Gift Of Pain , allow him to slow Generator Progression and continue to torment Survivors who have experienced his sweet suffering. Difficulty Rating: Very Hard ( These Killers require a high amount of practice and understanding, inexperienced Players are likely to find little success when using them )"
   },
   "10260": {
    "id": 10260,
@@ -90335,7 +90385,9 @@
    "patch_date": "30 November 2021",
    "licensed": false,
    "image": "portraits/the-artist.png",
-   "power_icon": "artist.png"
+   "power_icon": "artist.png",
+   "power_name": "Birds of Torment",
+   "power_desc": "No matter the distance, The Artist and her murder of Dire Crows pose a constant threat to Survivors. Position up to three Crows and unleash them on a lethal trajectory, swarming and injuring anyone caught in their path. Use her Power to shut down key areas, predict and punish Survivor pathing, and gain valuable map-wide information. The Artist is a ranged-reconnaissance Killer, able to launch Dire Crows across the map to reveal and attack Survivors. Her personal Perks, Grim Embrace , Scourge Hook: Pain Resonance , and Hex: Pentimento , allow her to interrupt Survivor objectives, torment hooked Survivors, and use destroyed Totems to her advantage. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10270": {
    "id": 10270,
@@ -91557,7 +91609,8 @@
    "patch_date": "8 March 2022",
    "licensed": true,
    "image": "portraits/the-onryo.png",
-   "power_icon": "onryo.png"
+   "power_icon": "onryo.png",
+   "power_name": "Deluge of Fear"
   },
   "10280": {
    "id": 10280,
@@ -92765,7 +92818,9 @@
    "patch_date": "7 June 2022",
    "licensed": false,
    "image": "portraits/the-dredge.png",
-   "power_icon": "dredge.png"
+   "power_icon": "dredge.png",
+   "power_name": "Reign of Darkness",
+   "power_desc": "A twisted abomination too disturbing to bear, The Dredge’s malevolence is palpable. All light slowly drains in its presence, surrounding Survivors in darkness. Using lockers as map-wide gateways, it can emerge at any moment, seemingly everywhere at once. The Dredge is a manifestation of the dark thoughts of a once-vibrant community, the Dredge is able to teleport between lockers and summon an overwhelming darkness. Its personal Perks, Dissolution , Darkness Revealed , and Septic Touch , allow it to destroy pallets, spot Survivors near lockers, and afflict healing Survivors wit Blindness and Exhausted . Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10290": {
    "id": 10290,
@@ -93959,7 +94014,9 @@
    "patch_date": "30 August 2022",
    "licensed": true,
    "image": "portraits/the-mastermind.png",
-   "power_icon": "mastermind.png"
+   "power_icon": "mastermind.png",
+   "power_name": "Virulent Bound",
+   "power_desc": "A visionary as brilliant as he is ruthless, Albert Wesker’s strategic mind is unrivalled. While some plans require intellect, others call for brute force. Rush forward to seize Survivors in your grasp and give them the gift of Uroboros – a necessary step on the path to evolution. The Mastermind is a brilliant and ruthless mastermind infused with the power of Uroboros. His personal Perks, Superior Anatomy , Awakened Awareness , and Terminus , allow you to vault faster, see other Survivor's auras while carrying one, and cause Survivors to be permanently Broken when the exit gates are powered. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10300": {
    "id": 10300,
@@ -95139,7 +95196,8 @@
    "patch_date": "22 November 2022",
    "licensed": false,
    "image": "portraits/the-knight.png",
-   "power_icon": "knight.png"
+   "power_icon": "knight.png",
+   "power_name": "Guardia Compagnia"
   },
   "10310": {
    "id": 10310,
@@ -96305,7 +96363,9 @@
    "patch_date": "7 March 2023",
    "licensed": false,
    "image": "portraits/the-skull-merchant.png",
-   "power_icon": "skullmerchant.png"
+   "power_icon": "skullmerchant.png",
+   "power_name": "Eyes in the Sky",
+   "power_desc": "A cunning and ruthless hunter, The Skull Merchant strives to be the ultimate apex predator. Using her gruesome Drones to track Survivors, she specializes in creating a deadly web of surveillance. Many have fallen prey to her dark innovations, their bones later repurposed into her next invention. The Skull Merchant is a tactical Killer, able to place Drones that detect and debilitate her targets. Her personal Perks, Game Afoot , THWACK! , and Leverage , allow her to gain Haste from pursuing your Obsession , force screams from Survivors when breaking walls or pallets, and reduce Survivors' heal speed the more times you place them on hooks. Difficulty Rating: Hard ( These Killers use mechanics that are specific to them and require more practice to be effective )"
   },
   "10320": {
    "id": 10320,
@@ -97457,7 +97517,9 @@
    "patch_date": "13 June 2023",
    "licensed": false,
    "image": "portraits/the-singularity.png",
-   "power_icon": "singularity.png"
+   "power_icon": "singularity.png",
+   "power_name": "Quantum Instantiation",
+   "power_desc": "The Singularity can deploy Biopods to monitor and track Survivors, and use Quantum Instantiation to teleport to them. Its power revolves around surveillance and mobility, allowing it to lock onto Survivors and close the distance rapidly."
   },
   "10330": {
    "id": 10330,
@@ -98595,7 +98657,9 @@
    "patch_date": "29 August 2023",
    "licensed": true,
    "image": "portraits/the-xenomorph.png",
-   "power_icon": null
+   "power_icon": null,
+   "power_name": "Hidden Pursuit",
+   "power_desc": "A perfect organism, born of violence, designed to kill, the Xenomorph is a relentless and cunning specimen. It stalks prey through subterranean tunnels, emerging without hesitation, striking with its razor-sharp tail, and eliminating prey one by one. The Xenomorph is a relentless specimen from a distant planet, The Xenomorph is vicious, agile, and cunning. Its personal Perks, Rapid Brutality , Alien Instinct , and Ultimate Weapon , allow it to cause nearby Survivors to scream, gain Haste after basic attacks, and see auras of faraway Survivors. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10340": {
    "id": 10340,
@@ -99719,7 +99783,9 @@
    "patch_date": "28 November 2023",
    "licensed": true,
    "image": "portraits/the-good-guy.png",
-   "power_icon": "thegoodguy.png"
+   "power_icon": "thegoodguy.png",
+   "power_name": "Playtime's Over",
+   "power_desc": "The Good Guy is an elusive Killer, capable of deceiving Survivors with his illusory Footfalls and deadly Slice &amp; Dice. His personal Perks, Hex: Two Can Play , Friends 'til the End , and Batteries Included , allow him to blind those who blind him, relentlessly hunt his Obsession , and get faster around completed Generators. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10350": {
    "id": 10350,
@@ -100829,7 +100895,9 @@
    "patch_date": "12 March 2024",
    "licensed": false,
    "image": "portraits/the-unknown.png",
-   "power_icon": "unknown.png"
+   "power_icon": "unknown.png",
+   "power_name": "UVX",
+   "power_desc": "If you hear a soft voice crying out for help in the woods, stay the hell away. The true nature of The Unknown remains a mystery, barring one fatal certainty: to cross its path is to risk an unknowable fate. The Unknown is a being beyond understanding, though many have tried. Its personal Perks, Unbound , Unforeseen , and Undone , allow it to move quicker, put its Terror Radius on a generator, and deplete generator progress. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10360": {
    "id": 10360,
@@ -101925,7 +101993,9 @@
    "patch_date": "3 June 2024",
    "licensed": true,
    "image": "portraits/the-lich.png",
-   "power_icon": "litch.png"
+   "power_icon": "litch.png",
+   "power_name": "Vile Darkness",
+   "power_desc": "The Whispered One. Lord of the Rotted Tower. The Master of Secrets. Few dare speak his true name, for fear that he may hear—or worse. A master of magic and calculated conqueror, the archlich Vecna is relentless in his pursuit for dominance. Few dare speak The Lich's true name, for fear that he may hear... or worse. His personal Perks, Weave Attunement , Languid Touch , and Dark Arrogance , allow him to exploit used items, exhaust those who disturb the crows, and increase vault speed. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10370": {
    "id": 10370,
@@ -103007,7 +103077,9 @@
    "patch_date": "27 August 2024",
    "licensed": true,
    "image": "portraits/the-dark-lord.png",
-   "power_icon": null
+   "power_icon": null,
+   "power_name": "Vampiric Shift",
+   "power_desc": "So comes the very night incarnate, accursed and ravenous, for darkness is Dracula’s domain. With the ability to transform into the vile denizens of the woods and conjure unnatural flames, all mortals shall succumb to The Dark Lord’s vengeance. The Dark Lord , Dracula , is the embodiment of darkness and tragedy. His personal Perks, Hex: Wretched Fate , Human Greed , and Dominance , allow him to slow the Obsession's repair speed, see the auras of unopened chests, and block chests and totems. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10380": {
    "id": 10380,
@@ -104075,7 +104147,9 @@
    "patch_date": "28 November 2024",
    "licensed": false,
    "image": "portraits/the-houndmaster.png",
-   "power_icon": "houndmaster.png"
+   "power_icon": "houndmaster.png",
+   "power_name": "Scent of Blood",
+   "power_desc": "Cast adrift by a horrific tragedy, Portia Maye arose from the blood with renewed purpose: to inflict unspeakable pain on those who tore her family apart. With her loyal dog forever at her side, her insatiable lust for violence runs deeper than the darkest ocean trench. The Houndmaster is a force to be feared, with an equally fearsome dog at her side. Her personal Perks, All-Shaking Thunder , Scourge Hook: Jagged Compass , and No Quarter , help her increase her lunge attack distance, create scourge hooks, and overwhelm Survivors with healing Skill Checks. Difficulty Rating: Moderate ( These Killers require the Player to be comfortable with the basics of the role, though they share common mechanics with easier ones )"
   },
   "10390": {
    "id": 10390,
