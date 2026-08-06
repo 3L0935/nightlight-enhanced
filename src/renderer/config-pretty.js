@@ -36,13 +36,31 @@ function renderPrettyMode(rawContent) {
   html += renderSection('scalability', scalGroup);
 
   // ── Section: Video ──
-  html += renderSection('video', dbdSection);
+  const engineSection = _currentSections['/Script/Engine.GameUserSettings'] || {};
+  html += renderSection('video', { ...engineSection, ...dbdSection });
 
   // ── Section: Audio ──
   html += renderSection('audio', dbdSection);
 
   // ── Section: Accessibility ──
   html += renderSection('accessibility', dbdSection);
+
+  // ── Section: Gameplay ──
+  html += renderSection('gameplay', dbdSection);
+
+  // ── Section: UI & Cosmetics ──
+  html += renderSection('ui', dbdSection);
+
+  // ── Section: Notifications ──
+  html += renderSection('notifications', dbdSection);
+
+  // ── Section: Optimization ──
+  const optSection = _currentSections['DeadByDaylight.Optimization'] || {};
+  html += renderSection('optimization', optSection);
+
+  // ── Section: Input ──
+  const inputSection = _currentSections['Input'] || {};
+  html += renderSection('input', inputSection);
 
   // ── Section: Auras ──
   html += renderAuraSection();
@@ -183,11 +201,6 @@ function renderField(field, currentVal) {
   const impact = IMPACT_LABELS[field.impact] || IMPACT_LABELS.none;
   const val = currentVal !== undefined && currentVal !== '' ? currentVal : (field.default !== undefined ? field.default : '');
 
-  // Deduplicate: FOV appears in both video and gameplay, only show in gameplay
-  if (field.key === 'FieldOfView' && !field.key.startsWith('sg.') && !field.key.startsWith('aura.')) {
-    // Only render in gameplay section
-  }
-
   let inputHtml = '';
   if (field.type === 'bool') {
     inputHtml = `
@@ -196,7 +209,6 @@ function renderField(field, currentVal) {
         <span class="toggle-track"></span>
       </label>`;
   } else if (field.type === 'select' || (field.min === undefined && field.max === undefined)) {
-    // Select or value display
     if (field.options) {
       inputHtml = `<select class="cfg-select cfg-input" data-key="${field.key}">
         ${Object.entries(field.options).map(([k, v]) => `<option value="${k}" ${String(val) === String(k) ? 'selected' : ''}>${v}</option>`).join('')}
@@ -206,10 +218,11 @@ function renderField(field, currentVal) {
     }
   } else {
     const unit = field.unit || '';
+    const step = field.step || 1;
     inputHtml = `
       <div class="cfg-slider-wrap">
         <input type="range" class="cfg-slider cfg-input" data-key="${field.key}" data-unit="${unit}"
-               min="${field.min}" max="${field.max}" step="${field.step || 1}" value="${val}" />
+               min="${field.min}" max="${field.max}" step="${step}" value="${val}" />
         <span class="cfg-value">${val}${unit}</span>
       </div>`;
   }
@@ -358,11 +371,21 @@ function serializePrettyConfig() {
 
   const sections = JSON.parse(JSON.stringify(_currentSections)); // deep clone
 
-  // Apply modified values
+  // Apply modified values to correct sections
   for (const [key, value] of Object.entries(_modifiedValues)) {
     if (key.startsWith('sg.')) {
       if (!sections['ScalabilityGroups']) sections['ScalabilityGroups'] = {};
       sections['ScalabilityGroups'][key] = value;
+    } else if (key.startsWith('bDisableLobbyMusic') || key.startsWith('bLowMemoryMode') || key.startsWith('bPreloadLobbyAssets')) {
+      if (!sections['DeadByDaylight.Optimization']) sections['DeadByDaylight.Optimization'] = {};
+      sections['DeadByDaylight.Optimization'][key] = value;
+    } else if (key.startsWith('bEnableRawInput') || key.startsWith('bEnableDoubleClick') || key.startsWith('bEnableMenuClickSound')) {
+      if (!sections['Input']) sections['Input'] = {};
+      sections['Input'][key] = value;
+    } else if (key === 'bUseVSync' || key === 'bUseDynamicResolution' || key === 'ResolutionSizeX' || key === 'ResolutionSizeY' || key === 'FullscreenMode' || key === 'PreferredFullscreenMode' || key === 'FrameRateLimit' || key === 'bUseDesiredScreenHeight' || key === 'Language' || key === 'AudioQualityLevel') {
+      // These go to Engine.GameUserSettings
+      if (!sections['/Script/Engine.GameUserSettings']) sections['/Script/Engine.GameUserSettings'] = {};
+      sections['/Script/Engine.GameUserSettings'][key] = value;
     } else {
       if (!sections['/Script/DeadByDaylight.DBDGameUserSettings']) {
         sections['/Script/DeadByDaylight.DBDGameUserSettings'] = {};
