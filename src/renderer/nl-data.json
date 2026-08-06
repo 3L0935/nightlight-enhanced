@@ -1938,6 +1938,21 @@
    "name": "Meg Thomas",
    "portrait": "meg-thomas.png"
   },
+  "90": {
+   "id": 90,
+   "name": "Feng Min",
+   "portrait": "feng-min.png"
+  },
+  "100": {
+   "id": 100,
+   "name": "David King",
+   "portrait": "david-king.png"
+  },
+  "110": {
+   "id": 110,
+   "name": "Kate Denson",
+   "portrait": "kate-denson.png"
+  },
   "30": {
    "id": 30,
    "name": "Claudette Morel",
@@ -1963,25 +1978,20 @@
    "name": "Ace Visconti",
    "portrait": "ace-visconti.png"
   },
-  "90": {
-   "id": 90,
-   "name": "Feng Min",
-   "portrait": "feng-min.png"
-  },
-  "100": {
-   "id": 100,
-   "name": "David King",
-   "portrait": "david-king.png"
-  },
-  "110": {
-   "id": 110,
-   "name": "Kate Denson",
-   "portrait": "kate-denson.png"
+  "80": {
+   "id": 80,
+   "name": "William ",
+   "portrait": "william-bill-overbeck.png"
   },
   "120": {
    "id": 120,
    "name": "Quentin Smith",
    "portrait": "quentin-smith.png"
+  },
+  "130": {
+   "id": 130,
+   "name": "Detective Tapp",
+   "portrait": "detective-tapp.png"
   },
   "140": {
    "id": 140,
@@ -2215,6 +2225,11 @@
    "name": "The Hag",
    "portrait": "the-hag.png"
   },
+  "10060": {
+   "id": 10060,
+   "name": "The Shape",
+   "portrait": "the-shape.png"
+  },
   "10070": {
    "id": 10070,
    "name": "The Doctor",
@@ -2224,6 +2239,16 @@
    "id": 10080,
    "name": "The Huntress",
    "portrait": "the-huntress.png"
+  },
+  "10090": {
+   "id": 10090,
+   "name": "The Cannibal",
+   "portrait": "the-cannibal.png"
+  },
+  "10100": {
+   "id": 10100,
+   "name": "The Nightmare",
+   "portrait": "the-nightmare.png"
   },
   "10110": {
    "id": 10110,
@@ -2250,10 +2275,30 @@
    "name": "The Plague",
    "portrait": "the-plague.png"
   },
+  "10160": {
+   "id": 10160,
+   "name": "The Ghost Face",
+   "portrait": "the-ghost-face.png"
+  },
+  "10170": {
+   "id": 10170,
+   "name": "The Demogorgon",
+   "portrait": "the-demogorgon.png"
+  },
   "10180": {
    "id": 10180,
    "name": "The Oni",
    "portrait": "the-oni.png"
+  },
+  "10190": {
+   "id": 10190,
+   "name": "The Deathslinger",
+   "portrait": "the-deathslinger.png"
+  },
+  "10200": {
+   "id": 10200,
+   "name": "The Executioner",
+   "portrait": "the-executioner.png"
   },
   "10210": {
    "id": 10210,
@@ -2275,25 +2320,50 @@
    "name": "The Nemesis",
    "portrait": "the-nemesis.png"
   },
+  "10250": {
+   "id": 10250,
+   "name": "The Cenobite",
+   "portrait": "the-cenobite.png"
+  },
   "10260": {
    "id": 10260,
    "name": "The Artist",
    "portrait": "the-artist.png"
+  },
+  "10270": {
+   "id": 10270,
+   "name": "The Onryō",
+   "portrait": "the-onryo.png"
   },
   "10280": {
    "id": 10280,
    "name": "The Dredge",
    "portrait": "the-dredge.png"
   },
+  "10290": {
+   "id": 10290,
+   "name": "The Mastermind",
+   "portrait": "the-mastermind.png"
+  },
   "10300": {
    "id": 10300,
    "name": "The Knight",
    "portrait": "the-knight.png"
   },
+  "10310": {
+   "id": 10310,
+   "name": "The Skull Merchant",
+   "portrait": "the-skull-merchant.png"
+  },
   "10320": {
    "id": 10320,
    "name": "The Singularity",
    "portrait": "the-singularity.png"
+  },
+  "10330": {
+   "id": 10330,
+   "name": "The Xenomorph",
+   "portrait": "the-xenomorph.png"
   },
   "10340": {
    "id": 10340,
