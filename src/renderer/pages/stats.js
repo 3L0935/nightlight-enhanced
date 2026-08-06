@@ -196,32 +196,55 @@ function renderStats(data) {
 
   const content = $('#stats-content');
   content.innerHTML = `
-    <div class="stats-grid">
+    <div class="stats-section">
+      <div class="stats-section-title">Most Used Perks</div>
+      <div class="stats-section-sub">Top 10 perks by usage rate across community matches.</div>
+      <div class="stats-cols">
+        <div class="stats-card">
+          <h3>Survivor Perks</h3>
+          ${renderTopPerks(data.top_survivor_perks)}
+        </div>
+        <div class="stats-card">
+          <h3>Killer Perks</h3>
+          ${renderTopPerks(data.top_killer_perks)}
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-section">
+      <div class="stats-section-title">Characters by Perk Usage</div>
+      <div class="stats-section-sub">Most played survivors and killers, with their signature perks.</div>
+      <div class="stats-cols">
+        <div class="stats-card">
+          <h3>Survivors</h3>
+          ${renderTopChars(data.top_survivors)}
+        </div>
+        <div class="stats-card">
+          <h3>Killers</h3>
+          ${renderTopChars(data.top_killers)}
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-section">
+      <div class="stats-section-title">Most Seen Builds</div>
+      <div class="stats-section-sub">Most frequent perk combinations in community matches.</div>
+      <div class="stats-cols">
+        <div class="stats-card">
+          <h3>Survivor Builds</h3>
+          ${renderBuilds(data.top_survivor_builds, 'survivor')}
+        </div>
+        <div class="stats-card">
+          <h3>Killer Builds</h3>
+          ${renderBuilds(data.top_killer_builds, 'killer')}
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-section">
+      <div class="stats-section-title">Builds by Killer</div>
+      <div class="stats-section-sub">Pick a killer to see their most popular builds.</div>
       <div class="stats-card">
-        <h3>Most Used Survivor Perks</h3>
-        ${renderTopPerks(data.top_survivor_perks)}
-      </div>
-      <div class="stats-card">
-        <h3>Most Used Killer Perks</h3>
-        ${renderTopPerks(data.top_killer_perks)}
-      </div>
-      <div class="stats-card">
-        <h3>Survivors by Perk Usage</h3>
-        ${renderTopChars(data.top_survivors)}
-      </div>
-      <div class="stats-card">
-        <h3>Killers by Perk Usage</h3>
-        ${renderTopChars(data.top_killers)}
-      </div>
-      <div class="stats-card stats-card-wide">
-        <h3>Most Seen Survivor Builds</h3>
-        ${renderBuilds(data.top_survivor_builds, 'survivor')}
-      </div>
-      <div class="stats-card stats-card-wide">
-        <h3>Most Seen Killer Builds</h3>
-        ${renderBuilds(data.top_killer_builds, 'killer')}
-      </div>
-      <div class="stats-card stats-card-wide">
         ${killerSelectorHtml()}
         <div id="killer-builds-body"></div>
       </div>
@@ -285,10 +308,12 @@ function positionTip(anchor, tip) {
   const r = anchor.getBoundingClientRect();
   const tw = tip.offsetWidth;
   const th = tip.offsetHeight;
-  let x = r.right + 10;
-  if (x + tw > window.innerWidth - 8) x = r.left - tw - 10;
+  // Prefer right of the anchor; fall back to left if it would overflow.
+  let x = r.right + 12;
+  if (x + tw > window.innerWidth - 8) x = r.left - tw - 12;
   if (x < 8) x = r.left;
-  let y = r.top;
+  // Vertically center against the anchor, clamped to viewport.
+  let y = r.top + r.height / 2 - th / 2;
   if (y + th > window.innerHeight - 8) y = window.innerHeight - th - 8;
   if (y < 8) y = 8;
   tip.style.left = x + 'px';
