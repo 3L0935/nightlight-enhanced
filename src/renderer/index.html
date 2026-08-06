@@ -11,7 +11,7 @@
   <div id="app">
     <aside id="sidebar">
       <div class="sidebar-header">
-        <h1>NL<span class="accent">+</span></h1>
+        <h1>NightLight<span class="accent">+</span></h1>
         <span class="version" id="version-label">v0.1.0</span>
       </div>
       <nav id="nav">
@@ -90,11 +90,9 @@
           <h2>Config Editor</h2>
           <div class="config-actions">
             <label class="mode-switch" title="Toggle Pretty/Raw mode">
+              <input type="checkbox" id="mode-toggle" checked style="display:none" />
               <span class="mode-switch-label" id="mode-label">Pretty</span>
-              <span class="switch-track">
-                <input type="checkbox" id="mode-toggle" checked />
-                <span class="switch-knob"></span>
-              </span>
+              <span class="mode-switch-label">Raw</span>
             </label>
             <button id="config-refresh" class="btn"></button>
             <button id="config-save" class="btn btn-primary"></button>

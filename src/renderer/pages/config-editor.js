@@ -95,19 +95,16 @@ function toggleEditorMode() {
   const editor = $('#config-editor');
   const pretty = $('#pretty-config');
   const toggle = $('#mode-toggle');
-  const label = $('#mode-label');
 
   toggle.checked = prettyMode;
 
   if (prettyMode) {
     editor.style.display = 'none';
     pretty.style.display = 'block';
-    label.textContent = 'Pretty';
     renderPrettyMode(editor.value);
   } else {
     editor.style.display = 'block';
     pretty.style.display = 'none';
-    label.textContent = 'Raw';
     if (typeof serializePrettyConfig === 'function') {
       editor.value = serializePrettyConfig();
     }
