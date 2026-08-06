@@ -127,7 +127,7 @@ function renderCharDetail(charId) {
   const perks = (c.perks || []).map(pid => {
     const pimg = perkImage(pid, 85);
     const n = perkName(pid);
-    return perkTooltip(pid, `<div class="char-detail-perk">
+    return perkTooltip(pid, `<div class="char-detail-perk" data-perk-click="${pid}">
       ${pimg
         ? `<img class="stat-detail-perk" src="${pimg}" alt="${n}" loading="lazy" />`
         : `<img class="stat-detail-perk stat-build-perk-blank" src="img/blank.webp" alt="No perk" loading="lazy" />`}
@@ -140,28 +140,45 @@ function renderCharDetail(charId) {
   const rateVal = isK ? (c.kill_rate !== undefined ? `${c.kill_rate}%` : '—') : (c.escape_rate !== undefined ? `${c.escape_rate}%` : '—');
   const bio = c.bio || 'No bio available.';
   const backStory = c.back_story || '';
+  // Power icon for killers (local asset)
+  const powerHtml = isK && c.power_icon
+    ? `<div class="char-detail-power">
+        <h4>Power</h4>
+        <div class="char-detail-power-box">
+          <img class="char-detail-power-img" src="img/powers/${c.power_icon}" alt="${c.name} power" loading="lazy" />
+          <span class="char-detail-power-name">${c.name.replace('The ', '')}'s Power</span>
+        </div>
+      </div>`
+    : '';
   return `
     <div class="char-detail">
       <button class="btn btn-sm char-detail-back">${icon('arrowUp')} Back</button>
-      <div class="char-detail-head">
-        ${img ? `<img class="char-detail-portrait" src="${img}" alt="${c.name}" />` : ''}
-        <div class="char-detail-title">
-          <div class="char-detail-name">${c.name}</div>
-          <div class="char-detail-role">${isK ? 'Killer' : 'Survivor'}</div>
-          <div class="char-detail-stats">
-            <span class="cd-stat"><b>${pickRate}</b> Pick Rate</span>
-            <span class="cd-stat"><b>${rateVal}</b> ${rateLabel}</span>
+      <div class="char-detail-layout">
+        <div class="char-detail-left">
+          <div class="char-detail-head">
+            ${img ? `<img class="char-detail-portrait" src="${img}" alt="${c.name}" />` : ''}
+            <div class="char-detail-title">
+              <div class="char-detail-name">${c.name}</div>
+              <div class="char-detail-role">${isK ? 'Killer' : 'Survivor'}</div>
+              <div class="char-detail-stats">
+                <span class="cd-stat"><b>${pickRate}</b> Pick Rate</span>
+                <span class="cd-stat"><b>${rateVal}</b> ${rateLabel}</span>
+              </div>
+            </div>
+          </div>
+          <div class="char-detail-bio">
+            <h4>Bio</h4>
+            <p>${bio}</p>
+            ${backStory ? `<details class="char-detail-lore"><summary>Full Lore</summary><p>${backStory}</p></details>` : ''}
           </div>
         </div>
-      </div>
-      <div class="char-detail-perks">
-        <h4>Perks</h4>
-        <div class="char-detail-perks-row">${perks}</div>
-      </div>
-      <div class="char-detail-bio">
-        <h4>Bio</h4>
-        <p>${bio}</p>
-        ${backStory ? `<details class="char-detail-lore"><summary>Full Lore</summary><p>${backStory}</p></details>` : ''}
+        <div class="char-detail-right">
+          ${powerHtml}
+          <div class="char-detail-perks">
+            <h4>Perks</h4>
+            <div class="char-detail-perks-row">${perks}</div>
+          </div>
+        </div>
       </div>
       <div class="char-detail-graph">
         <h4>Pick Rate Over Time</h4>
@@ -170,7 +187,7 @@ function renderCharDetail(charId) {
     </div>`;
 }
 
-// ── Pick rate line graph (SVG) ──
+// ── Pick rate line graph (SVG) with hover tooltip ──
 function renderPickGraph(history) {
   if (!history || history.length < 2) return '<div class="empty-state">Not enough history data.</div>';
   const W = 600, H = 180, PAD = 30;
@@ -185,22 +202,29 @@ function renderPickGraph(history) {
   const line = pts.map((p, i) => `${i === 0 ? 'M' : 'L'} ${px(i).toFixed(1)} ${py(p.y).toFixed(1)}`).join(' ');
   const area = `${line} L ${px(n-1).toFixed(1)} ${H-PAD} L ${px(0).toFixed(1)} ${H-PAD} Z`;
   const labels = pts.filter((_, i) => i % Math.ceil(n / 6) === 0);
+  // Hover points with data for tooltip
+  const dots = pts.map((p, i) =>
+    `<circle class="pick-dot" data-idx="${i}" data-val="${p.y}" data-date="${p.x}"
+      cx="${px(i).toFixed(1)}" cy="${py(p.y).toFixed(1)}" r="3.5" fill="var(--accent)"/>`).join('');
   return `
-    <svg class="pick-graph" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
-      <defs>
-        <linearGradient id="pickgrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.35"/>
-          <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <path d="${area}" fill="url(#pickgrad)"/>
-      <path d="${line}" fill="none" stroke="var(--accent)" stroke-width="2"/>
-      ${labels.map(p => {
-        const i = pts.indexOf(p);
-        return `<text x="${px(i)}" y="${H-8}" class="pick-graph-label">${p.x.slice(0,7)}</text>`;
-      }).join('')}
-      ${pts.map((p, i) => `<circle cx="${px(i)}" cy="${py(p.y)}" r="2.5" fill="var(--accent)"/>`).join('')}
-    </svg>`;
+    <div class="pick-graph-wrap">
+      <svg class="pick-graph" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="pickgrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="${area}" fill="url(#pickgrad)"/>
+        <path d="${line}" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        ${labels.map(p => {
+          const i = pts.indexOf(p);
+          return `<text x="${px(i)}" y="${H-8}" class="pick-graph-label">${p.x.slice(0,7)}</text>`;
+        }).join('')}
+        ${dots}
+      </svg>
+      <div class="pick-tooltip hidden"></div>
+    </div>`;
 }
 
 // ── Builds (global survivor/killer) ──
@@ -359,12 +383,93 @@ function renderTab(tab, data) {
         const cid = el.dataset.char;
         content.innerHTML = renderCharDetail(cid);
         bindTooltips(content);
-        const back = content.querySelector('.char-detail-back');
-        if (back) back.addEventListener('click', () => renderTab('characters', data));
+        bindCharDetail(content, data);
       });
     });
   }
   bindTooltips(content);
+}
+
+// ── Bind interactions in the character detail view ──
+function bindCharDetail(content, data) {
+  // Back button
+  const back = content.querySelector('.char-detail-back');
+  if (back) back.addEventListener('click', () => renderTab('characters', data));
+  // Perk click → perk detail page
+  content.querySelectorAll('[data-perk-click]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const pid = el.dataset.perkClick;
+      content.innerHTML = renderPerkDetail(pid);
+      bindTooltips(content);
+      bindPerkDetail(content, data);
+    });
+  });
+  // Graph hover tooltip
+  const wrap = content.querySelector('.pick-graph-wrap');
+  if (wrap) bindPickHover(wrap);
+}
+
+// ── Perk detail page (with its own pick-rate graph) ──
+function renderPerkDetail(perkId) {
+  const p = _nlData?.perks?.[perkId];
+  if (!p) return '<div class="empty-state">Perk not found.</div>';
+  const img = perkImage(perkId, 85);
+  const history = _statsCache?.top_survivor_perks?.find(x => x.perk_id == perkId)?.history
+    || _statsCache?.top_killer_perks?.find(x => x.perk_id == perkId)?.history
+    || [];
+  const pct = _statsCache?.top_survivor_perks?.find(x => x.perk_id == perkId)?.pct
+    || _statsCache?.top_killer_perks?.find(x => x.perk_id == perkId)?.pct;
+  return `
+    <div class="perk-detail">
+      <button class="btn btn-sm perk-detail-back">${icon('arrowUp')} Back</button>
+      <div class="perk-detail-head">
+        ${img ? `<img class="perk-detail-img" src="${img}" alt="${p.name}" />` : ''}
+        <div class="perk-detail-title">
+          <div class="perk-detail-name">${p.name}</div>
+          <div class="perk-detail-role">${pct !== undefined ? `${pct}% usage` : ''}</div>
+        </div>
+      </div>
+      <div class="perk-detail-desc">
+        <h4>Description</h4>
+        <div class="perk-detail-desc-html">${p.desc_html || 'No description available.'}</div>
+      </div>
+      <div class="perk-detail-graph">
+        <h4>Pick Rate Over Time</h4>
+        ${renderPickGraph(history)}
+      </div>
+    </div>`;
+}
+
+// ── Bind perk detail interactions ──
+function bindPerkDetail(content, data) {
+  const back = content.querySelector('.perk-detail-back');
+  if (back) back.addEventListener('click', () => renderTab('characters', data));
+  const wrap = content.querySelector('.pick-graph-wrap');
+  if (wrap) bindPickHover(wrap);
+}
+
+// ── Graph hover tooltip: show value at the nearest point ──
+function bindPickHover(wrap) {
+  const tip = wrap.querySelector('.pick-tooltip');
+  const svg = wrap.querySelector('.pick-graph');
+  const dots = wrap.querySelectorAll('.pick-dot');
+  dots.forEach(dot => {
+    dot.addEventListener('mouseenter', () => {
+      const val = dot.dataset.val;
+      const date = dot.dataset.date;
+      tip.textContent = `${date}: ${val}%`;
+      tip.classList.remove('hidden');
+      // position near the dot (convert SVG coords to page coords)
+      const rect = svg.getBoundingClientRect();
+      const vb = svg.viewBox.baseVal;
+      const x = rect.left + (parseFloat(dot.getAttribute('cx')) / vb.width) * rect.width;
+      const y = rect.top + (parseFloat(dot.getAttribute('cy')) / vb.height) * rect.height;
+      tip.style.left = (x - tip.offsetWidth / 2) + 'px';
+      tip.style.top = (y - tip.offsetHeight - 8) + 'px';
+    });
+    dot.addEventListener('mouseleave', () => tip.classList.add('hidden'));
+  });
 }
 
 async function loadStats(force = false) {

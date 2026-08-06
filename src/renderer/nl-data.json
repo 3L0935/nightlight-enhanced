@@ -58552,7 +58552,8 @@
    "patch_added": "1.0.0",
    "patch_date": "14 June 2016",
    "licensed": false,
-   "image": "portraits/the-trapper.png"
+   "image": "portraits/the-trapper.png",
+   "power_icon": "trapper.png"
   },
   "10020": {
    "id": 10020,
@@ -59829,7 +59830,8 @@
    "patch_added": "1.0.0",
    "patch_date": "14 June 2016",
    "licensed": false,
-   "image": "portraits/the-wraith.png"
+   "image": "portraits/the-wraith.png",
+   "power_icon": "wraith.png"
   },
   "10030": {
    "id": 10030,
@@ -61106,7 +61108,8 @@
    "patch_added": "1.0.0",
    "patch_date": "14 June 2016",
    "licensed": false,
-   "image": "portraits/the-hillbilly.png"
+   "image": "portraits/the-hillbilly.png",
+   "power_icon": "hillbilly.png"
   },
   "10040": {
    "id": 10040,
@@ -62383,7 +62386,8 @@
    "patch_added": "1.1.0",
    "patch_date": "18 August 2016",
    "licensed": false,
-   "image": "portraits/the-nurse.png"
+   "image": "portraits/the-nurse.png",
+   "power_icon": "nurse.png"
   },
   "10050": {
    "id": 10050,
@@ -63660,7 +63664,8 @@
    "patch_added": "1.3.1",
    "patch_date": "8 December 2016",
    "licensed": false,
-   "image": "portraits/the-hag.png"
+   "image": "portraits/the-hag.png",
+   "power_icon": "hag.png"
   },
   "10060": {
    "id": 10060,
@@ -64937,7 +64942,8 @@
    "patch_added": "1.2.1",
    "patch_date": "25 October 2016",
    "licensed": true,
-   "image": "portraits/the-shape.png"
+   "image": "portraits/the-shape.png",
+   "power_icon": "shape.png"
   },
   "10070": {
    "id": 10070,
@@ -66214,7 +66220,8 @@
    "patch_added": "1.5.1",
    "patch_date": "11 May 2017",
    "licensed": false,
-   "image": "portraits/the-doctor.png"
+   "image": "portraits/the-doctor.png",
+   "power_icon": "doctor.png"
   },
   "10080": {
    "id": 10080,
@@ -67491,7 +67498,8 @@
    "patch_added": "1.6.0",
    "patch_date": "27 July 2017",
    "licensed": false,
-   "image": "portraits/the-huntress.png"
+   "image": "portraits/the-huntress.png",
+   "power_icon": "huntress.png"
   },
   "10090": {
    "id": 10090,
@@ -68768,7 +68776,8 @@
    "patch_added": "1.7.0",
    "patch_date": "14 September 2017",
    "licensed": true,
-   "image": "portraits/the-cannibal.png"
+   "image": "portraits/the-cannibal.png",
+   "power_icon": "cannibal.png"
   },
   "10100": {
    "id": 10100,
@@ -70045,7 +70054,8 @@
    "patch_added": "1.8.0",
    "patch_date": "26 October 2017",
    "licensed": true,
-   "image": "portraits/the-nightmare.png"
+   "image": "portraits/the-nightmare.png",
+   "power_icon": "nightmare.png"
   },
   "10110": {
    "id": 10110,
@@ -71322,7 +71332,8 @@
    "patch_added": "1.9.0",
    "patch_date": "23 January 2018",
    "licensed": true,
-   "image": "portraits/the-pig.png"
+   "image": "portraits/the-pig.png",
+   "power_icon": "pig.png"
   },
   "10120": {
    "id": 10120,
@@ -72592,7 +72603,8 @@
    "patch_added": "2.0.0",
    "patch_date": "12 June 2018",
    "licensed": false,
-   "image": "portraits/the-clown.png"
+   "image": "portraits/the-clown.png",
+   "power_icon": "clown.png"
   },
   "10130": {
    "id": 10130,
@@ -73862,7 +73874,8 @@
    "patch_added": "2.2.0",
    "patch_date": "18 September 2018",
    "licensed": false,
-   "image": "portraits/the-spirit.png"
+   "image": "portraits/the-spirit.png",
+   "power_icon": "spirit.png"
   },
   "10140": {
    "id": 10140,
@@ -75132,7 +75145,8 @@
    "patch_added": "2.4.0",
    "patch_date": "11 December 2018",
    "licensed": false,
-   "image": "portraits/the-legion.png"
+   "image": "portraits/the-legion.png",
+   "power_icon": "legion.png"
   },
   "10150": {
    "id": 10150,
@@ -76402,7 +76416,8 @@
    "patch_added": "2.6.0",
    "patch_date": "19 March 2019",
    "licensed": false,
-   "image": "portraits/the-plague.png"
+   "image": "portraits/the-plague.png",
+   "power_icon": "plague.png"
   },
   "10160": {
    "id": 10160,
@@ -77672,7 +77687,8 @@
    "patch_added": "3.0.0",
    "patch_date": "18 June 2019",
    "licensed": true,
-   "image": "portraits/the-ghost-face.png"
+   "image": "portraits/the-ghost-face.png",
+   "power_icon": "ghostface.png"
   },
   "10170": {
    "id": 10170,
@@ -78942,7 +78958,8 @@
    "patch_added": "3.2.0",
    "patch_date": "17 September 2019",
    "licensed": true,
-   "image": "portraits/the-demogorgon.png"
+   "image": "portraits/the-demogorgon.png",
+   "power_icon": "demogorgon.png"
   },
   "10180": {
    "id": 10180,
@@ -80212,7 +80229,8 @@
    "patch_added": "3.4.0",
    "patch_date": "3 December 2019",
    "licensed": false,
-   "image": "portraits/the-oni.png"
+   "image": "portraits/the-oni.png",
+   "power_icon": "oni.png"
   },
   "10190": {
    "id": 10190,
@@ -81482,7 +81500,8 @@
    "patch_added": "3.6.0",
    "patch_date": "10 March 2020",
    "licensed": false,
-   "image": "portraits/the-deathslinger.png"
+   "image": "portraits/the-deathslinger.png",
+   "power_icon": "deathlinger.png"
   },
   "10200": {
    "id": 10200,
@@ -82752,7 +82771,8 @@
    "patch_added": "4.0.0",
    "patch_date": "16 June 2020",
    "licensed": true,
-   "image": "portraits/the-executioner.png"
+   "image": "portraits/the-executioner.png",
+   "power_icon": "executioner.png"
   },
   "10210": {
    "id": 10210,
@@ -84022,7 +84042,8 @@
    "patch_added": "4.2.0",
    "patch_date": "8 September 2020",
    "licensed": false,
-   "image": "portraits/the-blight.png"
+   "image": "portraits/the-blight.png",
+   "power_icon": "blight.png"
   },
   "10220": {
    "id": 10220,
@@ -85292,7 +85313,8 @@
    "patch_added": "4.4.0",
    "patch_date": "1 December 2020",
    "licensed": false,
-   "image": "portraits/the-twins.png"
+   "image": "portraits/the-twins.png",
+   "power_icon": "twins.png"
   },
   "10230": {
    "id": 10230,
@@ -86562,7 +86584,8 @@
    "patch_added": "4.6.0",
    "patch_date": "30 March 2021",
    "licensed": false,
-   "image": "portraits/the-trickster.png"
+   "image": "portraits/the-trickster.png",
+   "power_icon": "trickster.png"
   },
   "10240": {
    "id": 10240,
@@ -87825,7 +87848,8 @@
    "patch_added": "5.0.0",
    "patch_date": "15 June 2021",
    "licensed": true,
-   "image": "portraits/the-nemesis.png"
+   "image": "portraits/the-nemesis.png",
+   "power_icon": "nemesis.png"
   },
   "10250": {
    "id": 10250,
@@ -89074,7 +89098,8 @@
    "patch_added": "5.2.0",
    "patch_date": "7 September 2021",
    "licensed": true,
-   "image": "portraits/the-cenobite.png"
+   "image": "portraits/the-cenobite.png",
+   "power_icon": "cenobite.png"
   },
   "10260": {
    "id": 10260,
@@ -90309,7 +90334,8 @@
    "patch_added": "5.4.0",
    "patch_date": "30 November 2021",
    "licensed": false,
-   "image": "portraits/the-artist.png"
+   "image": "portraits/the-artist.png",
+   "power_icon": "artist.png"
   },
   "10270": {
    "id": 10270,
@@ -91530,7 +91556,8 @@
    "patch_added": "5.6.0",
    "patch_date": "8 March 2022",
    "licensed": true,
-   "image": "portraits/the-onryo.png"
+   "image": "portraits/the-onryo.png",
+   "power_icon": "onryo.png"
   },
   "10280": {
    "id": 10280,
@@ -92737,7 +92764,8 @@
    "patch_added": "6.0.0",
    "patch_date": "7 June 2022",
    "licensed": false,
-   "image": "portraits/the-dredge.png"
+   "image": "portraits/the-dredge.png",
+   "power_icon": "dredge.png"
   },
   "10290": {
    "id": 10290,
@@ -93930,7 +93958,8 @@
    "patch_added": "6.2.0",
    "patch_date": "30 August 2022",
    "licensed": true,
-   "image": "portraits/the-mastermind.png"
+   "image": "portraits/the-mastermind.png",
+   "power_icon": "mastermind.png"
   },
   "10300": {
    "id": 10300,
@@ -95109,7 +95138,8 @@
    "patch_added": "6.4.0",
    "patch_date": "22 November 2022",
    "licensed": false,
-   "image": "portraits/the-knight.png"
+   "image": "portraits/the-knight.png",
+   "power_icon": "knight.png"
   },
   "10310": {
    "id": 10310,
@@ -96274,7 +96304,8 @@
    "patch_added": "6.6.0",
    "patch_date": "7 March 2023",
    "licensed": false,
-   "image": "portraits/the-skull-merchant.png"
+   "image": "portraits/the-skull-merchant.png",
+   "power_icon": "skullmerchant.png"
   },
   "10320": {
    "id": 10320,
@@ -97425,7 +97456,8 @@
    "patch_added": "7.0.0",
    "patch_date": "13 June 2023",
    "licensed": false,
-   "image": "portraits/the-singularity.png"
+   "image": "portraits/the-singularity.png",
+   "power_icon": "singularity.png"
   },
   "10330": {
    "id": 10330,
@@ -98562,7 +98594,8 @@
    "patch_added": "7.2.0",
    "patch_date": "29 August 2023",
    "licensed": true,
-   "image": "portraits/the-xenomorph.png"
+   "image": "portraits/the-xenomorph.png",
+   "power_icon": null
   },
   "10340": {
    "id": 10340,
@@ -99685,7 +99718,8 @@
    "patch_added": "7.4.0",
    "patch_date": "28 November 2023",
    "licensed": true,
-   "image": "portraits/the-good-guy.png"
+   "image": "portraits/the-good-guy.png",
+   "power_icon": "thegoodguy.png"
   },
   "10350": {
    "id": 10350,
@@ -100794,7 +100828,8 @@
    "patch_added": "7.6.0",
    "patch_date": "12 March 2024",
    "licensed": false,
-   "image": "portraits/the-unknown.png"
+   "image": "portraits/the-unknown.png",
+   "power_icon": "unknown.png"
   },
   "10360": {
    "id": 10360,
@@ -101889,7 +101924,8 @@
    "patch_added": "8.0.0",
    "patch_date": "3 June 2024",
    "licensed": true,
-   "image": "portraits/the-lich.png"
+   "image": "portraits/the-lich.png",
+   "power_icon": "litch.png"
   },
   "10370": {
    "id": 10370,
@@ -102970,7 +103006,8 @@
    "patch_added": "8.2.0",
    "patch_date": "27 August 2024",
    "licensed": true,
-   "image": "portraits/the-dark-lord.png"
+   "image": "portraits/the-dark-lord.png",
+   "power_icon": null
   },
   "10380": {
    "id": 10380,
@@ -104037,7 +104074,8 @@
    "patch_added": "8.4.0",
    "patch_date": "28 November 2024",
    "licensed": false,
-   "image": "portraits/the-houndmaster.png"
+   "image": "portraits/the-houndmaster.png",
+   "power_icon": "houndmaster.png"
   },
   "10390": {
    "id": 10390,
@@ -105090,7 +105128,8 @@
    "patch_added": "8.6.0",
    "patch_date": "2 April 2025",
    "licensed": true,
-   "image": "portraits/the-ghoul.png"
+   "image": "portraits/the-ghoul.png",
+   "power_icon": "ghoul.png"
   },
   "10400": {
    "id": 10400,
@@ -106129,7 +106168,8 @@
    "patch_added": "9.0.0",
    "patch_date": "17 June 2025",
    "licensed": true,
-   "image": "portraits/the-animatronic.png"
+   "image": "portraits/the-animatronic.png",
+   "power_icon": "animatronic.png"
   },
   "10410": {
    "id": 10410,
@@ -107154,7 +107194,8 @@
    "patch_added": "9.2.0",
    "patch_date": "23 September 2025",
    "licensed": false,
-   "image": "portraits/the-krasue.png"
+   "image": "portraits/the-krasue.png",
+   "power_icon": "krasue.png"
   },
   "10420": {
    "id": 10420,
@@ -108172,7 +108213,8 @@
    "patch_added": "9.4.0",
    "patch_date": "27 January 2026",
    "licensed": true,
-   "image": "portraits/the-first.png"
+   "image": "portraits/the-first.png",
+   "power_icon": "first.png"
   },
   "10430": {
    "id": 10430,
@@ -109449,7 +109491,8 @@
    "patch_added": "10.0.0",
    "patch_date": "16 June 2026",
    "licensed": true,
-   "image": "portraits/the-slasher.png"
+   "image": "portraits/the-slasher.png",
+   "power_icon": "slasher.png"
   },
   "10440": {
    "id": 10440,
@@ -110623,7 +110666,8 @@
    "patch_added": "10.1.0 PTB",
    "patch_date": "4 August 2026",
    "licensed": false,
-   "image": "portraits/the-judgement.png"
+   "image": "portraits/the-judgement.png",
+   "power_icon": "judgement.png"
   }
  }
 }
