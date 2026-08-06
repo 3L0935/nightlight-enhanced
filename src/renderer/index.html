@@ -109,15 +109,40 @@
         <div class="page-header">
           <h2>Match Upload</h2>
         </div>
+        <div id="upload-status-banner" class="upload-status-banner hidden"></div>
         <div class="upload-area" id="upload-area">
           <div class="upload-placeholder">
             <span class="upload-icon" id="upload-icon-placeholder"></span>
-            <p>Drop a screenshot here or click to select</p>
-            <p class="upload-hint">Scoreboard screenshots (JPG/PNG)</p>
+            <p>Drop a scoreboard screenshot here or click to select</p>
+            <p class="upload-hint">End-of-match scoreboard only — JPG/PNG, max 5MB</p>
           </div>
           <input type="file" id="upload-input" accept="image/png,image/jpeg" hidden />
         </div>
+        <div id="upload-preview" class="upload-preview hidden">
+          <img id="upload-preview-img" src="" alt="Screenshot preview" />
+          <div class="upload-preview-actions">
+            <button id="upload-confirm-btn" class="btn btn-primary"></button>
+            <button id="upload-cancel-btn" class="btn"></button>
+          </div>
+        </div>
+        <div id="upload-progress" class="install-progress hidden">
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="upload-progress-fill" style="width:0%"></div>
+          </div>
+          <div class="progress-label" id="upload-progress-label">Uploading...</div>
+        </div>
         <div id="upload-result" class="upload-result hidden"></div>
+        <div class="upload-requirements">
+          <h3>Screenshot Requirements</h3>
+          <ul>
+            <li>Scoreboard screen only (end-of-match)</li>
+            <li>1920x1080 or higher recommended</li>
+            <li>16:9 aspect ratio</li>
+            <li>100% UI scale</li>
+            <li>Default icons (custom icons reduce accuracy)</li>
+            <li>Max 5MB file size</li>
+          </ul>
+        </div>
       </div>
 
       <div id="page-settings" class="page">

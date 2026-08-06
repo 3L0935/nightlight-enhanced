@@ -1184,30 +1184,42 @@ html, body {
 
 /* ── Upload ── */
 .upload-area {
-  border: 2px dashed var(--border);
-  border-radius: 12px;
-  padding: 60px 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
   text-align: center;
   cursor: pointer;
   transition: all 0.15s;
+  background: var(--bg-secondary);
 }
 
 .upload-area:hover,
 .upload-area.drag-over {
   border-color: var(--accent);
-  background: rgba(124, 58, 237, 0.05);
+  background: var(--bg-elevated);
 }
 
 .upload-icon {
-  font-size: 48px;
   display: block;
   margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.upload-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.upload-placeholder p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .upload-hint {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-muted);
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .upload-result {
@@ -1215,7 +1227,7 @@ html, body {
   padding: 16px;
   background: var(--bg-secondary);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
 }
 
 .upload-result.hidden { display: none; }
@@ -1226,6 +1238,120 @@ html, body {
 }
 
 .upload-result a:hover { text-decoration: underline; }
+
+/* ── Upload Preview ── */
+.upload-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.upload-preview.hidden { display: none; }
+
+.upload-preview img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  object-fit: contain;
+  background: var(--bg-tertiary);
+}
+
+.upload-preview-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ── Upload Review Box ── */
+.upload-review-box {
+  margin-top: 16px;
+  padding: 20px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.upload-review-box h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.upload-review-box h4 svg {
+  width: 18px;
+  height: 18px;
+}
+
+.upload-review-box p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.upload-review-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.upload-review-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.upload-result-detail {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ── Upload Requirements ── */
+.upload-requirements {
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.upload-requirements h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-secondary);
+}
+
+.upload-requirements ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.upload-requirements li {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding-left: 16px;
+  position: relative;
+}
+
+.upload-requirements li::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  color: var(--accent);
+}
 
 /* ── Settings ── */
 .settings-form {
