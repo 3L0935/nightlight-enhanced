@@ -197,7 +197,6 @@ function renderSection(sectionKey, data) {
       field.default !== undefined ? field.default : '';
 
     if (sectionKey === 'auras') continue; // handled separately
-    if (field.key === 'FieldOfView' && sectionKey !== 'gameplay') continue; // only in gameplay
 
     html += renderField(field, currentVal);
   }
