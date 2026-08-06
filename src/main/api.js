@@ -52,17 +52,33 @@ async function uploadScreenshot(filePath, apiToken) {
   const boundary = '----NightLightEnhanced' + Date.now();
   const fileContent = fs.readFileSync(filePath);
   const fileName = path.basename(filePath);
-  const header = `--${boundary}\r\nContent-Disposition: form-data; name="file"; filename="${fileName}"\r\nContent-Type: image/${path.extname(filePath).slice(1)}\r\n\r\n`;
+  const ext = path.extname(filePath).slice(1).toLowerCase();
+  const mimeType = ext === 'png' ? 'image/png' : 'image/jpeg';
+  const header = `--${boundary}\r\nContent-Disposition: form-data; name="file"; filename="${fileName}"\r\nContent-Type: ${mimeType}\r\n\r\n`;
   const footer = `\r\n--${boundary}--\r\n`;
   const body = Buffer.concat([Buffer.from(header, 'utf-8'), fileContent, Buffer.from(footer, 'utf-8')]);
-  return request(`${API_BASE}/upload`, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${apiToken}`,
-      'Content-Type': `multipart/form-data; boundary=${boundary}`,
-      'Content-Length': body.length
-    }, body
-  });
+
+  try {
+    const result = await request(`${API_BASE}/upload`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiToken}`,
+        'Content-Type': `multipart/form-data; boundary=${boundary}`,
+        'Content-Length': body.length
+      }, body
+    });
+    return result;
+  } catch (err) {
+    // Parse NightLight error response if available
+    if (err.message.includes('HTTP 400')) {
+      throw new Error('Upload rejected: file may not be a valid scoreboard screenshot. Make sure it\'s the end-of-match scoreboard screen.');
+    } else if (err.message.includes('HTTP 403')) {
+      throw new Error('Invalid API token. Generate a new one at nightlight.gg/account/api.');
+    } else if (err.message.includes('HTTP 413')) {
+      throw new Error('File too large. NightLight limit is 5MB.');
+    }
+    throw err;
+  }
 }
 
 function fetchBannerBase64(packId, version) {
