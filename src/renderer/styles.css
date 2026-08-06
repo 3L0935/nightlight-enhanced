@@ -2322,6 +2322,9 @@ html, body {
   line-height: 1.5;
   color: var(--text-secondary);
 }
+.char-detail-power-full.hidden {
+  display: none;
+}
 .char-detail-power-full b {
   color: var(--text-primary);
 }
