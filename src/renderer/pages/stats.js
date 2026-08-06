@@ -127,9 +127,12 @@ function renderCharDetail(charId) {
   const perks = (c.perks || []).map(pid => {
     const pimg = perkImage(pid, 85);
     const n = perkName(pid);
-    return perkTooltip(pid, pimg
-      ? `<img class="stat-detail-perk" src="${pimg}" alt="${n}" loading="lazy" />`
-      : `<img class="stat-detail-perk stat-build-perk-blank" src="img/blank.webp" alt="No perk" loading="lazy" />`);
+    return perkTooltip(pid, `<div class="char-detail-perk">
+      ${pimg
+        ? `<img class="stat-detail-perk" src="${pimg}" alt="${n}" loading="lazy" />`
+        : `<img class="stat-detail-perk stat-build-perk-blank" src="img/blank.webp" alt="No perk" loading="lazy" />`}
+      <span class="char-detail-perk-name">${n}</span>
+    </div>`);
   }).join('');
   const history = c.history || [];
   const pickRate = c.pick_rate !== undefined ? `${c.pick_rate}%` : (c.total !== undefined ? `${c.total}%` : '—');
@@ -171,7 +174,8 @@ function renderCharDetail(charId) {
 function renderPickGraph(history) {
   if (!history || history.length < 2) return '<div class="empty-state">Not enough history data.</div>';
   const W = 600, H = 180, PAD = 30;
-  const pts = history.map(h => ({ x: h.end, y: h.pick_rate }));
+  // history is newest-first; reverse so the graph reads oldest → newest left→right
+  const pts = history.slice().reverse().map(h => ({ x: h.end, y: h.pick_rate }));
   const maxY = Math.max(...pts.map(p => p.y), 1);
   const minY = Math.min(...pts.map(p => p.y), 0);
   const range = (maxY - minY) || 1;
