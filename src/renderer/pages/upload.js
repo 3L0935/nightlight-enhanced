@@ -98,6 +98,7 @@ async function confirmUpload() {
     const url = response.data?.url;
 
     if (url) {
+      progress.classList.add('hidden');
       result.innerHTML = `
         <div class="upload-result-success">
           ${icon('check')}
