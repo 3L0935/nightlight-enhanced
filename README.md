@@ -35,6 +35,18 @@ Built with Electron. Linux first. Works on Windows too.
 - Drag & drop or file picker
 - Auto-delete after upload option
 
+### Community Stats
+- **Tabs** — Perks / Builds / Characters, browser-style navigation
+- **Perks** — top 10 survivor & killer perks by usage, click a perk for its detail page with pick-rate graph
+- **Builds** — most-seen survivor/killer builds + per-killer build selector (44 killers)
+- **Characters** — click any survivor/killer for a detail view:
+  - Bio + full lore (collapsible)
+  - **Power** — official name, TLDR summary, and a "Full Power" expand for the complete description (killers)
+  - Perks with hover tooltips (level-tinted values) and click-through to perk detail
+  - **Pick-rate over time** — interactive SVG graph with hover tooltip
+- **Responsive** — stacked sections, 2-column cards, mobile-friendly
+- **UI Scale** — adjustable in Settings (0.8×–1.6×) applied globally
+
 ## Install
 
 ```bash
@@ -85,12 +97,17 @@ nightlight-enhanced/
 │       ├── app.js         # Navigation, notifications, lock indicator
 │       ├── config-parser.js  # INI parser + field definitions
 │       ├── config-pretty.js  # Pretty mode renderer
+│       ├── nl-data.json      # Perk/character data (bios, powers, builds, history)
+│       ├── img/
+│       │   ├── blank.webp   # Empty perk placeholder
+│       │   └── powers/      # Killer power icons (local assets)
 │       └── pages/
 │           ├── pack-browser.js   # Pack listing, search, preview, install
 │           ├── pack-manager.js   # Installed packs management
 │           ├── config-editor.js  # Config editor (pretty + raw)
 │           ├── upload.js         # Screenshot upload
-│           └── settings.js       # DBD path, API token, preferences
+│           ├── stats.js          # Community stats (tabs, char detail, graphs)
+│           └── settings.js       # DBD path, API token, UI scale, preferences
 ├── docs/
 │   ├── plan.md            # Implementation roadmap
 │   ├── specs.md           # Technical specifications
