@@ -1930,8 +1930,8 @@ html, body {
 }
 
 .stat-perk-img {
-  width: calc(38px * var(--ui-scale));
-  height: calc(38px * var(--ui-scale));
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-sm);
   background: var(--bg-tertiary);
   object-fit: cover;
@@ -1940,8 +1940,8 @@ html, body {
 
 .stat-perk-img-none {
   display: inline-block;
-  width: calc(38px * var(--ui-scale));
-  height: calc(38px * var(--ui-scale));
+  width: 38px;
+  height: 38px;
 }
 
 .stat-perk-body {
@@ -1950,7 +1950,7 @@ html, body {
 }
 
 .stat-perk-name {
-  font-size: calc(13px * var(--ui-scale));
+  font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
@@ -1958,13 +1958,13 @@ html, body {
 }
 
 .stat-perk-pct {
-  font-size: calc(11px * var(--ui-scale));
+  font-size: 11px;
   color: var(--text-muted);
   margin-bottom: 4px;
 }
 
 .pct-track {
-  height: calc(5px * var(--ui-scale));
+  height: 5px;
   background: var(--bg-hover);
   border-radius: 3px;
   overflow: hidden;
@@ -1995,8 +1995,8 @@ html, body {
 .stat-char:hover { border-color: var(--accent); }
 
 .stat-char-img {
-  width: calc(40px * var(--ui-scale));
-  height: calc(40px * var(--ui-scale));
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-sm);
   background: var(--bg-hover);
   object-fit: cover;
@@ -2006,7 +2006,7 @@ html, body {
 .stat-char-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; }
 
 .stat-char-name {
-  font-size: calc(13px * var(--ui-scale));
+  font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
@@ -2014,7 +2014,7 @@ html, body {
 }
 
 .stat-char-total {
-  font-size: calc(12px * var(--ui-scale));
+  font-size: 12px;
   color: var(--accent);
   font-weight: 600;
   flex-shrink: 0;
@@ -2026,8 +2026,8 @@ html, body {
 }
 
 .stat-mini-perk {
-  width: calc(24px * var(--ui-scale));
-  height: calc(24px * var(--ui-scale));
+  width: 24px;
+  height: 24px;
   border-radius: 3px;
   background: var(--bg-hover);
   object-fit: cover;
@@ -2053,8 +2053,8 @@ html, body {
 }
 
 .stat-build-perk {
-  width: calc(44px * var(--ui-scale));
-  height: calc(44px * var(--ui-scale));
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-sm);
   background: var(--bg-tertiary);
   object-fit: cover;
@@ -2067,13 +2067,13 @@ html, body {
 }
 
 .stat-build-usage {
-  font-size: calc(14px * var(--ui-scale));
+  font-size: 14px;
   font-weight: 700;
   color: var(--text-primary);
 }
 
 .stat-build-rate {
-  font-size: calc(11px * var(--ui-scale));
+  font-size: 11px;
   color: var(--text-muted);
   margin-top: 2px;
 }
