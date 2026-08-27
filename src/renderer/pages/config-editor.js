@@ -31,6 +31,7 @@ async function loadConfig() {
     pathDisplay.innerHTML = `${icon('alertCircle')} ${err.message}`;
     status.textContent = '';
     status.className = 'config-status';
+    updateLockButton();
   }
 }
 
@@ -120,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   refreshBtn.innerHTML = `${icon('refresh')} Refresh`;
   saveBtn.innerHTML = `${icon('save')} Save`;
+  updateLockButton();
 
   refreshBtn.addEventListener('click', loadConfig);
   saveBtn.addEventListener('click', saveConfig);

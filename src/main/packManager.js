@@ -136,7 +136,7 @@ function doDownload(url, redirectCount, resolve, reject, onProgress) {
   if (redirectCount > 5) { reject(new Error('Too many redirects')); return; }
   const lib = url.startsWith('https') ? https : http;
   const req = lib.request(url, {
-    headers: { 'User-Agent': 'NightLight-Enhanced/0.1.0', 'Origin': 'https://nightlight.gg', 'Referer': 'https://nightlight.gg/' }
+    headers: { 'User-Agent': 'NightLight-Enhanced/0.2.0', 'Origin': 'https://nightlight.gg', 'Referer': 'https://nightlight.gg/' }
   }, (res) => {
     if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
       const redirectUrl = res.headers.location.startsWith('http') ? res.headers.location : new URL(res.headers.location, url).href;

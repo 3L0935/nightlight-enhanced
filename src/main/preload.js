@@ -46,6 +46,9 @@ contextBridge.exposeInMainWorld('nightlight', {
   // Community stats
   fetchCommunityStats: () => ipcRenderer.invoke('stats:community'),
 
+  // External links
+  openExternal: (url) => ipcRenderer.invoke('open-external', url),
+
   // Events from main
   onConfigOverwritten: (callback) => ipcRenderer.on('config:overwritten', (_, data) => callback(data)),
   onInstallProgress: (callback) => {

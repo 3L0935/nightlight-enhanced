@@ -225,6 +225,15 @@ function registerIpcHandlers(ipcMain) {
   ipcMain.handle('stats:community', async () => {
     return api.fetchCommunityStats();
   });
+
+  // ── External links (wiki etc.) — https only ──
+  const { shell } = require('electron');
+  ipcMain.handle('open-external', async (_, url) => {
+    if (typeof url !== 'string' || !url.startsWith('https://deadbydaylight.wiki.gg/')) {
+      throw new Error('Blocked external URL');
+    }
+    return shell.openExternal(url);
+  });
 }
 
 module.exports = { registerIpcHandlers };

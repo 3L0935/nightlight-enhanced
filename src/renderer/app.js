@@ -75,4 +75,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const scale = all.uiScale || 1;
     document.documentElement.style.setProperty('--ui-scale', String(scale));
   } catch (e) {}
+
+  // Version label from package.json (single source of truth)
+  try {
+    const info = await window.nightlight.getAppInfo();
+    $('#version-label').textContent = `v${info.version}`;
+  } catch (e) {}
 });

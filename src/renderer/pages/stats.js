@@ -16,6 +16,36 @@ function perkImage(id, size = '') {
 function perkName(id) {
   return _nlData?.perks?.[id]?.name || 'Unknown';
 }
+
+// ── Wiki link helpers (source of truth: deadbydaylight.wiki.gg) ──
+// Perk names that need a custom wiki slug (name-case/charset mismatches verified 2026-08-27)
+const WIKI_PERK_SLUG_OVERRIDES = {
+  "We'll make it": "We'll_Make_It",
+  "Save the best for last": "Save_the_Best_for_Last",
+  "Make your Choice": "Make_Your_Choice",
+  "Dead Man\u2019s Switch": "Dead_Man's_Switch",
+  "Repressed\u00a0Alliance": "Repressed_Alliance",
+  "Dragon\u2019s Grip": "Dragon's_Grip",
+  "Better Than New": "Better_than_New",
+  "Light-footed": "Light-Footed",
+  "Friends \u2018Til the End": "Friends_'til_the_End",
+  "Hex: Nothing But Misery": "Hex:_Nothing_but_Misery",
+  "ONE-TWO-THREE-FOUR!": "One-Two-Three-Four!",
+};
+
+function wikiUrl(name, type) {
+  // nl-data perk urls (/perks/X) were the old nightlight.gg paths; the wiki uses /wiki/<Name>
+  const slug = type === 'perk'
+    ? (WIKI_PERK_SLUG_OVERRIDES[name] || name.replace(/ /g, '_'))
+    : name.replace(/ /g, '_');
+  return `https://deadbydaylight.wiki.gg/wiki/${encodeURIComponent(slug).replace(/%2F/g, '/')}`;
+}
+
+function wikiLinkHtml(name, type, label) {
+  const url = wikiUrl(name, type);
+  if (!url) return '';
+  return `<a class="wiki-link" href="#" data-wiki-url="${url}" title="Open on deadbydaylight.wiki.gg">${icon('externalLink')} ${label || 'Wiki'}</a>`;
+}
 function charName(id) {
   return _nlData?.survivors?.[id]?.name || _nlData?.killers?.[id]?.name || 'Unknown';
 }
@@ -76,13 +106,13 @@ function perkTooltip(perkId, inner) {
   return `<div class="stat-tip" data-perk="${perkId}">${inner}</div>`;
 }
 
-// ── Top perks ──
+// ── Top perks (clickable → perk detail) ──
 function renderTopPerks(perks) {
   if (!perks || perks.length === 0) return '<div class="empty-state">No data yet.</div>';
   return perks.map((p, i) => {
     const img = perkImage(p.perk_id, 85);
     return perkTooltip(p.perk_id, `
-      <div class="stat-perk-row">
+      <div class="stat-perk-row stat-clickable" data-perk-nav="${p.perk_id}" title="Click to view perk details">
         <span class="stat-rank">${i + 1}</span>
         ${img ? `<img class="stat-perk-img" src="${img}" alt="${perkName(p.perk_id)}" loading="lazy" />` : '<span class="stat-perk-img stat-perk-img-none"></span>'}
         <div class="stat-perk-body">
@@ -90,6 +120,7 @@ function renderTopPerks(perks) {
           <div class="stat-perk-pct">${p.pct}%</div>
           ${pctBar(p.pct)}
         </div>
+        <span class="stat-chevron">${icon('arrowRight')}</span>
       </div>`);
   }).join('');
 }
@@ -167,6 +198,21 @@ function renderCharDetail(charId) {
         </div>
       </div>`
     : '';
+  // Top used perks ON this character (from nl-data), with per-char usage + outcome rates
+  const topPerksHtml = (c.top_perks || []).slice(0, 8).map(tp => {
+    const pimg = perkImage(tp.perk_id, 85);
+    const n = perkName(tp.perk_id);
+    const rate = isK ? tp.kill_rate : tp.escape_rate;
+    const rateLbl = isK ? 'kill' : 'escape';
+    return `
+      <div class="char-top-perk-row stat-clickable" data-perk-nav="${tp.perk_id}">
+        ${pimg ? `<img class="stat-perk-img" src="${pimg}" alt="${n}" loading="lazy" />` : '<span class="stat-perk-img stat-perk-img-none"></span>'}
+        <div class="char-top-perk-body">
+          <div class="stat-perk-name">${n}</div>
+          <div class="char-top-perk-meta">${tp.usage_rate}% usage · ${rate != null ? rate.toFixed(1) + '% ' + rateLbl : '—'}</div>
+        </div>
+      </div>`;
+  }).join('');
   return `
     <div class="char-detail">
       <button class="btn btn-sm char-detail-back">${icon('arrowUp')} Back</button>
@@ -176,12 +222,13 @@ function renderCharDetail(charId) {
             ${img ? `<img class="char-detail-portrait" src="${img}" alt="${c.name}" />` : ''}
             <div class="char-detail-title">
               <div class="char-detail-name">${c.name}</div>
-              <div class="char-detail-role">${isK ? 'Killer' : 'Survivor'}</div>
+              <div class="char-detail-role">${isK ? 'Killer' : 'Survivor'}${c.chapter ? ` · ${c.chapter}` : ''}</div>
               <div class="char-detail-stats">
                 <span class="cd-stat"><b>${pickRate}</b> Pick Rate</span>
                 <span class="cd-stat"><b>${rateVal}</b> ${rateLabel}</span>
               </div>
             </div>
+            <div class="char-detail-wiki">${wikiLinkHtml(c.name, 'character', 'View on Wiki')}</div>
           </div>
           <div class="char-detail-bio">
             <h4>Bio</h4>
@@ -192,9 +239,14 @@ function renderCharDetail(charId) {
         <div class="char-detail-right">
           ${powerHtml}
           <div class="char-detail-perks">
-            <h4>Perks</h4>
+            <h4>Perks (Teachable)</h4>
             <div class="char-detail-perks-row">${perks}</div>
           </div>
+          ${topPerksHtml ? `
+          <div class="char-detail-top-perks">
+            <h4>Most Used Perks on ${c.name}</h4>
+            ${topPerksHtml}
+          </div>` : ''}
         </div>
       </div>
       <div class="char-detail-graph">
@@ -209,7 +261,8 @@ function renderPickGraph(history) {
   if (!history || history.length < 2) return '<div class="empty-state">Not enough history data.</div>';
   const W = 600, H = 180, PAD = 30;
   // history is newest-first; reverse so the graph reads oldest → newest left→right
-  const pts = history.slice().reverse().map(h => ({ x: h.end, y: h.pick_rate }));
+  // char history uses pick_rate, perk history uses pct
+  const pts = history.slice().reverse().map(h => ({ x: h.end, y: h.pick_rate ?? h.pct ?? 0 }));
   const maxY = Math.max(...pts.map(p => p.y), 1);
   const minY = Math.min(...pts.map(p => p.y), 0);
   const range = (maxY - minY) || 1;
@@ -253,7 +306,7 @@ function renderBuilds(builds, role) {
       const img = perkImage(pid, 85);
       const n = perkName(pid);
       return perkTooltip(pid, img
-        ? `<img class="stat-build-perk" src="${img}" alt="${n}" loading="lazy" />`
+        ? `<img class="stat-build-perk stat-clickable" data-perk-nav="${pid}" src="${img}" alt="${n}" loading="lazy" />`
         : `<img class="stat-build-perk stat-build-perk-blank" src="img/blank.webp" alt="No perk" loading="lazy" />`);
     }).join('');
     const metric = role === 'killer'
@@ -282,7 +335,7 @@ function renderKillerBuilds(killerId) {
       const img = perkImage(pid, 85);
       const n = perkName(pid);
       return perkTooltip(pid, img
-        ? `<img class="stat-build-perk" src="${img}" alt="${n}" loading="lazy" />`
+        ? `<img class="stat-build-perk stat-clickable" data-perk-nav="${pid}" src="${img}" alt="${n}" loading="lazy" />`
         : `<img class="stat-build-perk stat-build-perk-blank" src="img/blank.webp" alt="No perk" loading="lazy" />`);
     }).join('');
     return `
@@ -317,6 +370,25 @@ function pctBar(pct) {
 }
 
 let _currentTab = 'perks';
+
+// ── Detail-view navigation: stack of render callbacks, Back pops one level ──
+let _navStack = [];
+function pushView(renderFn) {
+  hideTip();
+  _navStack.push(renderFn);
+  renderFn();
+}
+function popView(data) {
+  hideTip();
+  _navStack.pop();
+  const prev = _navStack[_navStack.length - 1];
+  if (prev) prev();
+  else renderTab(_currentTab, data);
+}
+function resetNav() {
+  hideTip();
+  _navStack = [];
+}
 
 function renderStats(data) {
   const meta = $('#stats-meta');
@@ -394,32 +466,64 @@ function renderTab(tab, data) {
           </div>
         </div>
       </div>`;
-    // Click a character to open detail view
-    content.querySelectorAll('.stat-char[data-char]').forEach(el => {
-      el.addEventListener('click', () => {
-        const cid = el.dataset.char;
+  }
+  bindTooltips(content);
+  bindDetailNav(content, data);
+}
+
+// ── Global navigation binding: perk rows/icons, character rows, wiki links ──
+function bindDetailNav(content, data) {
+  // Perk navigation from anywhere (top perk rows, build icons, char detail perks)
+  content.querySelectorAll('[data-perk-nav]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const pid = el.dataset.perkNav;
+      pushView(() => {
+        content.innerHTML = renderPerkDetail(pid);
+        bindTooltips(content);
+        bindPerkDetail(content, data);
+        bindDetailNav(content, data);
+      });
+    });
+  });
+  // Character navigation
+  content.querySelectorAll('.stat-char[data-char]').forEach(el => {
+    el.addEventListener('click', () => {
+      const cid = el.dataset.char;
+      pushView(() => {
         content.innerHTML = renderCharDetail(cid);
         bindTooltips(content);
         bindCharDetail(content, data);
+        bindDetailNav(content, data);
       });
     });
-  }
-  bindTooltips(content);
+  });
+  // Wiki links (open in system browser via main process)
+  content.querySelectorAll('[data-wiki-url]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      window.nightlight.openExternal(el.dataset.wikiUrl);
+    });
+  });
 }
 
 // ── Bind interactions in the character detail view ──
 function bindCharDetail(content, data) {
-  // Back button
+  // Back button (pop one nav level)
   const back = content.querySelector('.char-detail-back');
-  if (back) back.addEventListener('click', () => renderTab('characters', data));
-  // Perk click → perk detail page
+  if (back) back.addEventListener('click', () => { hideTip(); popView(data); });
+  // Perk click → perk detail page (push one nav level)
   content.querySelectorAll('[data-perk-click]').forEach(el => {
     el.addEventListener('click', (e) => {
       e.stopPropagation();
       const pid = el.dataset.perkClick;
-      content.innerHTML = renderPerkDetail(pid);
-      bindTooltips(content);
-      bindPerkDetail(content, data);
+      pushView(() => {
+        content.innerHTML = renderPerkDetail(pid);
+        bindTooltips(content);
+        bindPerkDetail(content, data);
+        bindDetailNav(content, data);
+      });
     });
   });
   // Graph hover tooltip
@@ -442,11 +546,24 @@ function renderPerkDetail(perkId) {
   const p = _nlData?.perks?.[perkId];
   if (!p) return '<div class="empty-state">Perk not found.</div>';
   const img = perkImage(perkId, 85);
-  const history = _statsCache?.top_survivor_perks?.find(x => x.perk_id == perkId)?.history
-    || _statsCache?.top_killer_perks?.find(x => x.perk_id == perkId)?.history
-    || [];
-  const pct = _statsCache?.top_survivor_perks?.find(x => x.perk_id == perkId)?.pct
-    || _statsCache?.top_killer_perks?.find(x => x.perk_id == perkId)?.pct;
+  // Find the perk in the stats cache (survivor and/or killer lists)
+  const sEntry = _statsCache?.top_survivor_perks?.find(x => x.perk_id == perkId);
+  const kEntry = _statsCache?.top_killer_perks?.find(x => x.perk_id == perkId);
+  const entry = (sEntry && (!kEntry || (sEntry.history?.length || 0) >= (kEntry.history?.length || 0))) ? sEntry : (kEntry || sEntry);
+  const history = entry?.history || [];
+  const pct = entry?.pct;
+  const role = isKillerPerk(perkId) ? 'Killer Perk' : 'Survivor Perk';
+  // Latest history point carries escape_rate (survivor) — killer perks report 0 escape rate
+  const latest = history[0];
+  const rateLine = latest && !isKillerPerk(perkId) && latest.escape_rate
+    ? `<span class="cd-stat"><b>${latest.escape_rate.toFixed(1)}%</b> Escape Rate (w/ perk)</span>`
+    : '';
+  const countLine = latest ? `<span class="cd-stat"><b>${latest.count.toLocaleString()}</b> Matches</span>` : '';
+  // Convert desc html with tunable colors (reuse tooltip transformer, minus the tooltip chrome)
+  let descHtml = '<div class="empty-state">No description available.</div>';
+  if (p.desc_html) {
+    descHtml = perkTooltipContent(perkId).replace(/^<div class="pt-name">.*?<\/div>/, '');
+  }
   return `
     <div class="perk-detail">
       <button class="btn btn-sm perk-detail-back">${icon('arrowUp')} Back</button>
@@ -454,12 +571,18 @@ function renderPerkDetail(perkId) {
         ${img ? `<img class="perk-detail-img" src="${img}" alt="${p.name}" />` : ''}
         <div class="perk-detail-title">
           <div class="perk-detail-name">${p.name}</div>
-          <div class="perk-detail-role">${pct !== undefined ? `${pct}% usage` : ''}</div>
+          <div class="perk-detail-role">${role}</div>
+          <div class="char-detail-stats">
+            ${pct !== undefined ? `<span class="cd-stat"><b>${pct}%</b> Usage</span>` : ''}
+            ${rateLine}
+            ${countLine}
+          </div>
         </div>
+        <div class="perk-detail-wiki">${wikiLinkHtml(p.name, 'perk', 'View on Wiki')}</div>
       </div>
       <div class="perk-detail-desc">
-        <h4>Description</h4>
-        <div class="perk-detail-desc-html">${p.desc_html || 'No description available.'}</div>
+        <h4>Effect</h4>
+        <div class="perk-detail-desc-html">${descHtml}</div>
       </div>
       <div class="perk-detail-graph">
         <h4>Pick Rate Over Time</h4>
@@ -468,10 +591,24 @@ function renderPerkDetail(perkId) {
     </div>`;
 }
 
+// Resolve a perk's role: killers'/survivors' teachable lists from nl-data, fallback to the
+// verified static table for the 30 "general" perks absent from character perk lists.
+const GENERAL_PERK_ROLES = {"1":"survivor","2":"survivor","3":"survivor","4":"survivor","5":"survivor","6":"survivor","7":"survivor","8":"survivor","9":"survivor","10":"survivor","11":"survivor","12":"survivor","13":"survivor","14":"survivor","15":"killer","16":"killer","17":"killer","18":"killer","19":"killer","20":"killer","21":"killer","22":"killer","23":"killer","24":"killer","25":"killer","26":"killer","66":"survivor","67":"survivor","68":"survivor","204":"killer"};
+function isKillerPerk(perkId) {
+  const id = String(perkId);
+  for (const k of Object.values(_nlData?.killers || {})) {
+    if ((k.perks || []).includes(Number(perkId))) return true;
+  }
+  for (const s of Object.values(_nlData?.survivors || {})) {
+    if ((s.perks || []).includes(Number(perkId))) return false;
+  }
+  return GENERAL_PERK_ROLES[id] === 'killer';
+}
+
 // ── Bind perk detail interactions ──
 function bindPerkDetail(content, data) {
   const back = content.querySelector('.perk-detail-back');
-  if (back) back.addEventListener('click', () => renderTab('characters', data));
+  if (back) back.addEventListener('click', () => { hideTip(); popView(data); });
   const wrap = content.querySelector('.pick-graph-wrap');
   if (wrap) bindPickHover(wrap);
 }
@@ -524,6 +661,9 @@ function ensureTip() {
   }
   return _tipEl;
 }
+function hideTip() {
+  if (_tipEl) _tipEl.classList.remove('visible');
+}
 
 function bindTooltips(container) {
   const tip = ensureTip();
@@ -566,6 +706,7 @@ document.addEventListener('DOMContentLoaded', () => {
       _currentTab = btn.dataset.tab;
       document.querySelectorAll('.stats-tab').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      resetNav();
       if (_statsCache) renderTab(_currentTab, _statsCache);
     });
   });

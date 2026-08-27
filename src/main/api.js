@@ -16,7 +16,7 @@ function request(url, options = {}) {
     const lib = parsed.protocol === 'https:' ? https : http;
     const req = lib.request(url, {
       method: options.method || 'GET',
-      headers: { 'User-Agent': 'NightLight-Enhanced/0.1.0', ...(options.headers || {}) }
+      headers: { 'User-Agent': 'NightLight-Enhanced/0.2.0', ...(options.headers || {}) }
     }, (res) => {
       const chunks = [];
       res.on('data', (chunk) => chunks.push(chunk));
@@ -93,7 +93,7 @@ function fetchBannerBase64(packId, version) {
     const url = `${CDN_BASE}/packs/${packId}/${version}/banner.png`;
     const lib = url.startsWith('https') ? https : http;
     const req = lib.request(url, {
-      headers: { 'User-Agent': 'NightLight-Enhanced/0.1.0', 'Origin': 'https://nightlight.gg', 'Referer': 'https://nightlight.gg/' }
+      headers: { 'User-Agent': 'NightLight-Enhanced/0.2.0', 'Origin': 'https://nightlight.gg', 'Referer': 'https://nightlight.gg/' }
     }, (res) => {
       const chunks = [];
       res.on('data', chunk => chunks.push(chunk));
@@ -204,7 +204,7 @@ function doRequest(url, redirectCount, resolve, reject, onProgress) {
   if (redirectCount > 5) { reject(new Error('Too many redirects')); return; }
   const lib = url.startsWith('https') ? https : http;
   const req = lib.request(url, {
-    headers: { 'User-Agent': 'NightLight-Enhanced/0.1.0', 'Origin': 'https://nightlight.gg', 'Referer': 'https://nightlight.gg/' }
+    headers: { 'User-Agent': 'NightLight-Enhanced/0.2.0', 'Origin': 'https://nightlight.gg', 'Referer': 'https://nightlight.gg/' }
   }, (res) => {
     if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
       const redirectUrl = res.headers.location.startsWith('http') ? res.headers.location : new URL(res.headers.location, url).href;

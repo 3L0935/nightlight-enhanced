@@ -1,6 +1,6 @@
 {
   "name": "nightlight-enhanced",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Enhanced NightLight Desktop — Icon Pack Manager, Config Editor & Match Upload for Dead by Daylight",
   "main": "src/main/main.js",
   "scripts": {

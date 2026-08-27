@@ -32,7 +32,6 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-size: calc(14px * var(--ui-scale));
   overflow: hidden;
 }
 
@@ -187,11 +186,15 @@ html, body {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
 }
 
 .page-header-actions .search-bar {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
 }
 
 /* ── Search Bar ── */
@@ -207,6 +210,7 @@ html, body {
   padding: 7px 12px;
   border-radius: var(--radius);
   width: 220px;
+  max-width: 100%;
   font-size: 12px;
 }
 
@@ -2390,6 +2394,111 @@ html, body {
 .perk-detail-desc-html .level-2 { color: #60a5fa; }
 .perk-detail-desc-html .level-3 { color: #c084fc; }
 
+/* ── Clickable rows / chevron ── */
+.stat-clickable {
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.stat-perk-row.stat-clickable:hover {
+  background: var(--bg-hover);
+  border-radius: var(--radius-sm);
+}
+.stat-chevron {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.stat-perk-row.stat-clickable:hover .stat-chevron {
+  opacity: 1;
+}
+.stat-build-perk.stat-clickable {
+  cursor: pointer;
+}
+.stat-build-perk.stat-clickable:hover {
+  outline: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+}
+
+/* ── Wiki link ── */
+.wiki-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s;
+}
+.wiki-link:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+.wiki-link svg {
+  width: 12px;
+  height: 12px;
+}
+.perk-detail-wiki {
+  margin-left: auto;
+  align-self: flex-start;
+}
+.char-detail-wiki {
+  align-self: flex-start;
+}
+
+/* ── Perk detail: head alignment ── */
+.perk-detail-head .char-detail-stats {
+  margin-top: 8px;
+}
+
+/* ── Character detail: top perks on this char ── */
+.char-detail-top-perks {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+}
+.char-detail-top-perks h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 12px;
+}
+.char-top-perk-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 8px;
+  border-radius: var(--radius-sm);
+}
+.char-top-perk-row:hover {
+  background: var(--bg-hover);
+}
+.char-top-perk-body {
+  flex: 1;
+  min-width: 0;
+}
+.char-top-perk-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ── Char detail head: allow wiki link placement ── */
+.char-detail-head {
+  position: relative;
+}
+
 @media (max-width: 900px) {
   .char-detail-layout {
     grid-template-columns: 1fr;
@@ -2452,26 +2561,34 @@ html, body {
   opacity: 1;
   transform: translateY(0);
 }
-.perk-tooltip .pt-name {
+.perk-tooltip .pt-name,
+.perk-detail-desc-html .pt-name {
   font-size: 13px;
   font-weight: 700;
   margin-bottom: 6px;
   color: var(--text-primary);
 }
-.perk-tooltip .pt-desc {
+.perk-tooltip .pt-desc,
+.perk-detail-desc-html .pt-desc {
   font-size: 12px;
   line-height: 1.45;
   color: var(--text-secondary);
 }
-.perk-tooltip .pt-lvl {
+.perk-tooltip .pt-lvl,
+.perk-detail-desc-html .pt-lvl {
   font-weight: 700;
   padding: 0 1px;
 }
-.perk-tooltip .pt-l1 { color: #4ade80; }       /* green */
-.perk-tooltip .pt-l2 { color: #60a5fa; }       /* blue */
-.perk-tooltip .pt-l3 { color: #c084fc; }       /* violet */
-.perk-tooltip .pt-static { color: var(--text-primary); font-weight: 600; }
-.perk-tooltip .pt-flavor {
+.perk-tooltip .pt-l1,
+.perk-detail-desc-html .pt-l1 { color: #4ade80; }       /* green */
+.perk-tooltip .pt-l2,
+.perk-detail-desc-html .pt-l2 { color: #60a5fa; }       /* blue */
+.perk-tooltip .pt-l3,
+.perk-detail-desc-html .pt-l3 { color: #c084fc; }       /* violet */
+.perk-tooltip .pt-static,
+.perk-detail-desc-html .pt-static { color: var(--text-primary); font-weight: 600; }
+.perk-tooltip .pt-flavor,
+.perk-detail-desc-html .pt-flavor {
   display: block;
   margin-top: 6px;
   font-style: italic;

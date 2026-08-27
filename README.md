@@ -36,18 +36,34 @@ Built with Electron. Linux first. Works on Windows too.
 - Auto-delete after upload option
 
 ### Community Stats
-- **Tabs** — Perks / Builds / Characters, browser-style navigation
-- **Perks** — top 10 survivor & killer perks by usage, click a perk for its detail page with pick-rate graph
-- **Builds** — most-seen survivor/killer builds + per-killer build selector (44 killers)
+- **Tabs** — Perks / Builds / Characters, browser-style back navigation (perk → character → list)
+- **Perks** — top 10 survivor & killer perks by usage, click any perk row for its detail page:
+  - Role badge, usage %, escape rate with the perk, match count
+  - **Effect** — full description with level-tinted tunable values (tier 1/2/3)
+  - **Pick-rate over time** — interactive SVG graph with hover tooltip
+  - **View on Wiki** — opens [deadbydaylight.wiki.gg](https://deadbydaylight.wiki.gg/) in your browser
+- **Builds** — most-seen survivor/killer builds + per-killer build selector (44 killers); every perk icon is clickable
 - **Characters** — click any survivor/killer for a detail view:
   - Bio + full lore (collapsible)
   - **Power** — official name, TLDR summary, and a "Full Power" expand for the complete description (killers)
-  - Perks with hover tooltips (level-tinted values) and click-through to perk detail
+  - **Teachable perks** with hover tooltips and click-through to perk detail
+  - **Most Used Perks on [character]** — top 8 perks on this character with usage % and kill/escape rate, all clickable
   - **Pick-rate over time** — interactive SVG graph with hover tooltip
+  - **View on Wiki** link
+- **Perk detail pages reachable from anywhere** — perk rows, build icons, teachables, per-character top perks
 - **Responsive** — stacked sections, 2-column cards, mobile-friendly
 - **UI Scale** — adjustable in Settings (0.8×–1.6×) applied globally
 
 ## Install
+
+### Download (recommended)
+
+Grab the latest release from [Releases](https://github.com/3L0935/nightlight-enhanced/releases):
+
+- **Linux** — `AppImage` (run directly, no install)
+- **Windows** — `Setup.exe` (NSIS installer) or the portable `.exe`
+
+### From source
 
 ```bash
 git clone https://github.com/3L0935/nightlight-enhanced.git
@@ -61,6 +77,14 @@ npm start
 ```bash
 npx electron-builder --linux AppImage
 ```
+
+### Build (Windows, from Linux via Wine)
+
+```bash
+npx electron-builder --win nsis portable
+```
+
+> Requires `wine` on the host. Produces both the NSIS installer and the portable exe.
 
 ### DBD Path Setup
 
@@ -127,8 +151,8 @@ nightlight-enhanced/
 - [x] Config lock
 - [x] Screenshot upload (preview + review flow)
 - [x] Community stats (perks, builds, killers/survivors)
+- [x] Detail pages — perks & characters with stats, graphs, wiki links
 - [ ] Personal match history (uploaded matches list + detail)
-- [ ] Windows build testing
 - [ ] Auto-updater
 - [ ] Keyboard shortcuts
 
