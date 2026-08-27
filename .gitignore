@@ -1,6 +1,15 @@
 node_modules/
 dist/
+.ui-audit/
+docs/superpowers/
+graphify-out/
 .DS_Store
 *.log
 .env
-graphify-out/
+builder-debug.yml
+latest-linux.yml
+latest.yml
+linux-unpacked/
+win-unpacked/
+*.blockmap
+stat page.png
